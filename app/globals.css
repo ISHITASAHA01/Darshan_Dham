@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fdf8f1;
+  --foreground: #2b1d12;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* DARSHAN DHAM theme colors */
+  --color-saffron: #d9822b;
+  --color-saffron-dark: #b8681a;
+  --color-saffron-light: #f6e4cc;
+  --color-cream: #fdf8f1;
+  --color-navy: #0f1b2d;
+  --color-brown: #5a3e2b;
+
+  --font-heading: var(--font-playfair);
+  --font-sans: var(--font-poppins);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+}
+/* Google Translate ka bar hamesha ke liye chhupa hua rakho */
+.goog-te-banner-frame,
+.skiptranslate {
+  display: none !important;
+}
+body {
+  top: 0 !important;
+  position: static !important;
+}
+@keyframes loading {
+  0% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
