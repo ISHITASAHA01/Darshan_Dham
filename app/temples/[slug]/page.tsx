@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import {
   MapPin,
   Clock,
-  Landmark,
   Flame,
   Navigation,
   ScrollText,
@@ -12,6 +11,7 @@ import {
 } from "lucide-react";
 import { temples } from "@/data/temples";
 import TempleStory from "@/components/TempleStory";
+import TempleIcon from "@/components/TempleIcon";
 import PujaList from "@/components/PujaList";
 import { getTempleImage } from "@/lib/temple-image";
 
@@ -41,7 +41,7 @@ export default async function TempleDetails({
         {temple.image ? (
           <Image src={temple.image} alt={temple.name} fill className="object-cover" priority />
         ) : (
-          <Landmark className="absolute right-10 top-10 h-40 w-40 text-white/10" />
+          <TempleIcon className="absolute right-10 top-10 h-40 w-40 text-white/10" />
         )}
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 mx-auto flex h-full max-w-7xl flex-col justify-end px-6 pb-8 text-white">

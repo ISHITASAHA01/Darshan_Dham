@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, MapPin, Landmark, ArrowRight } from "lucide-react";
+import { Clock, MapPin, ArrowRight } from "lucide-react";
+import TempleIcon from "@/components/TempleIcon";
 import type { Temple } from "@/data/temples";
 import { useLanguage } from "@/i18n/LanguageContext";
 
@@ -22,7 +23,7 @@ export default function TempleCard({ temple }: { temple: Temple }) {
                     />
                 ) : (
                     <div className="flex h-full items-center justify-center">
-                        <Landmark className="h-14 w-14 text-saffron-dark/60" />
+                        <TempleIcon className="h-14 w-14 text-saffron-dark/60" />
                     </div>
                 )}
             </div>
