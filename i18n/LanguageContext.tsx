@@ -2,11 +2,12 @@
 
 import { createContext, useContext, useEffect, useState } from "react";
 import { dictionary, type Lang } from "./dictionary";
+import { moreText } from "./moreText";
 
 type ContextType = {
     lang: Lang;
     setLang: (l: Lang) => void;
-    t: (key: string) => string;
+    t: (key: string, vars?: Record<string, string | number>) => string;
 };
 
 const LanguageContext = createContext<ContextType | null>(null);
@@ -29,12 +30,22 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
     const setLang = (l: Lang) => setLangState(l);
 
-    // const t = (key: keyof typeof dictionary["en"]) =>
-    //     dictionary[lang][key] ?? dictionary.en[key];
-    const t = (key: string): string =>
-        (dictionary[lang] as Record<string, string>)[key] ??
-        (dictionary.en as Record<string, string>)[key] ??
-        key;
+    // t("key") ya t("key", { name: "Delhi" })  ->  text me {name} ki jagah value aa jayegi
+    const t = (key: string, vars?: Record<string, string | number>): string => {
+        const d = dictionary as Record<string, Record<string, string>>;
+        let s =
+            d[lang]?.[key] ??
+            moreText[lang]?.[key] ??
+            d.en?.[key] ??
+            moreText.en[key] ??
+            key;
+        if (vars) {
+            for (const k of Object.keys(vars)) {
+                s = s.split(`{${k}}`).join(String(vars[k]));
+            }
+        }
+        return s;
+    };
 
     return (
         <LanguageContext.Provider value={{ lang, setLang, t }}>

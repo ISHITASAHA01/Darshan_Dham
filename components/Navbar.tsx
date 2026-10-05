@@ -9,11 +9,11 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const links = [
-  { name: "Home", href: "/" },
-  { name: "Temples", href: "/temples" },
-  { name: "States", href: "/states" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { key: "nav_home", href: "/" },
+  { key: "nav_temples", href: "/temples" },
+  { key: "nav_states", href: "/states" },
+  { key: "nav_about", href: "/about" },
+  { key: "nav_contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -59,7 +59,7 @@ export default function Navbar() {
                     : "text-foreground"
                     }`}
                 >
-                  {link.name}
+                  {t(link.key)}
                 </Link>
               </li>
             );
@@ -138,7 +138,7 @@ export default function Navbar() {
                       : "text-foreground hover:bg-saffron-light/40"
                       }`}
                   >
-                    {link.name}
+                    {t(link.key)}
                   </Link>
                 </li>
               );

@@ -2,21 +2,44 @@
 
 import { useState } from "react";
 import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const inputClass =
   "w-full rounded-md border border-saffron-light bg-white px-3 py-2 text-sm outline-none focus:border-saffron";
 
 export default function ContactPage() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const { t } = useLanguage();
+
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const fd = new FormData(e.currentTarget);
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: fd.get("name"),
+          email: fd.get("email"),
+          message: fd.get("message"),
+          website: fd.get("website"),
+        }),
+      });
+      setStatus(res.ok ? "sent" : "error");
+    } catch {
+      setStatus("error");
+    }
+  }
 
   return (
     <main>
       <section className="bg-gradient-to-br from-navy to-saffron-dark py-16 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <h1 className="font-heading text-4xl font-semibold md:text-5xl">
-            Get in Touch
+            {t("contact_title")}
           </h1>
-          <p className="mt-2 text-white/85">We&apos;d love to hear from you</p>
+          <p className="mt-2 text-white/85">{t("contact_sub")}</p>
         </div>
       </section>
 
@@ -24,63 +47,75 @@ export default function ContactPage() {
         {/* Contact info: apni asli details yahan likhna */}
         <div>
           <h2 className="mb-4 font-heading text-2xl font-semibold">
-            Contact Information
+            {t("contact_info")}
           </h2>
           <ul className="space-y-4 text-sm text-brown">
             <li className="flex gap-3">
               <MapPin className="h-5 w-5 shrink-0 text-saffron" />
-              DARSHAN DHAM, New Delhi, India
+              {t("contact_addr")}
             </li>
             <li className="flex gap-3">
               <Mail className="h-5 w-5 shrink-0 text-saffron" />
-              your-email@example.com
+              your-ishitasaha675@gmail.com
             </li>
             <li className="flex gap-3">
               <Phone className="h-5 w-5 shrink-0 text-saffron" />
-              +91 00000 00000
+              +91 1234567890
             </li>
             <li className="flex gap-3">
               <Clock className="h-5 w-5 shrink-0 text-saffron" />
-              Mon - Sun, 9:00 AM - 6:00 PM
+              {t("contact_hours")}
             </li>
           </ul>
         </div>
 
         <div>
           <h2 className="mb-4 font-heading text-2xl font-semibold">
-            Send Us a Message
+            {t("send_msg")}
           </h2>
 
-          {sent ? (
+          {status === "sent" ? (
             <div className="rounded-lg border border-saffron/40 bg-saffron-light/50 p-6 text-brown">
-              Thank you! Your message has been received.
+              {t("thanks_msg")}
             </div>
           ) : (
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSent(true);
-              }}
-              className="space-y-4"
-            >
-              <input required className={inputClass} placeholder="Your name" />
+            <form onSubmit={onSubmit} className="space-y-4">
+              {/* Bots ke liye jaal: insaan ko ye dikhta nahi */}
               <input
+                name="website"
+                tabIndex={-1}
+                autoComplete="off"
+                aria-hidden="true"
+                className="absolute -left-[9999px] h-0 w-0 opacity-0"
+              />
+              <input name="name" required maxLength={100} className={inputClass} placeholder={t("your_name")} />
+              <input
+                name="email"
                 required
                 type="email"
+                maxLength={150}
                 className={inputClass}
-                placeholder="Your email"
+                placeholder={t("your_email")}
               />
               <textarea
+                name="message"
                 required
                 rows={5}
+                maxLength={3000}
                 className={inputClass}
-                placeholder="Your message"
+                placeholder={t("your_message")}
               />
+
+              {status === "error" && (
+                <p className="text-sm text-red-600">{t("send_error")}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full rounded-md bg-saffron py-2.5 text-sm font-medium text-white hover:bg-saffron-dark"
+                disabled={status === "sending"}
+                className="w-full rounded-md bg-saffron py-2.5 text-sm font-medium text-white hover:bg-saffron-dark disabled:opacity-60"
               >
-                Send Message
+                {status === "sending" ? t("sending") : t("send_button")}
               </button>
             </form>
           )}

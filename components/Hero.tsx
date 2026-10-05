@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { Search, MapPin } from "lucide-react";
 import { states } from "@/data/temples";
 import { useLanguage } from "@/i18n/LanguageContext";
+import { locState } from "@/i18n/localize";
 
 const images = [
   "/images/hero/hero1.jpg",
@@ -16,7 +17,7 @@ const images = [
 ];
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
@@ -78,10 +79,10 @@ export default function Hero() {
               defaultValue=""
               className="bg-transparent py-2 text-sm text-foreground outline-none"
             >
-              <option value="">All States</option>
+              <option value="">{t("hero_all_states")}</option>
               {states.map((s) => (
                 <option key={s.slug} value={s.name}>
-                  {s.name}
+                  {locState(s.name, lang)}
                 </option>
               ))}
             </select>

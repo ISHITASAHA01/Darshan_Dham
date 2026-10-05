@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { states, temples } from "@/data/temples";
 import TempleCard from "@/components/TempleCard";
+import StateHeader from "@/components/StateHeader";
 import { getTempleImage } from "@/lib/temple-image";
 
 export function generateStaticParams() {
@@ -20,8 +21,7 @@ export default async function StatePage({
 
   return (
     <main className="mx-auto max-w-7xl px-6 py-12">
-      <h1 className="font-heading text-4xl font-semibold">{state.name}</h1>
-      <p className="mb-8 text-brown">Explore temples in {state.name}</p>
+      <StateHeader stateName={state.name} />
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {list.map((t) => (
           <TempleCard
