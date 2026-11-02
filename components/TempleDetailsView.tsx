@@ -1,8 +1,15 @@
 "use client";
+<<<<<<< HEAD
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { MapPin, Clock, Flame, Navigation, ScrollText, ZoomIn, Music } from "lucide-react";
+=======
+
+import Link from "next/link";
+import Image from "next/image";
+import { MapPin, Clock, Flame, Navigation, ScrollText, ZoomIn } from "lucide-react";
+>>>>>>> a7f2e8ae168c59ac1f641c151460a084bf444885
 import type { Temple } from "@/data/temples";
 import TempleStory from "@/components/TempleStory";
 import TempleIcon from "@/components/TempleIcon";
@@ -11,6 +18,7 @@ import ImageLightbox from "@/components/ImageLightbox";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { locName, locCity, locState, locDeity, locTimings } from "@/i18n/localize";
 
+<<<<<<< HEAD
 // ---- Bhajan & Aarti (deity ke hisaab se list) ----
 type Bhajan = { title: string; kind: string };
 
@@ -5230,6 +5238,8 @@ function DiyaArt() {
     );
 }
 
+=======
+>>>>>>> a7f2e8ae168c59ac1f641c151460a084bf444885
 export default function TempleDetailsView({
     temple,
     image,
@@ -5243,7 +5253,10 @@ export default function TempleDetailsView({
 }) {
     const { t, lang } = useLanguage();
     const name = locName(temple.slug, temple.name, lang);
+<<<<<<< HEAD
     const bhajans = getBhajans(temple.deity);
+=======
+>>>>>>> a7f2e8ae168c59ac1f641c151460a084bf444885
 
     return (
         <main>
@@ -5288,6 +5301,7 @@ export default function TempleDetailsView({
                     <TempleStory slug={temple.slug} story={temple.story} note={temple.note} />
 
                     <h2 className="mb-3 mt-10 flex items-center gap-2 font-heading text-2xl font-semibold">
+<<<<<<< HEAD
                         <Music className="h-6 w-6 text-saffron" /> Bhajan & Aarti
                     </h2>
                     <div className="flex items-center gap-4 rounded-xl border border-saffron-light bg-white p-5 shadow-sm">
@@ -5327,11 +5341,17 @@ export default function TempleDetailsView({
                     </div>
 
                     <h2 className="mb-3 mt-10 flex items-center gap-2 font-heading text-2xl font-semibold">
+=======
+>>>>>>> a7f2e8ae168c59ac1f641c151460a084bf444885
                         <MapPin className="h-6 w-6 text-saffron" /> {t("real_location")}
                     </h2>
                     <div className="overflow-hidden rounded-xl border border-saffron-light">
                         <iframe
+<<<<<<< HEAD
                             title={`Map of ${temple.name} `}
+=======
+                            title={`Map of ${temple.name}`}
+>>>>>>> a7f2e8ae168c59ac1f641c151460a084bf444885
                             src={mapSrc}
                             className="h-80 w-full"
                             loading="lazy"
