@@ -2,6 +2,40 @@ import { notFound } from "next/navigation";
 import { temples } from "@/data/temples";
 import TempleDetailsView from "@/components/TempleDetailsView";
 import { getTempleImage } from "@/lib/temple-image";
+import type { Metadata } from "next";
+
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const temple = temples.find((t) => t.slug === slug);
+  if (!temple) return {};
+
+  const image = temple.image ?? getTempleImage(temple.slug);
+  const title = `${temple.name}, ${temple.city} - Timings, Aarti & History`;
+  const description = `${temple.name} in ${temple.city}, ${temple.state}. Darshan timings: ${temple.timings}. Aarti times, history, map and directions.`;
+
+  return {
+    title,
+    description,
+    alternates: { canonical: `/temples/${slug}` },
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: image ? [{ url: image }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: image ? [image] : undefined,
+    },
+  };
+}
 
 export function generateStaticParams() {
   return temples.map((t) => ({ slug: t.slug }));

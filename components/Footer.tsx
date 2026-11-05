@@ -11,7 +11,7 @@ export default function Footer() {
                 <div className="flex items-center gap-3">
                     <Image
                         src="/images/logo/logo.png"
-                        alt="DHARSHAN DHAM"
+                        alt="DARSHAN DHAM"
                         width={56}
                         height={56}
                         className="h-14 w-14 object-contain"
@@ -37,7 +37,7 @@ export default function Footer() {
             </div>
 
             <div className="border-t border-white/10 py-4 text-center text-xs text-white/60">
-                © 2025 DARSHAN DHAM. {t("footer_rights")} {t("footer_photo_credit")}
+                © 2026 DARSHAN DHAM. {t("footer_rights")} {t("footer_photo_credit")}
             </div>
         </footer>
     );

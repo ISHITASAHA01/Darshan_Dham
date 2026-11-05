@@ -7,6 +7,7 @@ import type { Temple } from "@/data/temples";
 import TempleStory from "@/components/TempleStory";
 import TempleIcon from "@/components/TempleIcon";
 import PujaList from "@/components/PujaList";
+import VisitInfo from "@/components/VisitInfo";
 import ImageLightbox from "@/components/ImageLightbox";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { locName, locCity, locState, locDeity, locTimings } from "@/i18n/localize";
@@ -5362,6 +5363,7 @@ export default function TempleDetailsView({
                         <PujaList slug={temple.slug} pujas={temple.pujas} />
                         <p className="mt-3 text-xs text-brown/70">{t("timings_note")}</p>
                     </div>
+                    <VisitInfo slug={temple.slug} />
                 </aside>
             </div>
         </main>

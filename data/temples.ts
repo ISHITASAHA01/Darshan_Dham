@@ -66,7 +66,7 @@ export const temples: Temple[] = [
         state: "Uttar Pradesh",
         city: "Ayodhya",
         deity: "Lord Ram",
-        timings: "7:00 AM - 7:00 PM",
+        timings: "4:00 AM - 10:00 PM",
         pujas: [
             { name: "Shringar Aarti", time: "6:30 AM" },
             { name: "Bhog Aarti", time: "12:00 PM" },

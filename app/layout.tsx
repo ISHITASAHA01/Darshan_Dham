@@ -19,10 +19,31 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: "DARSHAN DHAM | Explore Every Temple in India",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://aapki-site.vercel.app"
+  ),
+  title: {
+    default: "DARSHAN DHAM | Explore Every Temple in India",
+    template: "%s | DARSHAN DHAM",
+  },
   description:
     "Discover all Indian temples with their real location, history, timings and more.",
+  openGraph: {
+    siteName: "DARSHAN DHAM",
+    type: "website",
+    images: ["/images/hero/hero1.jpg"],
+  },
 };
+
+// export const metadata: Metadata = {
+//   metadataBase: new URL(
+//     process.env.NEXT_PUBLIC_SITE_URL ?? "https://aapki-site.vercel.app"
+//   ),
+
+//   title: "DARSHAN DHAM | Explore Every Temple in India",
+//   description:
+//     "Discover all Indian temples with their real location, history, timings and more.",
+// };
 
 export default function RootLayout({
   children,

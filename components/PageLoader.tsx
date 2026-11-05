@@ -7,15 +7,30 @@ export default function PageLoader({ children }: { children: React.ReactNode }) 
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Chahe site kitni bhi fast ho, loader kam se kam 2 second dikhega
-        const timer = setTimeout(() => setLoading(false), 2000);
+        // Agar is session me loader pehle dikh chuka hai, to dobara mat dikhao
+        let seen = false;
+        try {
+            seen = sessionStorage.getItem("dd-loader-seen") === "1";
+        } catch { }
+
+        if (seen) {
+            setLoading(false);
+            return;
+        }
+
+        const timer = setTimeout(() => {
+            setLoading(false);
+            try {
+                sessionStorage.setItem("dd-loader-seen", "1");
+            } catch { }
+        }, 1200);
+
         return () => clearTimeout(timer);
     }, []);
 
     return (
         <>
             {loading && (
-                // <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-5 bg-cream">
                 <div className="fixed inset-0 z-[100] flex flex-col items-center justify-center gap-5 bg-gradient-to-b from-[#fff4dc] via-[#fdecc8] to-[#fbe4b0]">
                     <Image
                         src="/images/logo/logo.png"
