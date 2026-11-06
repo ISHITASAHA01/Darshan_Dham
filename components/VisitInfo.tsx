@@ -2,22 +2,20 @@
 
 import { ExternalLink, CalendarDays, Train, Plane, Ticket, Shirt } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import { templeExtras } from "@/data/templeExtras";
+import type { TempleFull } from "@/lib/temple-types";
 
-export default function VisitInfo({ slug }: { slug: string }) {
+export default function VisitInfo({ temple }: { temple: TempleFull }) {
     const { t } = useLanguage();
-    const x = templeExtras[slug];
-    if (!x) return null;
 
     const rows = [
-        { icon: CalendarDays, label: t("best_time"), value: x.bestTime },
-        { icon: Train, label: t("nearest_railway"), value: x.nearestRailway },
-        { icon: Plane, label: t("nearest_airport"), value: x.nearestAirport },
-        { icon: Ticket, label: t("entry_fee"), value: x.entryFee },
-        { icon: Shirt, label: t("dress_code"), value: x.dressCode },
+        { icon: CalendarDays, label: t("best_time"), value: temple.bestTime },
+        { icon: Train, label: t("nearest_railway"), value: temple.nearestRailway },
+        { icon: Plane, label: t("nearest_airport"), value: temple.nearestAirport },
+        { icon: Ticket, label: t("entry_fee"), value: temple.entryFee },
+        { icon: Shirt, label: t("dress_code"), value: temple.dressCode },
     ].filter((r) => r.value);
 
-    if (rows.length === 0 && !x.website) return null;
+    if (rows.length === 0 && !temple.website) return null;
 
     return (
         <div className="rounded-xl border border-saffron-light bg-white p-5 shadow-sm">
@@ -35,9 +33,9 @@ export default function VisitInfo({ slug }: { slug: string }) {
                 ))}
             </ul>
 
-            {x.website && (
+            {temple.website && (
                 <a
-                    href={x.website}
+                    href={temple.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4 flex items-center justify-center gap-2 rounded-md border border-saffron py-2 text-sm font-medium text-saffron transition hover:bg-saffron hover:text-white"
@@ -46,9 +44,9 @@ export default function VisitInfo({ slug }: { slug: string }) {
                 </a>
             )}
 
-            {x.checked && (
+            {temple.checked && (
                 <p className="mt-3 text-xs text-brown/70">
-                    {t("checked_on", { date: x.checked })}
+                    {t("checked_on", { date: temple.checked })}
                 </p>
             )}
         </div>

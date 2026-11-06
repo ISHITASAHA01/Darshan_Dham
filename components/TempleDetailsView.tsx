@@ -5363,7 +5363,8 @@ export default function TempleDetailsView({
                         <PujaList slug={temple.slug} pujas={temple.pujas} />
                         <p className="mt-3 text-xs text-brown/70">{t("timings_note")}</p>
                     </div>
-                    <VisitInfo slug={temple.slug} />
+                    <VisitInfo temple={temple} />
+                    {/* <VisitInfo slug={temple.slug} /> */}
                 </aside>
             </div>
         </main>
