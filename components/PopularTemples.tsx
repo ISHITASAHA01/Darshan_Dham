@@ -1,9 +1,11 @@
-import { temples } from "@/data/temples";
 import TempleCard from "./TempleCard";
 import SectionHeader from "./SectionHeader";
 import { getTempleImage } from "@/lib/temple-image";
+import { getPopularTemples } from "@/lib/temples-db";
 
-export default function PopularTemples() {
+export default async function PopularTemples() {
+    const temples = await getPopularTemples(8);
+
     return (
         <section className="mx-auto max-w-7xl px-6 py-12">
             <SectionHeader
@@ -14,7 +16,7 @@ export default function PopularTemples() {
             />
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-                {temples.slice(0, 8).map((t) => (
+                {temples.map((t) => (
                     <TempleCard
                         key={t.slug}
                         temple={{ ...t, image: t.image ?? getTempleImage(t.slug) }}

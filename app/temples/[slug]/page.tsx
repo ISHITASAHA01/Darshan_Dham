@@ -1,9 +1,10 @@
 import { notFound } from "next/navigation";
-import { temples } from "@/data/temples";
 import TempleDetailsView from "@/components/TempleDetailsView";
 import { getTempleImage } from "@/lib/temple-image";
+import { getAllTemples, getTempleBySlug } from "@/lib/temples-db";
 import type { Metadata } from "next";
 
+export const revalidate = 60;
 
 export async function generateMetadata({
   params,
@@ -11,7 +12,7 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const temple = temples.find((t) => t.slug === slug);
+  const temple = await getTempleBySlug(slug);
   if (!temple) return {};
 
   const image = temple.image ?? getTempleImage(temple.slug);
@@ -37,8 +38,9 @@ export async function generateMetadata({
   };
 }
 
-export function generateStaticParams() {
-  return temples.map((t) => ({ slug: t.slug }));
+export async function generateStaticParams() {
+  const all = await getAllTemples();
+  return all.map((t) => ({ slug: t.slug }));
 }
 
 export default async function TempleDetails({
@@ -47,7 +49,7 @@ export default async function TempleDetails({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const temple = temples.find((t) => t.slug === slug);
+  const temple = await getTempleBySlug(slug);
   if (!temple) notFound();
   const image = temple.image ?? getTempleImage(temple.slug);
 

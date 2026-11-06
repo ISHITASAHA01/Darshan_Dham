@@ -1,12 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import { states } from "@/data/temples";
 import SectionHeader from "./SectionHeader";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { locState } from "@/i18n/localize";
 
-export default function BrowseByState() {
+export default function BrowseByState({
+    states,
+}: {
+    states: { name: string; slug: string; count: number }[];
+}) {
     const { t, lang } = useLanguage();
 
     return (

@@ -26,8 +26,6 @@ type Row = {
     checked: string | null;
 };
 
-
-
 function fromRow(r: Row): TempleFull {
     return {
         slug: r.slug,

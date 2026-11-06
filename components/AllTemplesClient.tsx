@@ -3,17 +3,19 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Search } from "lucide-react";
-import { states, type Temple } from "@/data/temples";
+import type { Temple } from "@/data/temples";
 import TempleCard from "@/components/TempleCard";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { locState, templeSearchText } from "@/i18n/localize";
 
 export default function AllTemplesClient({
     items,
+    states,
     initialQ,
     initialState,
 }: {
     items: Temple[];
+    states: { name: string; slug: string }[];
     initialQ: string;
     initialState: string;
 }) {

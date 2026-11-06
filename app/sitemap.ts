@@ -1,10 +1,14 @@
 import type { MetadataRoute } from "next";
-import { temples, states } from "@/data/temples";
+import { getAllTemples, getStates } from "@/lib/temples-db";
 
 const base =
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://aapki-site.vercel.app";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const revalidate = 3600;
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+    const [temples, states] = await Promise.all([getAllTemples(), getStates()]);
+
     const pages = ["", "/temples", "/states", "/about", "/contact"].map((p) => ({
         url: `${base}${p}`,
         lastModified: new Date(),

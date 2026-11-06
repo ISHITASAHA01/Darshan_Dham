@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Search, MapPin } from "lucide-react";
-import { states } from "@/data/temples";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { locState } from "@/i18n/localize";
 
@@ -16,7 +15,11 @@ const images = [
   "/images/hero/hero6.jpg",
 ];
 
-export default function Hero() {
+export default function Hero({
+  states,
+}: {
+  states: { name: string; slug: string }[];
+}) {
   const { t, lang } = useLanguage();
   const [current, setCurrent] = useState(0);
 
