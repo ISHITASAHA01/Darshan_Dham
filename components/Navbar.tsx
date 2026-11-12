@@ -1,8 +1,10 @@
+
 "use client";
-import { useState } from "react";
+
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Search, Menu, X } from "lucide-react";
+import { Search, Menu, X, Sun, Moon } from "lucide-react";
 import Image from "next/image";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { useLanguage } from "@/i18n/LanguageContext";
@@ -18,11 +20,32 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const { t } = useLanguage();
 
+  // Saved theme load karna
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    const dark = savedTheme === "dark";
+
+    document.documentElement.classList.toggle("dark", dark);
+    setIsDark(dark);
+  }, []);
+
+  // Theme change karna
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+
+    setIsDark(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme);
+
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
+  };
+
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-saffron-light">
+    <header className="sticky top-0 z-50 border-b border-saffron-light bg-background/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
+
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -49,13 +72,14 @@ export default function Navbar() {
               link.href === "/"
                 ? pathname === "/"
                 : pathname.startsWith(link.href);
+
             return (
               <li key={link.href}>
                 <Link
                   href={link.href}
                   className={`pb-1 text-sm font-medium transition-colors hover:text-saffron ${active
-                    ? "border-b-2 border-saffron text-saffron"
-                    : "text-foreground"
+                      ? "border-b-2 border-saffron text-saffron"
+                      : "text-foreground"
                     }`}
                 >
                   {t(link.key)}
@@ -65,8 +89,10 @@ export default function Navbar() {
           })}
         </ul>
 
-        {/* Right side: search (desktop only), translate, hamburger */}
+        {/* Right side */}
         <div className="flex items-center gap-2 sm:gap-4">
+
+          {/* Desktop search */}
           <form
             action="/temples"
             method="get"
@@ -83,11 +109,26 @@ export default function Navbar() {
             />
           </form>
 
+          {/* Language switcher */}
           <div className="hidden sm:block">
             <LanguageSwitcher />
           </div>
 
-          {/* Hamburger button, sirf mobile/tablet pe dikhega */}
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+            title={isDark ? "Light Mode" : "Dark Mode"}
+            className="rounded-full border border-saffron-light p-2 text-foreground transition hover:bg-saffron-light"
+          >
+            {isDark ? (
+              <Sun className="h-5 w-5" />
+            ) : (
+              <Moon className="h-5 w-5" />
+            )}
+          </button>
+
+          {/* Mobile menu button */}
           <button
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
@@ -102,9 +143,10 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu: khulne wala panel */}
+      {/* Mobile menu */}
       {open && (
-        <div className="border-t border-saffron-light bg-white px-4 pb-5 pt-3 md:hidden">
+        <div className="border-t border-saffron-light bg-background px-4 pb-5 pt-3 md:hidden">
+
           {/* Mobile search */}
           <form
             action="/temples"
@@ -127,14 +169,15 @@ export default function Navbar() {
                 link.href === "/"
                   ? pathname === "/"
                   : pathname.startsWith(link.href);
+
               return (
                 <li key={link.href}>
                   <Link
                     href={link.href}
                     onClick={() => setOpen(false)}
                     className={`block rounded-md px-3 py-2.5 text-sm font-medium ${active
-                      ? "bg-saffron-light text-saffron-dark"
-                      : "text-foreground hover:bg-saffron-light/40"
+                        ? "bg-saffron-light text-saffron-dark"
+                        : "text-foreground hover:bg-saffron-light/40"
                       }`}
                   >
                     {t(link.key)}
@@ -144,6 +187,7 @@ export default function Navbar() {
             })}
           </ul>
 
+          {/* Mobile language switcher */}
           <div className="mt-4 border-t border-saffron-light pt-4">
             <LanguageSwitcher />
           </div>

@@ -1,25 +1,47 @@
 @import "tailwindcss";
 
+
 :root {
+  color-scheme: light;
   --background: #fdf8f1;
   --foreground: #2b1d12;
-}
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-
-  /* DARSHAN DHAM theme colors */
   --color-saffron: #d9822b;
   --color-saffron-dark: #b8681a;
   --color-saffron-light: #f6e4cc;
   --color-cream: #fdf8f1;
   --color-navy: #0f1b2d;
   --color-brown: #5a3e2b;
+}
+
+.dark {
+  color-scheme: dark;
+  --background: #121212;
+  --foreground: #f5eee6;
+
+  --color-saffron: #f0a34f;
+  --color-saffron-dark: #d9822b;
+  --color-saffron-light: #49331f;
+  --color-cream: #1e1e1e;
+  --color-navy: #0b1422;
+  --color-brown: #e4c9ae;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-saffron: var(--color-saffron);
+  --color-saffron-dark: var(--color-saffron-dark);
+  --color-saffron-light: var(--color-saffron-light);
+  --color-cream: var(--color-cream);
+  --color-navy: var(--color-navy);
+  --color-brown: var(--color-brown);
 
   --font-heading: var(--font-playfair);
   --font-sans: var(--font-poppins);
 }
+
 
 body {
   background: var(--background);

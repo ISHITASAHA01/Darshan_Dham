@@ -1,10 +1,11 @@
+import GoogleTranslate from "@/components/GoogleTranslate";
 import type { Metadata } from "next";
 import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/i18n/LanguageContext";
-import ClearGoogleTranslate from "@/components/ClearGoogleTranslate";
+// import ClearGoogleTranslate from "@/components/ClearGoogleTranslate";
 import PageLoader from "@/components/PageLoader";
 
 const playfair = Playfair_Display({
@@ -54,7 +55,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${playfair.variable} ${poppins.variable} font-sans antialiased`}>
         <PageLoader>
-          <ClearGoogleTranslate />
+          {/* <ClearGoogleTranslate /> */}
+          <GoogleTranslate />
           <LanguageProvider>
             <Navbar />
             {children}
