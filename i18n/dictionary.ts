@@ -33,6 +33,8 @@ export const dictionary = {
         browse_by_state_sub: "Find temples in your favorite state.",
         footer_rights: "All rights reserved.",
         footer_quick_links: "Quick Links",
+        nav_favorites: "Favorites",
+        nav_calendar: "Calendar",
     },
     hi: {
         tagline: "भारत के हर मंदिर की सैर करें",
@@ -59,6 +61,8 @@ export const dictionary = {
         browse_by_state_sub: "अपने पसंदीदा राज्य में मंदिर खोजें।",
         footer_rights: "सर्वाधिकार सुरक्षित।",
         footer_quick_links: "त्वरित लिंक",
+        nav_favorites: "पसंदीदा",
+        nav_calendar: "पंचांग",
     },
     bn: {
         tagline: "ভারতের প্রতিটি মন্দির ঘুরে দেখুন",
@@ -85,6 +89,8 @@ export const dictionary = {
         browse_by_state_sub: "আপনার পছন্দের রাজ্যে মন্দির খুঁজুন।",
         footer_rights: "সর্বস্বত্ব সংরক্ষিত।",
         footer_quick_links: "দ্রুত লিংক",
+        nav_favorites: "প্রিয়",
+        nav_calendar: "পঞ্জিকা",
     },
     ur: {
         tagline: "بھارت کے ہر مندر کی سیر کریں",
@@ -111,5 +117,7 @@ export const dictionary = {
         browse_by_state_sub: "اپنی پسندیدہ ریاست میں مندر تلاش کریں۔",
         footer_rights: "جملہ حقوق محفوظ ہیں۔",
         footer_quick_links: "فوری لنکس",
+        nav_favorites: "پسندیدہ",
+        nav_calendar: "کیلنڈر",
     },
 } satisfies Record<Lang, Record<string, string>>;
