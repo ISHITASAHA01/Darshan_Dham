@@ -1,8 +1,7 @@
-
 "use client";
 
 import { Globe } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const languages = [
     { code: "en", label: "English" },
@@ -15,13 +14,21 @@ const languages = [
 export default function LanguageSwitcher() {
     const [lang, setLang] = useState("en");
 
+    // Page reload ke baad Google Translate ki cookie se selected language wapas dikhao
+    useEffect(() => {
+        const match = document.cookie.match(/googtrans=\/en\/([a-z]{2})/);
+        if (match && languages.some((l) => l.code === match[1])) {
+            setLang(match[1]);
+        }
+    }, []);
+
     const handleLanguageChange = (code: string) => {
         setLang(code);
         window.setGoogleTranslateLanguage?.(code);
     };
 
     return (
-        <div className="flex items-center gap-1 rounded-full border border-saffron-light px-2 py-1">
+        <div className="notranslate flex items-center gap-1 rounded-full border border-saffron-light px-2 py-1">
             <Globe className="h-4 w-4 text-brown" />
 
             <select

@@ -1,54 +1,36 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext } from "react";
 import { dictionary, type Lang } from "./dictionary";
 import { moreText } from "./moreText";
 
+// Site ki language badalne ka kaam sirf Navbar ke Google Translate selector
+// (components/LanguageSwitcher.tsx + GoogleTranslate.tsx) karta hai.
+// Yahan sirf English text rakha hai, jise Google Translate aage translate karta hai.
+
 type ContextType = {
     lang: Lang;
-    setLang: (l: Lang) => void;
     t: (key: string, vars?: Record<string, string | number>) => string;
 };
 
 const LanguageContext = createContext<ContextType | null>(null);
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-    const [lang, setLangState] = useState<Lang>("en");
+const lang: Lang = "en";
 
-    // Pehli baar load hote hi, browser me saved language uthao
-    useEffect(() => {
-        const saved = localStorage.getItem("mndir-lang") as Lang | null;
-        if (saved && dictionary[saved]) setLangState(saved);
-    }, []);
-
-    // Language badalte hi save karo, aur Urdu ke liye right-to-left lagao
-    useEffect(() => {
-        localStorage.setItem("mndir-lang", lang);
-        document.documentElement.lang = lang;
-        document.documentElement.dir = lang === "ur" ? "rtl" : "ltr";
-    }, [lang]);
-
-    const setLang = (l: Lang) => setLangState(l);
-
-    // t("key") ya t("key", { name: "Delhi" })  ->  text me {name} ki jagah value aa jayegi
-    const t = (key: string, vars?: Record<string, string | number>): string => {
-        const d = dictionary as Record<string, Record<string, string>>;
-        let s =
-            d[lang]?.[key] ??
-            moreText[lang]?.[key] ??
-            d.en?.[key] ??
-            moreText.en[key] ??
-            key;
-        if (vars) {
-            for (const k of Object.keys(vars)) {
-                s = s.split(`{${k}}`).join(String(vars[k]));
-            }
+// t("key") ya t("key", { name: "Delhi" })  ->  text me {name} ki jagah value aa jayegi
+const t = (key: string, vars?: Record<string, string | number>): string => {
+    let s = dictionary.en?.[key as keyof typeof dictionary.en] ?? moreText.en[key] ?? key;
+    if (vars) {
+        for (const k of Object.keys(vars)) {
+            s = s.split(`{${k}}`).join(String(vars[k]));
         }
-        return s;
-    };
+    }
+    return s;
+};
 
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
     return (
-        <LanguageContext.Provider value={{ lang, setLang, t }}>
+        <LanguageContext.Provider value={{ lang, t }}>
             {children}
         </LanguageContext.Provider>
     );
