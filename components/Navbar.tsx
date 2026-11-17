@@ -12,6 +12,8 @@ import { useLanguage } from "@/i18n/LanguageContext";
 const links = [
   { key: "nav_home", href: "/" },
   { key: "nav_temples", href: "/temples" },
+  { key: "nav_calendar", href: "/calendar" },
+  { key: "nav_favorites", href: "/favorites" },
   { key: "nav_states", href: "/states" },
   { key: "nav_about", href: "/about" },
   { key: "nav_contact", href: "/contact" },
@@ -23,7 +25,6 @@ export default function Navbar() {
   const [isDark, setIsDark] = useState(false);
   const { t } = useLanguage();
 
-  // Saved theme load karna
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme");
     const dark = savedTheme === "dark";
@@ -32,7 +33,6 @@ export default function Navbar() {
     setIsDark(dark);
   }, []);
 
-  // Theme change karna
   const toggleTheme = () => {
     const newTheme = !isDark;
 
@@ -45,7 +45,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-saffron-light bg-background/95 backdrop-blur">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6">
-
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
@@ -66,7 +65,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-8 md:flex">
+        <ul className="hidden items-center gap-6 lg:gap-8 md:flex">
           {links.map((link) => {
             const active =
               link.href === "/"
@@ -91,7 +90,6 @@ export default function Navbar() {
 
         {/* Right side */}
         <div className="flex items-center gap-2 sm:gap-4">
-
           {/* Desktop search */}
           <form
             action="/temples"
@@ -146,7 +144,6 @@ export default function Navbar() {
       {/* Mobile menu */}
       {open && (
         <div className="border-t border-saffron-light bg-background px-4 pb-5 pt-3 md:hidden">
-
           {/* Mobile search */}
           <form
             action="/temples"

@@ -55,13 +55,50 @@ function fromFiles(): TempleFull[] {
     return fileTemples.map((t) => ({ ...t, ...(templeExtras[t.slug] ?? {}) }));
 }
 
+// export const getAllTemples = cache(async (): Promise<TempleFull[]> => {
+//     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+//     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+//     if (!url || !key) return fromFiles();
+
+//     try {
+//         const supabase = createClient(url, key, { auth: { persistSession: false } });
+//         const { data, error } = await supabase
+//             .from("temples")
+//             .select("*")
+//             .eq("published", true)
+//             .order("sort_order", { ascending: true })
+//             .order("name", { ascending: true });
+
+//         if (error || !data || data.length === 0) {
+//             console.error("Supabase se mandir nahi mile, files use ho rahi hain:", error?.message);
+//             return fromFiles();
+//         }
+//         return (data as Row[]).map(fromRow);
+//     } catch (e) {
+//         console.error("Supabase error, files use ho rahi hain:", e);
+//         return fromFiles();
+//     }
+// });
+
 export const getAllTemples = cache(async (): Promise<TempleFull[]> => {
     const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
     const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-    if (!url || !key) return fromFiles();
+
+    // Local file se shuru karo
+    const merged = new Map<string, TempleFull>(
+        fromFiles().map((temple) => [temple.slug, temple])
+    );
+
+    // Supabase configured nahi hai to local data return karo
+    if (!url || !key) {
+        return Array.from(merged.values());
+    }
 
     try {
-        const supabase = createClient(url, key, { auth: { persistSession: false } });
+        const supabase = createClient(url, key, {
+            auth: { persistSession: false },
+        });
+
         const { data, error } = await supabase
             .from("temples")
             .select("*")
@@ -69,14 +106,21 @@ export const getAllTemples = cache(async (): Promise<TempleFull[]> => {
             .order("sort_order", { ascending: true })
             .order("name", { ascending: true });
 
-        if (error || !data || data.length === 0) {
-            console.error("Supabase se mandir nahi mile, files use ho rahi hain:", error?.message);
-            return fromFiles();
+        if (error) {
+            console.error("Supabase error, local temples use ho rahe hain:", error.message);
+            return Array.from(merged.values());
         }
-        return (data as Row[]).map(fromRow);
-    } catch (e) {
-        console.error("Supabase error, files use ho rahi hain:", e);
-        return fromFiles();
+
+        // Supabase ka data bhi add karo.
+        // Same slug hua to Supabase ka updated record use hoga.
+        for (const row of (data ?? []) as Row[]) {
+            merged.set(row.slug, fromRow(row));
+        }
+
+        return Array.from(merged.values());
+    } catch (error) {
+        console.error("Supabase error:", error);
+        return Array.from(merged.values());
     }
 });
 

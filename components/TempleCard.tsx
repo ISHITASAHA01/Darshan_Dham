@@ -1,7 +1,9 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock, MapPin, ArrowRight } from "lucide-react";
+import { useEffect, useState } from "react";
+
+import { Clock, MapPin, ArrowRight, Heart } from "lucide-react";
 import TempleIcon from "@/components/TempleIcon";
 import ImageLightbox from "@/components/ImageLightbox";
 import type { Temple } from "@/data/temples";
@@ -13,9 +15,41 @@ export default function TempleCard({ temple }: { temple: Temple }) {
     const image = temple.image; // ab fs wala function yahan nahi chalega
     const name = locName(temple.slug, temple.name, lang);
 
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    useEffect(() => {
+        const saved = JSON.parse(localStorage.getItem("favorites") || "[]");
+        setIsFavorite(saved.includes(temple.slug));
+    }, [temple.slug]);
+
+    const toggleFavorite = () => {
+        const saved = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+        let updated;
+
+        if (saved.includes(temple.slug)) {
+            updated = saved.filter((slug: string) => slug !== temple.slug);
+        } else {
+            updated = [...saved, temple.slug];
+        }
+
+        localStorage.setItem("favorites", JSON.stringify(updated));
+        setIsFavorite(updated.includes(temple.slug));
+    };
     return (
         <div className="flex flex-col overflow-hidden rounded-xl border border-saffron-light bg-white shadow-sm transition hover:shadow-lg">
             <div className="relative h-40 w-full bg-gradient-to-br from-saffron-light to-saffron/40">
+                <button
+                    onClick={toggleFavorite}
+                    aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+                    className="absolute right-3 top-3 z-10 rounded-full bg-white p-2 shadow-md transition hover:scale-110"
+                >
+                    <Heart
+                        className={`h-5 w-5 ${isFavorite ? "fill-red-500 text-red-500" : "text-gray-600"
+                            }`}
+                    />
+                </button>
+
                 {image ? (
                     // Photo pe click = photo bada khulega (details page nahi)
                     <ImageLightbox src={image} alt={name} className="relative block h-full w-full">
