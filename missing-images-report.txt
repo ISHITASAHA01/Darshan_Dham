@@ -1,9 +1,5 @@
 Ye photos haath se public/images/temples/ me daalni hain:
 
-kamtanath-temple-chitrakoot.jpg   <- Kamtanath Temple, Chitrakoot, Uttar Pradesh
-shri-siddheshwar-nath-temple-ziro.jpg   <- Shri Siddheshwar Nath Temple, Ziro, Arunachal Pradesh
-dimapur-kalibari.jpg   <- Dimapur Kalibari, Dimapur, Nagaland
-sri-vetrimalai-murugan-temple.jpg   <- Sri Vetrimalai Murugan Temple, Port Blair, Andaman and Nicobar Islands
-bindrabin-temple-silvassa.jpg   <- Bindrabin Temple, Bindrabin, Silvassa, Dadra and Nagar Haveli and Daman and Diu
-shri-bungshibudon-temple-khangabok.jpg   <- Shri Bungshibudon Temple, Khangabok, Thoubal, Manipur
-dirgheswari-temple.jpg   <- Dirgheswari Temple, North Guwahati, Kamrup, Assam
+bhimeshwari-devi-temple-beri.jpg   <- Bhimeshwari Devi Temple, Beri, Jhajjar, Haryana
+kapal-mochan-tirtha.jpg   <- Kapal Mochan Tirtha, Bilaspur, Yamunanagar, Haryana
+chintaman-ganesh-temple-ujjain.jpg   <- Chintaman Ganesh Temple, Ujjain, Madhya Pradesh

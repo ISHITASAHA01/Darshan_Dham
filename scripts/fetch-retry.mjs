@@ -1,3 +1,8 @@
+
+// node scripts/fetch-retry.mjs
+// mandir check kar ne k liye kitni mandiro ki photo public/images/temples/ me nahi hai aur Wikipedia
+//  Wikimedia Commons se khud dhoondh kar download kar deti hai. Har mandir ko haath se list me daalne ki zarurat nahi.
+
 import fs from "node:fs";
 import path from "node:path";
 
@@ -22,7 +27,7 @@ const ALIASES = {
 
 function readTemples() {
     const list = [];
-    for (const file of ["temples.ts", "moreTemples.ts"]) {
+    for (const file of ["temples.ts", "moreTemples.ts", "moreTemples2.ts"]) {
         const p = path.join(ROOT, "data", file);
         if (!fs.existsSync(p)) continue;
         const src = fs.readFileSync(p, "utf8");
@@ -69,7 +74,7 @@ async function byWiki(q) {
         "https://en.wikipedia.org/w/api.php?action=query&format=json&generator=search" +
         `&gsrlimit=5&prop=pageimages&pithumbsize=960&gsrsearch=${encodeURIComponent(q)}`, true);
     const pages = Object.values(d.query?.pages ?? {}).sort((a, b) => a.index - b.index);
-    return pages.find((p) => p.thumbnail)?.thumbnail.source ?? null;
+    return pages.find((p) => p.thumbnail && !BAD.test(decodeURIComponent(p.thumbnail.source)))?.thumbnail.source ?? null;
 }
 
 function queries(t) {

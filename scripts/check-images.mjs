@@ -19,7 +19,7 @@ const ALIASES = {
 };
 
 const temples = [];
-for (const f of ["temples.ts", "moreTemples.ts"]) {
+for (const f of ["temples.ts", "moreTemples.ts", "moreTemples2.ts"]) {
     const p = path.join(ROOT, "data", f);
     if (!fs.existsSync(p)) continue;
     const src = fs.readFileSync(p, "utf8");

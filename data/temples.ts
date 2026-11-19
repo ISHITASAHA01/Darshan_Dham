@@ -1,3 +1,4 @@
+import { moreTemples2 } from "./moreTemples2";
 
 export type Puja = { name: string; time: string };
 
@@ -24,7 +25,7 @@ export const slugify = (s: string) =>
         .replace(/[^a-z0-9]+/g, "-")
         .replace(/^-+|-+$/g, "");
 
-export const temples: Temple[] = [
+const baseTemples: Temple[] = [
     {
         slug: "kedarnath-temple",
         name: "Kedarnath Temple",
@@ -2083,6 +2084,27 @@ export const temples: Temple[] = [
     },
 
     // ---- Maharashtra ----
+
+    {
+        slug: "bet-dwarka-temple",
+        name: "Bet Dwarka Temple",
+        state: "Gujarat",
+        city: "Bet Dwarka, Devbhumi Dwarka",
+        deity: "Lord Krishna",
+        timings: "9:00 AM - 1:00 PM, 3:00 PM - 6:00 PM",
+        pujas: [
+            { name: "Morning Darshan", time: "9:00 AM" },
+            { name: "Evening Darshan", time: "3:00 PM" },
+        ],
+        story:
+            "Bet Dwarka, also known as Shankhodhar, is an island associated with Lord Krishna and is traditionally believed to have been his residence. According to legend, Krishna received the island as a gift from his friend Sudama. The temple complex also includes shrines dedicated to Hanuman, Vishnu, Shiva and other deities.",
+        note: "Located on Bet Dwarka island near Okha. Check local access and darshan timings before visiting.",
+        lat: 22.4560,
+        lng: 69.0850,
+    },
+
+
+
     {
         slug: "shirdi-sai-baba-temple",
         name: "Shirdi Sai Baba Temple",
@@ -3835,6 +3857,8 @@ export const temples: Temple[] = [
         lng: 74.8730,
     },
 ];
+
+export const temples: Temple[] = Array.from(new Map([...baseTemples, ...moreTemples2].map((t) => [t.slug, t])).values());
 
 // States apne aap temples se ban jayenge, count bhi real hoga
 export const states = Array.from(new Set(temples.map((t) => t.state))).map(

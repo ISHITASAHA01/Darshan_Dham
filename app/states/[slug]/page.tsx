@@ -31,7 +31,13 @@ export default async function StatePage({
         {list.map((t) => (
           <TempleCard
             key={t.slug}
-            temple={{ ...t, image: t.image ?? getTempleImage(t.slug) }}
+            temple={{
+              ...t,
+              image:
+                t.slug === "bet-dwarka-temple"
+                  ? "/images/temples/bet-dwarka-temple-new.jpg"
+                  : t.image ?? getTempleImage(t.slug),
+            }}
           />
         ))}
       </div>
