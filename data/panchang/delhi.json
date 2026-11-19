@@ -1,0 +1,4635 @@
+{
+ "2026-11-14": {
+  "data": {
+   "date": "2026-11-14",
+   "weekday": "Saturday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 27,
+     "month": "Kartik",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "14-11-2026 06:42:45",
+    "set": "14-11-2026 17:28:04",
+    "longitude": 231.63,
+    "rashi": "Tula"
+   },
+   "moon": {
+    "rise": "14-11-2026 11:01:11",
+    "set": "14-11-2026 21:22:22",
+    "rashi": "Dhanu"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "panchami"
+   ],
+   "udaya_tithi": {
+    "number": 5,
+    "name": "Panchami",
+    "paksha": "Shukla",
+    "end": "14-11-2026 23:25:08"
+   },
+   "udaya_nakshatra": {
+    "number": 20,
+    "name": "Purva Ashadha",
+    "end": "14-11-2026 20:23:22"
+   },
+   "udaya_yoga": {
+    "number": 9,
+    "name": "Shula",
+    "end": "15-11-2026 06:19:54"
+   },
+   "tithi": [
+    {
+     "number": 5,
+     "name": "Panchami",
+     "paksha": "Shukla",
+     "start": "14-11-2026 06:42:45",
+     "end": "14-11-2026 23:25:08"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 20,
+     "name": "Purva Ashadha",
+     "start": "14-11-2026 06:42:45",
+     "end": "14-11-2026 20:23:22"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 9,
+     "name": "Shula",
+     "start": "14-11-2026 06:42:45",
+     "end": "15-11-2026 06:19:54"
+    }
+   ],
+   "karana": [
+    {
+     "number": 9,
+     "name": "Bava",
+     "start": "13-11-2026 20:43:41",
+     "end": "14-11-2026 10:04:05"
+    },
+    {
+     "number": 10,
+     "name": "Balava",
+     "start": "14-11-2026 10:04:05",
+     "end": "14-11-2026 23:25:08"
+    },
+    {
+     "number": 11,
+     "name": "Kaulava",
+     "start": "14-11-2026 23:25:08",
+     "end": "15-11-2026 12:45:09"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "14-11-2026 09:24:04",
+     "end": "14-11-2026 10:44:44"
+    },
+    "gulika_kaal": {
+     "start": "14-11-2026 06:42:45",
+     "end": "14-11-2026 08:03:24"
+    },
+    "yamaganda_kaal": {
+     "start": "14-11-2026 13:26:04",
+     "end": "14-11-2026 14:46:44"
+    },
+    "abhijit": {
+     "start": "14-11-2026 11:43:53",
+     "end": "14-11-2026 12:26:55"
+    },
+    "brahma": {
+     "start": "14-11-2026 05:06:45",
+     "end": "14-11-2026 05:54:45"
+    },
+    "vijaya": {
+     "start": "14-11-2026 14:14:28",
+     "end": "14-11-2026 14:57:29"
+    },
+    "varjyam": {
+     "start": "14-11-2026 12:05:24",
+     "end": "14-11-2026 13:09:56"
+    },
+    "durmuhurta": {
+     "start": "14-11-2026 08:12:45",
+     "end": "14-11-2026 09:42:45"
+    },
+    "amrit_siddhi": {
+     "start": "14-11-2026 16:02:01",
+     "end": "14-11-2026 16:23:32"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "14-11-2026 06:42:45",
+     "end": "14-11-2026 08:03:24"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "14-11-2026 08:03:24",
+     "end": "14-11-2026 09:24:04"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "14-11-2026 09:24:04",
+     "end": "14-11-2026 10:44:44"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "14-11-2026 10:44:44",
+     "end": "14-11-2026 12:05:24"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "14-11-2026 12:05:24",
+     "end": "14-11-2026 13:26:04"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "14-11-2026 13:26:04",
+     "end": "14-11-2026 14:46:44"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "14-11-2026 14:46:44",
+     "end": "14-11-2026 16:07:24"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "14-11-2026 16:07:24",
+     "end": "14-11-2026 17:28:04"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "14-11-2026 17:28:04",
+     "end": "14-11-2026 19:07:24"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "14-11-2026 19:07:24",
+     "end": "14-11-2026 20:46:44"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "14-11-2026 20:46:44",
+     "end": "14-11-2026 22:26:04"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "14-11-2026 22:26:04",
+     "end": "15-11-2026 00:05:24"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "15-11-2026 00:05:24",
+     "end": "15-11-2026 01:44:44"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "15-11-2026 01:44:44",
+     "end": "15-11-2026 03:24:04"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "15-11-2026 03:24:04",
+     "end": "15-11-2026 05:03:24"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "15-11-2026 05:03:24",
+     "end": "15-11-2026 06:42:45"
+    }
+   ],
+   "festivals": {
+    "total": 3,
+    "data": [
+     {
+      "id": "2026-11-14_KARTIK_BIHU",
+      "name": "Kartik Bihu",
+      "slug": "kartik-bihu",
+      "type": "major",
+      "category": "hindu_solar",
+      "observed_in": [
+       "assam"
+      ],
+      "start": "14-11-2026 00:00:00",
+      "end": "14-11-2026 23:59:59",
+      "duration_note": "All day",
+      "observance_tithi": null,
+      "note": "Kongali Bihu — Assamese festival of lights",
+      "observance_type": "regional",
+      "status": "computed",
+      "confidence": "high",
+      "notice": "Festival observance may vary by region and tradition."
+     },
+     {
+      "id": "2026-11-14_CHHATH_PUJA_DAY_2_KHARNA",
+      "name": "Chhath Puja Day 2 – Kharna",
+      "slug": "chhath-puja-day-2--kharna",
+      "type": "major",
+      "category": "hindu",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "14-11-2026 06:42:45",
+      "end": "14-11-2026 23:25:08",
+      "duration_note": "16h 42m",
+      "observance_tithi": {
+       "number": 5,
+       "paksha": "Shukla",
+       "name": "Panchami"
+      },
+      "note": "Evening prasad, fast begins",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-14_NATIONAL_Children_s_Day",
+      "name": "Children's Day",
+      "slug": "childrens-day",
+      "type": "national",
+      "category": "observance",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "14-11-2026 00:00:00",
+      "end": "14-11-2026 23:59:59",
+      "duration_note": "All day",
+      "observance_tithi": null,
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-17T12:56:27.117Z",
+   "computed_at": "2026-11-17T12:56:27.117Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-14",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-15": {
+  "data": {
+   "date": "2026-11-15",
+   "weekday": "Sunday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 28,
+     "month": "Kartik",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "15-11-2026 06:43:32",
+    "set": "15-11-2026 17:27:37",
+    "longitude": 232.63,
+    "rashi": "Tula"
+   },
+   "moon": {
+    "rise": "15-11-2026 11:41:04",
+    "set": "15-11-2026 22:18:34",
+    "rashi": "Makara"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "shashthi"
+   ],
+   "udaya_tithi": {
+    "number": 6,
+    "name": "Shashthi",
+    "paksha": "Shukla",
+    "end": "16-11-2026 02:02:19"
+   },
+   "udaya_nakshatra": {
+    "number": 21,
+    "name": "Uttara Ashadha",
+    "end": "15-11-2026 23:27:54"
+   },
+   "udaya_yoga": {
+    "number": 10,
+    "name": "Ganda",
+    "end": "16-11-2026 07:13:41"
+   },
+   "tithi": [
+    {
+     "number": 6,
+     "name": "Shashthi",
+     "paksha": "Shukla",
+     "start": "15-11-2026 06:43:32",
+     "end": "16-11-2026 02:02:19"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 21,
+     "name": "Uttara Ashadha",
+     "start": "15-11-2026 06:43:32",
+     "end": "15-11-2026 23:27:54"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 10,
+     "name": "Ganda",
+     "start": "15-11-2026 06:43:32",
+     "end": "16-11-2026 07:13:41"
+    }
+   ],
+   "karana": [
+    {
+     "number": 11,
+     "name": "Kaulava",
+     "start": "14-11-2026 23:25:08",
+     "end": "15-11-2026 12:45:09"
+    },
+    {
+     "number": 12,
+     "name": "Taitila",
+     "start": "15-11-2026 12:45:09",
+     "end": "16-11-2026 02:02:19"
+    },
+    {
+     "number": 13,
+     "name": "Garaja",
+     "start": "16-11-2026 02:02:19",
+     "end": "16-11-2026 15:14:49"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "15-11-2026 16:07:06",
+     "end": "15-11-2026 17:27:37"
+    },
+    "gulika_kaal": {
+     "start": "15-11-2026 14:46:35",
+     "end": "15-11-2026 16:07:06"
+    },
+    "yamaganda_kaal": {
+     "start": "15-11-2026 12:05:34",
+     "end": "15-11-2026 13:26:05"
+    },
+    "abhijit": {
+     "start": "15-11-2026 11:44:06",
+     "end": "15-11-2026 12:27:02"
+    },
+    "brahma": {
+     "start": "15-11-2026 05:07:32",
+     "end": "15-11-2026 05:55:32"
+    },
+    "vijaya": {
+     "start": "15-11-2026 14:14:23",
+     "end": "15-11-2026 14:57:19"
+    },
+    "varjyam": {
+     "start": "15-11-2026 12:05:34",
+     "end": "15-11-2026 13:09:59"
+    },
+    "durmuhurta": {
+     "start": "15-11-2026 08:13:32",
+     "end": "15-11-2026 09:43:32"
+    },
+    "amrit_siddhi": {
+     "start": "15-11-2026 16:01:44",
+     "end": "15-11-2026 16:23:12"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "15-11-2026 06:43:32",
+     "end": "15-11-2026 08:04:02"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "15-11-2026 08:04:02",
+     "end": "15-11-2026 09:24:33"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "15-11-2026 09:24:33",
+     "end": "15-11-2026 10:45:03"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "15-11-2026 10:45:03",
+     "end": "15-11-2026 12:05:34"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "15-11-2026 12:05:34",
+     "end": "15-11-2026 13:26:05"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "15-11-2026 13:26:05",
+     "end": "15-11-2026 14:46:35"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "15-11-2026 14:46:35",
+     "end": "15-11-2026 16:07:06"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "15-11-2026 16:07:06",
+     "end": "15-11-2026 17:27:37"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "15-11-2026 17:27:37",
+     "end": "15-11-2026 19:07:06"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "15-11-2026 19:07:06",
+     "end": "15-11-2026 20:46:35"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "15-11-2026 20:46:35",
+     "end": "15-11-2026 22:26:05"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "15-11-2026 22:26:05",
+     "end": "16-11-2026 00:05:34"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "16-11-2026 00:05:34",
+     "end": "16-11-2026 01:45:03"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "16-11-2026 01:45:03",
+     "end": "16-11-2026 03:24:33"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "16-11-2026 03:24:33",
+     "end": "16-11-2026 05:04:02"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "16-11-2026 05:04:02",
+     "end": "16-11-2026 06:43:32"
+    }
+   ],
+   "festivals": {
+    "total": 2,
+    "data": [
+     {
+      "id": "2026-11-15_KARTIK_BIHU",
+      "name": "Kartik Bihu",
+      "slug": "kartik-bihu",
+      "type": "major",
+      "category": "hindu_solar",
+      "observed_in": [
+       "assam"
+      ],
+      "start": "15-11-2026 00:00:00",
+      "end": "15-11-2026 23:59:59",
+      "duration_note": "All day",
+      "observance_tithi": null,
+      "note": "Kongali Bihu — Assamese festival of lights",
+      "observance_type": "regional",
+      "status": "computed",
+      "confidence": "high",
+      "notice": "Festival observance may vary by region and tradition."
+     },
+     {
+      "id": "2026-11-15_CHHATH_PUJA_DAY_3_SANDHYA_ARGHYA",
+      "name": "Chhath Puja Day 3 – Sandhya Arghya",
+      "slug": "chhath-puja-day-3--sandhya-arghya",
+      "type": "major",
+      "category": "hindu",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "15-11-2026 06:43:32",
+      "end": "16-11-2026 02:02:19",
+      "duration_note": "19h 18m (ends next day)",
+      "observance_tithi": {
+       "number": 6,
+       "paksha": "Shukla",
+       "name": "Shashthi"
+      },
+      "note": "Evening arghya to setting sun at 05:27 PM",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-17T12:56:27.999Z",
+   "computed_at": "2026-11-17T12:56:27.999Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-15",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-16": {
+  "data": {
+   "date": "2026-11-16",
+   "weekday": "Monday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 29,
+     "month": "Kartik",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "16-11-2026 06:44:19",
+    "set": "16-11-2026 17:27:11",
+    "longitude": 233.64,
+    "rashi": "Tula",
+    "transit_rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "16-11-2026 12:16:33",
+    "set": "16-11-2026 23:14:33",
+    "rashi": "Makara"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "saptami"
+   ],
+   "udaya_tithi": {
+    "number": 7,
+    "name": "Saptami",
+    "paksha": "Shukla",
+    "end": "17-11-2026 04:20:46"
+   },
+   "udaya_nakshatra": {
+    "number": 22,
+    "name": "Shravana",
+    "end": "17-11-2026 02:16:00"
+   },
+   "udaya_yoga": {
+    "number": 10,
+    "name": "Ganda",
+    "end": "16-11-2026 07:13:42"
+   },
+   "tithi": [
+    {
+     "number": 7,
+     "name": "Saptami",
+     "paksha": "Shukla",
+     "start": "16-11-2026 06:44:19",
+     "end": "17-11-2026 04:20:46"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 22,
+     "name": "Shravana",
+     "start": "16-11-2026 06:44:19",
+     "end": "17-11-2026 02:16:00"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 10,
+     "name": "Ganda",
+     "start": "16-11-2026 06:44:19",
+     "end": "16-11-2026 07:13:42"
+    },
+    {
+     "number": 11,
+     "name": "Vriddhi",
+     "start": "16-11-2026 07:13:42",
+     "end": "17-11-2026 07:51:20"
+    }
+   ],
+   "karana": [
+    {
+     "number": 13,
+     "name": "Garaja",
+     "start": "16-11-2026 02:02:20",
+     "end": "16-11-2026 15:14:49"
+    },
+    {
+     "number": 14,
+     "name": "Vanija",
+     "start": "16-11-2026 15:14:49",
+     "end": "17-11-2026 04:20:46"
+    },
+    {
+     "number": 15,
+     "name": "Vishti",
+     "start": "17-11-2026 04:20:46",
+     "end": "17-11-2026 17:18:27"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "16-11-2026 08:04:40",
+     "end": "16-11-2026 09:25:02"
+    },
+    "gulika_kaal": {
+     "start": "16-11-2026 13:26:06",
+     "end": "16-11-2026 14:46:28"
+    },
+    "yamaganda_kaal": {
+     "start": "16-11-2026 10:45:23",
+     "end": "16-11-2026 12:05:45"
+    },
+    "abhijit": {
+     "start": "16-11-2026 11:44:19",
+     "end": "16-11-2026 12:27:10"
+    },
+    "brahma": {
+     "start": "16-11-2026 05:08:19",
+     "end": "16-11-2026 05:56:19"
+    },
+    "vijaya": {
+     "start": "16-11-2026 14:14:19",
+     "end": "16-11-2026 14:57:10"
+    },
+    "varjyam": {
+     "start": "16-11-2026 12:05:45",
+     "end": "16-11-2026 13:10:02"
+    },
+    "durmuhurta": {
+     "start": "16-11-2026 08:14:19",
+     "end": "16-11-2026 09:44:19"
+    },
+    "amrit_siddhi": {
+     "start": "16-11-2026 16:01:28",
+     "end": "16-11-2026 16:22:53"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "16-11-2026 06:44:19",
+     "end": "16-11-2026 08:04:40"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "16-11-2026 08:04:40",
+     "end": "16-11-2026 09:25:02"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "16-11-2026 09:25:02",
+     "end": "16-11-2026 10:45:23"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "16-11-2026 10:45:23",
+     "end": "16-11-2026 12:05:45"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "16-11-2026 12:05:45",
+     "end": "16-11-2026 13:26:06"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "16-11-2026 13:26:06",
+     "end": "16-11-2026 14:46:28"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "16-11-2026 14:46:28",
+     "end": "16-11-2026 16:06:49"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "16-11-2026 16:06:49",
+     "end": "16-11-2026 17:27:11"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "16-11-2026 17:27:11",
+     "end": "16-11-2026 19:06:49"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "16-11-2026 19:06:49",
+     "end": "16-11-2026 20:46:28"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "16-11-2026 20:46:28",
+     "end": "16-11-2026 22:26:06"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "16-11-2026 22:26:06",
+     "end": "17-11-2026 00:05:45"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "17-11-2026 00:05:45",
+     "end": "17-11-2026 01:45:23"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "17-11-2026 01:45:23",
+     "end": "17-11-2026 03:25:02"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "17-11-2026 03:25:02",
+     "end": "17-11-2026 05:04:40"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "17-11-2026 05:04:40",
+     "end": "17-11-2026 06:44:19"
+    }
+   ],
+   "festivals": {
+    "total": 3,
+    "data": [
+     {
+      "id": "2026-11-16_SHUKLA_SAPTAMI",
+      "name": "Masik Saptami",
+      "slug": "masik-saptami",
+      "type": "vrat",
+      "category": "hindu",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "16-11-2026 06:44:19",
+      "end": "17-11-2026 04:20:46",
+      "duration_note": "21h 36m (ends next day)",
+      "observance_tithi": {
+       "number": 7,
+       "paksha": "Shukla",
+       "name": "Saptami"
+      },
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-16_SANKRANTI_210",
+      "name": "Vrischika Sankranti",
+      "slug": "vrischika-sankranti",
+      "type": "vrat",
+      "category": "hindu_solar",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "16-11-2026 19:30:10",
+      "end": null,
+      "duration_note": "Sun enters at 07:30 PM",
+      "observance_tithi": null,
+      "note": "Sun enters Scorpio",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-16_CHHATH_PUJA_DAY_4_USHA_ARGHYA",
+      "name": "Chhath Puja Day 4 – Usha Arghya",
+      "slug": "chhath-puja-day-4--usha-arghya",
+      "type": "major",
+      "category": "hindu",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "16-11-2026 06:44:19",
+      "end": "17-11-2026 04:20:46",
+      "duration_note": "21h 36m (ends next day)",
+      "observance_tithi": {
+       "number": 7,
+       "paksha": "Shukla",
+       "name": "Saptami"
+      },
+      "note": "Morning arghya to rising sun at 06:44 AM",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-17T12:56:28.954Z",
+   "computed_at": "2026-11-17T12:56:28.954Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-16",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-17": {
+  "data": {
+   "date": "2026-11-17",
+   "weekday": "Tuesday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 30,
+     "month": "Kartik",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "17-11-2026 06:45:07",
+    "set": "17-11-2026 17:26:46",
+    "longitude": 234.65,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "17-11-2026 12:48:44",
+    "set": "18-11-2026 00:10:12",
+    "rashi": "Makara"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "ashtami"
+   ],
+   "udaya_tithi": {
+    "number": 8,
+    "name": "Ashtami",
+    "paksha": "Shukla",
+    "end": "18-11-2026 06:06:16"
+   },
+   "udaya_nakshatra": {
+    "number": 23,
+    "name": "Dhanishta",
+    "end": "18-11-2026 04:33:44"
+   },
+   "udaya_yoga": {
+    "number": 11,
+    "name": "Vriddhi",
+    "end": "17-11-2026 07:51:20"
+   },
+   "tithi": [
+    {
+     "number": 8,
+     "name": "Ashtami",
+     "paksha": "Shukla",
+     "start": "17-11-2026 06:45:07",
+     "end": "18-11-2026 06:06:16"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 23,
+     "name": "Dhanishta",
+     "start": "17-11-2026 06:45:07",
+     "end": "18-11-2026 04:33:44"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 11,
+     "name": "Vriddhi",
+     "start": "17-11-2026 06:45:07",
+     "end": "17-11-2026 07:51:20"
+    },
+    {
+     "number": 12,
+     "name": "Dhruva",
+     "start": "17-11-2026 07:51:20",
+     "end": "18-11-2026 08:02:53"
+    }
+   ],
+   "karana": [
+    {
+     "number": 15,
+     "name": "Vishti",
+     "start": "17-11-2026 04:20:46",
+     "end": "17-11-2026 17:18:27"
+    },
+    {
+     "number": 16,
+     "name": "Bava",
+     "start": "17-11-2026 17:18:27",
+     "end": "18-11-2026 06:06:16"
+    },
+    {
+     "number": 17,
+     "name": "Balava",
+     "start": "18-11-2026 06:06:16",
+     "end": "18-11-2026 18:42:53"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "17-11-2026 14:46:21",
+     "end": "17-11-2026 16:06:33"
+    },
+    "gulika_kaal": {
+     "start": "17-11-2026 12:05:56",
+     "end": "17-11-2026 13:26:08"
+    },
+    "yamaganda_kaal": {
+     "start": "17-11-2026 09:25:31",
+     "end": "17-11-2026 10:45:44"
+    },
+    "abhijit": {
+     "start": "17-11-2026 11:44:33",
+     "end": "17-11-2026 12:27:19"
+    },
+    "brahma": {
+     "start": "17-11-2026 05:09:07",
+     "end": "17-11-2026 05:57:07"
+    },
+    "vijaya": {
+     "start": "17-11-2026 14:14:16",
+     "end": "17-11-2026 14:57:02"
+    },
+    "varjyam": {
+     "start": "17-11-2026 12:05:56",
+     "end": "17-11-2026 13:10:06"
+    },
+    "durmuhurta": {
+     "start": "17-11-2026 08:15:07",
+     "end": "17-11-2026 09:45:07"
+    },
+    "amrit_siddhi": {
+     "start": "17-11-2026 16:01:12",
+     "end": "17-11-2026 16:22:36"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "17-11-2026 06:45:07",
+     "end": "17-11-2026 08:05:19"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "17-11-2026 08:05:19",
+     "end": "17-11-2026 09:25:31"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "17-11-2026 09:25:31",
+     "end": "17-11-2026 10:45:44"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "17-11-2026 10:45:44",
+     "end": "17-11-2026 12:05:56"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "17-11-2026 12:05:56",
+     "end": "17-11-2026 13:26:08"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "17-11-2026 13:26:08",
+     "end": "17-11-2026 14:46:21"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "17-11-2026 14:46:21",
+     "end": "17-11-2026 16:06:33"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "17-11-2026 16:06:33",
+     "end": "17-11-2026 17:26:46"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "17-11-2026 17:26:46",
+     "end": "17-11-2026 19:06:33"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "17-11-2026 19:06:33",
+     "end": "17-11-2026 20:46:21"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "17-11-2026 20:46:21",
+     "end": "17-11-2026 22:26:08"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "17-11-2026 22:26:08",
+     "end": "18-11-2026 00:05:56"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "18-11-2026 00:05:56",
+     "end": "18-11-2026 01:45:44"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "18-11-2026 01:45:44",
+     "end": "18-11-2026 03:25:31"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "18-11-2026 03:25:31",
+     "end": "18-11-2026 05:05:19"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "18-11-2026 05:05:19",
+     "end": "18-11-2026 06:45:07"
+    }
+   ],
+   "festivals": {
+    "total": 2,
+    "data": [
+     {
+      "id": "2026-11-17_SHUKLA_ASHTAMI",
+      "name": "Masik Durgashtami",
+      "slug": "masik-durgashtami",
+      "type": "vrat",
+      "category": "hindu_shakta",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "17-11-2026 06:45:07",
+      "end": "18-11-2026 06:06:16",
+      "duration_note": "23h 21m (ends next day)",
+      "observance_tithi": {
+       "number": 8,
+       "paksha": "Shukla",
+       "name": "Ashtami"
+      },
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-17_WANGALA",
+      "name": "Wangala",
+      "slug": "wangala",
+      "type": "major",
+      "category": "tribal",
+      "observed_in": [
+       "meghalaya",
+       "northeast-india"
+      ],
+      "start": "17-11-2026 00:00:00",
+      "end": "17-11-2026 23:59:59",
+      "duration_note": "All day",
+      "observance_tithi": null,
+      "note": "100 Drums Wangala — post-harvest thanksgiving festival of the Garo people of Meghalaya. Dedicated to Misi Saljong (Sun God). Features the iconic 100-drum ensemble, Doke Mande (slow dance) and Chambil Mande (fast dance).",
+      "observance_type": "regional",
+      "status": "computed",
+      "confidence": "high",
+      "notice": "Festival observance may vary by region and tradition."
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-17T12:46:33.965Z",
+   "computed_at": "2026-11-17T12:46:33.965Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-17",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "cache",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-18": {
+  "data": {
+   "date": "2026-11-18",
+   "weekday": "Wednesday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 1,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "18-11-2026 06:45:54",
+    "set": "18-11-2026 17:26:23",
+    "longitude": 235.66,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "18-11-2026 13:18:50",
+    "set": "19-11-2026 01:06:01",
+    "rashi": "Kumbha"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "navami"
+   ],
+   "udaya_tithi": {
+    "number": 9,
+    "name": "Navami",
+    "paksha": "Shukla",
+    "end": "19-11-2026 07:07:16"
+   },
+   "udaya_nakshatra": {
+    "number": 24,
+    "name": "Shatabhisha",
+    "end": "19-11-2026 06:09:29"
+   },
+   "udaya_yoga": {
+    "number": 12,
+    "name": "Dhruva",
+    "end": "18-11-2026 08:02:53"
+   },
+   "tithi": [
+    {
+     "number": 9,
+     "name": "Navami",
+     "paksha": "Shukla",
+     "start": "18-11-2026 06:45:54",
+     "end": "19-11-2026 07:07:16"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 24,
+     "name": "Shatabhisha",
+     "start": "18-11-2026 06:45:54",
+     "end": "19-11-2026 06:09:29"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 12,
+     "name": "Dhruva",
+     "start": "18-11-2026 06:45:54",
+     "end": "18-11-2026 08:02:53"
+    },
+    {
+     "number": 13,
+     "name": "Vyaghata",
+     "start": "18-11-2026 08:02:53",
+     "end": "19-11-2026 07:40:07"
+    }
+   ],
+   "karana": [
+    {
+     "number": 17,
+     "name": "Balava",
+     "start": "18-11-2026 06:06:16",
+     "end": "18-11-2026 18:42:53"
+    },
+    {
+     "number": 18,
+     "name": "Kaulava",
+     "start": "18-11-2026 18:42:53",
+     "end": "19-11-2026 07:07:16"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "18-11-2026 12:06:08",
+     "end": "18-11-2026 13:26:12"
+    },
+    "gulika_kaal": {
+     "start": "18-11-2026 10:46:04",
+     "end": "18-11-2026 12:06:08"
+    },
+    "yamaganda_kaal": {
+     "start": "18-11-2026 08:05:57",
+     "end": "18-11-2026 09:26:01"
+    },
+    "abhijit": {
+     "start": null,
+     "end": null
+    },
+    "brahma": {
+     "start": "18-11-2026 05:09:54",
+     "end": "18-11-2026 05:57:54"
+    },
+    "vijaya": {
+     "start": "18-11-2026 14:14:14",
+     "end": "18-11-2026 14:56:56"
+    },
+    "varjyam": {
+     "start": "18-11-2026 12:06:08",
+     "end": "18-11-2026 13:10:11"
+    },
+    "durmuhurta": {
+     "start": "18-11-2026 08:15:54",
+     "end": "18-11-2026 09:45:54"
+    },
+    "amrit_siddhi": {
+     "start": "18-11-2026 16:00:59",
+     "end": "18-11-2026 16:22:20"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "18-11-2026 06:45:54",
+     "end": "18-11-2026 08:05:57"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "18-11-2026 08:05:57",
+     "end": "18-11-2026 09:26:01"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "18-11-2026 09:26:01",
+     "end": "18-11-2026 10:46:04"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "18-11-2026 10:46:04",
+     "end": "18-11-2026 12:06:08"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "18-11-2026 12:06:08",
+     "end": "18-11-2026 13:26:12"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "18-11-2026 13:26:12",
+     "end": "18-11-2026 14:46:15"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "18-11-2026 14:46:15",
+     "end": "18-11-2026 16:06:19"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "18-11-2026 16:06:19",
+     "end": "18-11-2026 17:26:23"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "18-11-2026 17:26:23",
+     "end": "18-11-2026 19:06:19"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "18-11-2026 19:06:19",
+     "end": "18-11-2026 20:46:15"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "18-11-2026 20:46:15",
+     "end": "18-11-2026 22:26:12"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "18-11-2026 22:26:12",
+     "end": "19-11-2026 00:06:08"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "19-11-2026 00:06:08",
+     "end": "19-11-2026 01:46:04"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "19-11-2026 01:46:04",
+     "end": "19-11-2026 03:26:01"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "19-11-2026 03:26:01",
+     "end": "19-11-2026 05:05:57"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "19-11-2026 05:05:57",
+     "end": "19-11-2026 06:45:54"
+    }
+   ],
+   "festivals": {
+    "total": 1,
+    "data": [
+     {
+      "id": "2026-11-18_WANGALA",
+      "name": "Wangala",
+      "slug": "wangala",
+      "type": "major",
+      "category": "tribal",
+      "observed_in": [
+       "meghalaya",
+       "northeast-india"
+      ],
+      "start": "18-11-2026 00:00:00",
+      "end": "18-11-2026 23:59:59",
+      "duration_note": "All day",
+      "observance_tithi": null,
+      "note": "100 Drums Wangala — post-harvest thanksgiving festival of the Garo people of Meghalaya. Dedicated to Misi Saljong (Sun God). Features the iconic 100-drum ensemble, Doke Mande (slow dance) and Chambil Mande (fast dance).",
+      "observance_type": "regional",
+      "status": "computed",
+      "confidence": "high",
+      "notice": "Festival observance may vary by region and tradition."
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-16T19:02:02.803Z",
+   "computed_at": "2026-11-16T19:02:02.803Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-18",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "cache",
+   "cache_age_seconds": 63876,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-19": {
+  "data": {
+   "date": "2026-11-19",
+   "weekday": "Thursday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 2,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "19-11-2026 06:46:42",
+    "set": "19-11-2026 17:26:02",
+    "longitude": 236.66,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "19-11-2026 13:48:07",
+    "set": "20-11-2026 02:02:56",
+    "rashi": "Kumbha"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "navami"
+   ],
+   "udaya_tithi": {
+    "number": 9,
+    "name": "Navami",
+    "paksha": "Shukla",
+    "end": "19-11-2026 07:07:16"
+   },
+   "udaya_nakshatra": {
+    "number": 25,
+    "name": "Purva Bhadrapada",
+    "end": "20-11-2026 06:55:41"
+   },
+   "udaya_yoga": {
+    "number": 13,
+    "name": "Vyaghata",
+    "end": "19-11-2026 07:40:08"
+   },
+   "tithi": [
+    {
+     "number": 9,
+     "name": "Navami",
+     "paksha": "Shukla",
+     "start": "19-11-2026 06:46:42",
+     "end": "19-11-2026 07:07:16"
+    },
+    {
+     "number": 10,
+     "name": "Dashami",
+     "paksha": "Shukla",
+     "start": "19-11-2026 07:07:16",
+     "end": "20-11-2026 07:16:41"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 25,
+     "name": "Purva Bhadrapada",
+     "start": "19-11-2026 06:46:42",
+     "end": "20-11-2026 06:55:41"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 13,
+     "name": "Vyaghata",
+     "start": "19-11-2026 06:46:42",
+     "end": "19-11-2026 07:40:08"
+    },
+    {
+     "number": 14,
+     "name": "Harshana",
+     "start": "19-11-2026 07:40:08",
+     "end": "20-11-2026 06:37:38"
+    }
+   ],
+   "karana": [
+    {
+     "number": 18,
+     "name": "Kaulava",
+     "start": "18-11-2026 18:42:53",
+     "end": "19-11-2026 07:07:16"
+    },
+    {
+     "number": 19,
+     "name": "Taitila",
+     "start": "19-11-2026 07:07:16",
+     "end": "19-11-2026 19:18:40"
+    },
+    {
+     "number": 20,
+     "name": "Garaja",
+     "start": "19-11-2026 19:18:40",
+     "end": "20-11-2026 07:16:41"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "19-11-2026 13:26:17",
+     "end": "19-11-2026 14:46:12"
+    },
+    "gulika_kaal": {
+     "start": "19-11-2026 09:26:32",
+     "end": "19-11-2026 10:46:27"
+    },
+    "yamaganda_kaal": {
+     "start": "19-11-2026 06:46:42",
+     "end": "19-11-2026 08:06:37"
+    },
+    "abhijit": {
+     "start": "19-11-2026 11:45:03",
+     "end": "19-11-2026 12:27:40"
+    },
+    "brahma": {
+     "start": "19-11-2026 05:10:42",
+     "end": "19-11-2026 05:58:42"
+    },
+    "vijaya": {
+     "start": "19-11-2026 14:14:14",
+     "end": "19-11-2026 14:56:51"
+    },
+    "varjyam": {
+     "start": "19-11-2026 12:06:22",
+     "end": "19-11-2026 13:10:18"
+    },
+    "durmuhurta": {
+     "start": "19-11-2026 08:16:42",
+     "end": "19-11-2026 09:46:42"
+    },
+    "amrit_siddhi": {
+     "start": "19-11-2026 16:00:47",
+     "end": "19-11-2026 16:22:06"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "19-11-2026 06:46:42",
+     "end": "19-11-2026 08:06:37"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "19-11-2026 08:06:37",
+     "end": "19-11-2026 09:26:32"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "19-11-2026 09:26:32",
+     "end": "19-11-2026 10:46:27"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "19-11-2026 10:46:27",
+     "end": "19-11-2026 12:06:22"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "19-11-2026 12:06:22",
+     "end": "19-11-2026 13:26:17"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "19-11-2026 13:26:17",
+     "end": "19-11-2026 14:46:12"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "19-11-2026 14:46:12",
+     "end": "19-11-2026 16:06:07"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "19-11-2026 16:06:07",
+     "end": "19-11-2026 17:26:02"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "19-11-2026 17:26:02",
+     "end": "19-11-2026 19:06:07"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "19-11-2026 19:06:07",
+     "end": "19-11-2026 20:46:12"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "19-11-2026 20:46:12",
+     "end": "19-11-2026 22:26:17"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "19-11-2026 22:26:17",
+     "end": "20-11-2026 00:06:22"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "20-11-2026 00:06:22",
+     "end": "20-11-2026 01:46:27"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "20-11-2026 01:46:27",
+     "end": "20-11-2026 03:26:32"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "20-11-2026 03:26:32",
+     "end": "20-11-2026 05:06:37"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "20-11-2026 05:06:37",
+     "end": "20-11-2026 06:46:42"
+    }
+   ],
+   "festivals": {
+    "total": 0,
+    "data": []
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-17T12:56:31.266Z",
+   "computed_at": "2026-11-17T12:56:31.266Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-19",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-20": {
+  "data": {
+   "date": "2026-11-20",
+   "weekday": "Friday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 3,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "20-11-2026 06:47:30",
+    "set": "20-11-2026 17:25:42",
+    "longitude": 237.67,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "20-11-2026 14:17:56",
+    "set": "21-11-2026 03:02:07",
+    "rashi": "Meena"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "dashami"
+   ],
+   "udaya_tithi": {
+    "number": 10,
+    "name": "Dashami",
+    "paksha": "Shukla",
+    "end": "20-11-2026 07:16:41"
+   },
+   "udaya_nakshatra": {
+    "number": 25,
+    "name": "Purva Bhadrapada",
+    "end": "20-11-2026 06:55:41"
+   },
+   "udaya_yoga": {
+    "number": 15,
+    "name": "Vajra",
+    "end": "21-11-2026 04:53:20"
+   },
+   "tithi": [
+    {
+     "number": 10,
+     "name": "Dashami",
+     "paksha": "Shukla",
+     "start": "20-11-2026 06:47:30",
+     "end": "20-11-2026 07:16:41"
+    },
+    {
+     "number": 11,
+     "name": "Ekadashi",
+     "paksha": "Shukla",
+     "start": "20-11-2026 07:16:41",
+     "end": "21-11-2026 06:32:32"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 25,
+     "name": "Purva Bhadrapada",
+     "start": "20-11-2026 06:47:30",
+     "end": "20-11-2026 06:55:41"
+    },
+    {
+     "number": 26,
+     "name": "Uttara Bhadrapada",
+     "start": "20-11-2026 06:55:41",
+     "end": "21-11-2026 06:49:47"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 15,
+     "name": "Vajra",
+     "start": "20-11-2026 06:47:30",
+     "end": "21-11-2026 04:53:20"
+    }
+   ],
+   "karana": [
+    {
+     "number": 20,
+     "name": "Garaja",
+     "start": "19-11-2026 19:18:40",
+     "end": "20-11-2026 07:16:41"
+    },
+    {
+     "number": 21,
+     "name": "Vanija",
+     "start": "20-11-2026 07:16:41",
+     "end": "20-11-2026 19:01:14"
+    },
+    {
+     "number": 22,
+     "name": "Vishti",
+     "start": "20-11-2026 19:01:14",
+     "end": "21-11-2026 06:32:32"
+    },
+    {
+     "number": 23,
+     "name": "Bava",
+     "start": "21-11-2026 06:32:32",
+     "end": "21-11-2026 17:51:03"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "20-11-2026 10:46:49",
+     "end": "20-11-2026 12:06:36"
+    },
+    "gulika_kaal": {
+     "start": "20-11-2026 08:07:16",
+     "end": "20-11-2026 09:27:03"
+    },
+    "yamaganda_kaal": {
+     "start": "20-11-2026 14:46:09",
+     "end": "20-11-2026 16:05:55"
+    },
+    "abhijit": {
+     "start": "20-11-2026 11:45:19",
+     "end": "20-11-2026 12:27:52"
+    },
+    "brahma": {
+     "start": "20-11-2026 05:11:30",
+     "end": "20-11-2026 05:59:30"
+    },
+    "vijaya": {
+     "start": "20-11-2026 14:14:14",
+     "end": "20-11-2026 14:56:47"
+    },
+    "varjyam": {
+     "start": "20-11-2026 12:06:36",
+     "end": "20-11-2026 13:10:25"
+    },
+    "durmuhurta": {
+     "start": "20-11-2026 08:17:30",
+     "end": "20-11-2026 09:47:30"
+    },
+    "amrit_siddhi": {
+     "start": "20-11-2026 16:00:36",
+     "end": "20-11-2026 16:21:52"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "20-11-2026 06:47:30",
+     "end": "20-11-2026 08:07:16"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "20-11-2026 08:07:16",
+     "end": "20-11-2026 09:27:03"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "20-11-2026 09:27:03",
+     "end": "20-11-2026 10:46:49"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "20-11-2026 10:46:49",
+     "end": "20-11-2026 12:06:36"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "20-11-2026 12:06:36",
+     "end": "20-11-2026 13:26:22"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "20-11-2026 13:26:22",
+     "end": "20-11-2026 14:46:09"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "20-11-2026 14:46:09",
+     "end": "20-11-2026 16:05:55"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "20-11-2026 16:05:55",
+     "end": "20-11-2026 17:25:42"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "20-11-2026 17:25:42",
+     "end": "20-11-2026 19:05:55"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "20-11-2026 19:05:55",
+     "end": "20-11-2026 20:46:09"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "20-11-2026 20:46:09",
+     "end": "20-11-2026 22:26:22"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "20-11-2026 22:26:22",
+     "end": "21-11-2026 00:06:36"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "21-11-2026 00:06:36",
+     "end": "21-11-2026 01:46:49"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "21-11-2026 01:46:49",
+     "end": "21-11-2026 03:27:03"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "21-11-2026 03:27:03",
+     "end": "21-11-2026 05:07:16"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "21-11-2026 05:07:16",
+     "end": "21-11-2026 06:47:30"
+    }
+   ],
+   "festivals": {
+    "total": 2,
+    "data": [
+     {
+      "id": "2026-11-20_KANSA_VADH",
+      "name": "Kansa Vadh",
+      "slug": "kansa-vadh",
+      "type": "major",
+      "category": "hindu_vaishnava",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "20-11-2026 06:47:30",
+      "end": "20-11-2026 07:16:41",
+      "duration_note": "0h 29m",
+      "observance_tithi": {
+       "number": 10,
+       "paksha": "Shukla",
+       "name": "Dashami"
+      },
+      "note": "Krishna slays Kansa - Kartik Shukla Dashami",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-20_EKADASHI",
+      "name": "Devutthana Ekadashi",
+      "slug": "devutthana-ekadashi",
+      "type": "major_vrat",
+      "category": "hindu_vaishnava",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "20-11-2026 07:16:41",
+      "end": "21-11-2026 06:32:32",
+      "duration_note": "23h 15m (ends next day)",
+      "observance_tithi": {
+       "number": 11,
+       "paksha": "Shukla",
+       "name": "Ekadashi"
+      },
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-17T12:56:32.155Z",
+   "computed_at": "2026-11-17T12:56:32.155Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-20",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-21": {
+  "data": {
+   "date": "2026-11-21",
+   "weekday": "Saturday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 4,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "21-11-2026 06:48:17",
+    "set": "21-11-2026 17:25:23",
+    "longitude": 238.68,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "21-11-2026 14:49:49",
+    "set": "22-11-2026 04:04:46",
+    "rashi": "Meena"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "dwadashi",
+    "parana"
+   ],
+   "udaya_tithi": {
+    "number": 12,
+    "name": "Dwadashi",
+    "paksha": "Shukla",
+    "end": "22-11-2026 04:57:30"
+   },
+   "udaya_nakshatra": {
+    "number": 26,
+    "name": "Uttara Bhadrapada",
+    "end": "21-11-2026 06:49:47"
+   },
+   "udaya_yoga": {
+    "number": 16,
+    "name": "Siddhi",
+    "end": "22-11-2026 02:28:31"
+   },
+   "tithi": [
+    {
+     "number": 12,
+     "name": "Dwadashi",
+     "paksha": "Shukla",
+     "start": "21-11-2026 06:48:17",
+     "end": "22-11-2026 04:57:30"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 26,
+     "name": "Uttara Bhadrapada",
+     "start": "21-11-2026 06:48:17",
+     "end": "21-11-2026 06:49:47"
+    },
+    {
+     "number": 27,
+     "name": "Revati",
+     "start": "21-11-2026 06:49:47",
+     "end": "22-11-2026 05:54:04"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 16,
+     "name": "Siddhi",
+     "start": "21-11-2026 06:48:17",
+     "end": "22-11-2026 02:28:31"
+    }
+   ],
+   "karana": [
+    {
+     "number": 23,
+     "name": "Bava",
+     "start": "21-11-2026 06:32:32",
+     "end": "21-11-2026 17:51:02"
+    },
+    {
+     "number": 24,
+     "name": "Balava",
+     "start": "21-11-2026 17:51:02",
+     "end": "22-11-2026 04:57:30"
+    },
+    {
+     "number": 25,
+     "name": "Kaulava",
+     "start": "22-11-2026 04:57:30",
+     "end": "22-11-2026 15:52:50"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "21-11-2026 09:27:33",
+     "end": "21-11-2026 10:47:11"
+    },
+    "gulika_kaal": {
+     "start": "21-11-2026 06:48:17",
+     "end": "21-11-2026 08:07:55"
+    },
+    "yamaganda_kaal": {
+     "start": "21-11-2026 13:26:28",
+     "end": "21-11-2026 14:46:06"
+    },
+    "abhijit": {
+     "start": "21-11-2026 11:45:35",
+     "end": "21-11-2026 12:28:04"
+    },
+    "brahma": {
+     "start": "21-11-2026 05:12:17",
+     "end": "21-11-2026 06:00:17"
+    },
+    "vijaya": {
+     "start": "21-11-2026 14:14:15",
+     "end": "21-11-2026 14:56:43"
+    },
+    "varjyam": {
+     "start": "21-11-2026 12:06:50",
+     "end": "21-11-2026 13:10:32"
+    },
+    "durmuhurta": {
+     "start": "21-11-2026 08:18:17",
+     "end": "21-11-2026 09:48:17"
+    },
+    "amrit_siddhi": {
+     "start": "21-11-2026 16:00:26",
+     "end": "21-11-2026 16:21:40"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "21-11-2026 06:48:17",
+     "end": "21-11-2026 08:07:55"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "21-11-2026 08:07:55",
+     "end": "21-11-2026 09:27:33"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "21-11-2026 09:27:33",
+     "end": "21-11-2026 10:47:11"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "21-11-2026 10:47:11",
+     "end": "21-11-2026 12:06:50"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "21-11-2026 12:06:50",
+     "end": "21-11-2026 13:26:28"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "21-11-2026 13:26:28",
+     "end": "21-11-2026 14:46:06"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "21-11-2026 14:46:06",
+     "end": "21-11-2026 16:05:44"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "21-11-2026 16:05:44",
+     "end": "21-11-2026 17:25:23"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "21-11-2026 17:25:23",
+     "end": "21-11-2026 19:05:44"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "21-11-2026 19:05:44",
+     "end": "21-11-2026 20:46:06"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "21-11-2026 20:46:06",
+     "end": "21-11-2026 22:26:28"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "21-11-2026 22:26:28",
+     "end": "22-11-2026 00:06:50"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "22-11-2026 00:06:50",
+     "end": "22-11-2026 01:47:11"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "22-11-2026 01:47:11",
+     "end": "22-11-2026 03:27:33"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "22-11-2026 03:27:33",
+     "end": "22-11-2026 05:07:55"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "22-11-2026 05:07:55",
+     "end": "22-11-2026 06:48:17"
+    }
+   ],
+   "festivals": {
+    "total": 2,
+    "data": [
+     {
+      "id": "2026-11-21_EKADASHI_PARANA",
+      "name": "Ekadashi Parana",
+      "slug": "ekadashi-parana",
+      "type": "vrat",
+      "category": "hindu_vaishnava",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "21-11-2026 06:48:17",
+      "end": "21-11-2026 10:20:39",
+      "duration_note": "3h 32m",
+      "observance_tithi": null,
+      "note": "Break Ekadashi fast during parana window (sunrise to 1/3 of daytime or Dwadashi end)",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-21_TULASI_VIVAH",
+      "name": "Tulasi Vivah",
+      "slug": "tulasi-vivah",
+      "type": "major",
+      "category": "hindu_vaishnava",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "21-11-2026 06:48:17",
+      "end": "22-11-2026 04:57:30",
+      "duration_note": "22h 9m (ends next day)",
+      "observance_tithi": {
+       "number": 12,
+       "paksha": "Shukla",
+       "name": "Dwadashi"
+      },
+      "note": "Tulasi-Shaligram wedding - Kartik Shukla Dwadashi",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   },
+   "parana": {
+    "start": "21-11-2026 06:48:17",
+    "end": "21-11-2026 10:20:39",
+    "note": "Break Ekadashi fast during parana window (sunrise to 1/3 of daytime or Dwadashi end)"
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-18T05:14:41.924Z",
+   "computed_at": "2026-11-18T05:14:41.924Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-21",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-22": {
+  "data": {
+   "date": "2026-11-22",
+   "weekday": "Sunday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 5,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "22-11-2026 06:49:05",
+    "set": "22-11-2026 17:25:07",
+    "longitude": 239.69,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "22-11-2026 15:25:31",
+    "set": "23-11-2026 05:11:43",
+    "rashi": "Mesha"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "trayodashi"
+   ],
+   "udaya_tithi": {
+    "number": 13,
+    "name": "Trayodashi",
+    "paksha": "Shukla",
+    "end": "23-11-2026 02:38:06"
+   },
+   "udaya_nakshatra": {
+    "number": 1,
+    "name": "Ashwini",
+    "end": "23-11-2026 04:14:52"
+   },
+   "udaya_yoga": {
+    "number": 17,
+    "name": "Vyatipata",
+    "end": "22-11-2026 23:27:24"
+   },
+   "tithi": [
+    {
+     "number": 13,
+     "name": "Trayodashi",
+     "paksha": "Shukla",
+     "start": "22-11-2026 06:49:05",
+     "end": "23-11-2026 02:38:06"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 1,
+     "name": "Ashwini",
+     "start": "22-11-2026 06:49:05",
+     "end": "23-11-2026 04:14:52"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 17,
+     "name": "Vyatipata",
+     "start": "22-11-2026 06:49:05",
+     "end": "22-11-2026 23:27:24"
+    }
+   ],
+   "karana": [
+    {
+     "number": 25,
+     "name": "Kaulava",
+     "start": "22-11-2026 04:57:30",
+     "end": "22-11-2026 15:52:50"
+    },
+    {
+     "number": 26,
+     "name": "Taitila",
+     "start": "22-11-2026 15:52:50",
+     "end": "23-11-2026 02:38:06"
+    },
+    {
+     "number": 27,
+     "name": "Garaja",
+     "start": "23-11-2026 02:38:06",
+     "end": "23-11-2026 13:14:32"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "22-11-2026 16:05:36",
+     "end": "22-11-2026 17:25:07"
+    },
+    "gulika_kaal": {
+     "start": "22-11-2026 14:46:06",
+     "end": "22-11-2026 16:05:36"
+    },
+    "yamaganda_kaal": {
+     "start": "22-11-2026 12:07:06",
+     "end": "22-11-2026 13:26:36"
+    },
+    "abhijit": {
+     "start": "22-11-2026 11:45:53",
+     "end": "22-11-2026 12:28:18"
+    },
+    "brahma": {
+     "start": "22-11-2026 05:13:05",
+     "end": "22-11-2026 06:01:05"
+    },
+    "vijaya": {
+     "start": "22-11-2026 14:14:18",
+     "end": "22-11-2026 14:56:42"
+    },
+    "varjyam": {
+     "start": "22-11-2026 12:07:06",
+     "end": "22-11-2026 13:10:42"
+    },
+    "durmuhurta": {
+     "start": "22-11-2026 08:19:05",
+     "end": "22-11-2026 09:49:05"
+    },
+    "amrit_siddhi": {
+     "start": "22-11-2026 16:00:18",
+     "end": "22-11-2026 16:21:30"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "22-11-2026 06:49:05",
+     "end": "22-11-2026 08:08:35"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "22-11-2026 08:08:35",
+     "end": "22-11-2026 09:28:05"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "22-11-2026 09:28:05",
+     "end": "22-11-2026 10:47:35"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "22-11-2026 10:47:35",
+     "end": "22-11-2026 12:07:06"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "22-11-2026 12:07:06",
+     "end": "22-11-2026 13:26:36"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "22-11-2026 13:26:36",
+     "end": "22-11-2026 14:46:06"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "22-11-2026 14:46:06",
+     "end": "22-11-2026 16:05:36"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "22-11-2026 16:05:36",
+     "end": "22-11-2026 17:25:07"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "22-11-2026 17:25:07",
+     "end": "22-11-2026 19:05:36"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "22-11-2026 19:05:36",
+     "end": "22-11-2026 20:46:06"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "22-11-2026 20:46:06",
+     "end": "22-11-2026 22:26:36"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "22-11-2026 22:26:36",
+     "end": "23-11-2026 00:07:06"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "23-11-2026 00:07:06",
+     "end": "23-11-2026 01:47:35"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "23-11-2026 01:47:35",
+     "end": "23-11-2026 03:28:05"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "23-11-2026 03:28:05",
+     "end": "23-11-2026 05:08:35"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "23-11-2026 05:08:35",
+     "end": "23-11-2026 06:49:05"
+    }
+   ],
+   "festivals": {
+    "total": 1,
+    "data": [
+     {
+      "id": "2026-11-22_PRADOSH",
+      "name": "Shani Pradosh",
+      "slug": "shani-pradosh",
+      "type": "vrat",
+      "category": "hindu_shaiva",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "22-11-2026 15:55:07",
+      "end": "22-11-2026 18:25:07",
+      "duration_note": "2h 30m",
+      "observance_tithi": null,
+      "note": "Pradosh: 1.5 hrs before sunset to 1 hr after",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-18T05:14:49.573Z",
+   "computed_at": "2026-11-18T05:14:49.573Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-22",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-23": {
+  "data": {
+   "date": "2026-11-23",
+   "weekday": "Monday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 6,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "23-11-2026 06:49:53",
+    "set": "23-11-2026 17:24:52",
+    "longitude": 240.7,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "23-11-2026 16:07:05",
+    "set": "24-11-2026 06:22:36",
+    "rashi": "Mesha"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "chaturdashi"
+   ],
+   "udaya_tithi": {
+    "number": 14,
+    "name": "Chaturdashi",
+    "paksha": "Shukla",
+    "end": "23-11-2026 23:43:26"
+   },
+   "udaya_nakshatra": {
+    "number": 2,
+    "name": "Bharani",
+    "end": "24-11-2026 02:01:20"
+   },
+   "udaya_yoga": {
+    "number": 18,
+    "name": "Variyan",
+    "end": "23-11-2026 19:56:26"
+   },
+   "tithi": [
+    {
+     "number": 14,
+     "name": "Chaturdashi",
+     "paksha": "Shukla",
+     "start": "23-11-2026 06:49:53",
+     "end": "23-11-2026 23:43:26"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 2,
+     "name": "Bharani",
+     "start": "23-11-2026 06:49:53",
+     "end": "24-11-2026 02:01:20"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 18,
+     "name": "Variyan",
+     "start": "23-11-2026 06:49:53",
+     "end": "23-11-2026 19:56:26"
+    }
+   ],
+   "karana": [
+    {
+     "number": 27,
+     "name": "Garaja",
+     "start": "23-11-2026 02:38:06",
+     "end": "23-11-2026 13:14:32"
+    },
+    {
+     "number": 28,
+     "name": "Vanija",
+     "start": "23-11-2026 13:14:32",
+     "end": "23-11-2026 23:43:26"
+    },
+    {
+     "number": 29,
+     "name": "Vishti",
+     "start": "23-11-2026 23:43:26",
+     "end": "24-11-2026 10:06:08"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "23-11-2026 08:09:15",
+     "end": "23-11-2026 09:28:37"
+    },
+    "gulika_kaal": {
+     "start": "23-11-2026 13:26:44",
+     "end": "23-11-2026 14:46:07"
+    },
+    "yamaganda_kaal": {
+     "start": "23-11-2026 10:48:00",
+     "end": "23-11-2026 12:07:22"
+    },
+    "abhijit": {
+     "start": "23-11-2026 11:46:12",
+     "end": "23-11-2026 12:28:32"
+    },
+    "brahma": {
+     "start": "23-11-2026 05:13:53",
+     "end": "23-11-2026 06:01:53"
+    },
+    "vijaya": {
+     "start": "23-11-2026 14:14:22",
+     "end": "23-11-2026 14:56:42"
+    },
+    "varjyam": {
+     "start": "23-11-2026 12:07:22",
+     "end": "23-11-2026 13:10:52"
+    },
+    "durmuhurta": {
+     "start": "23-11-2026 08:19:53",
+     "end": "23-11-2026 09:49:53"
+    },
+    "amrit_siddhi": {
+     "start": "23-11-2026 16:00:12",
+     "end": "23-11-2026 16:21:22"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "23-11-2026 06:49:53",
+     "end": "23-11-2026 08:09:15"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "23-11-2026 08:09:15",
+     "end": "23-11-2026 09:28:37"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "23-11-2026 09:28:37",
+     "end": "23-11-2026 10:48:00"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "23-11-2026 10:48:00",
+     "end": "23-11-2026 12:07:22"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "23-11-2026 12:07:22",
+     "end": "23-11-2026 13:26:44"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "23-11-2026 13:26:44",
+     "end": "23-11-2026 14:46:07"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "23-11-2026 14:46:07",
+     "end": "23-11-2026 16:05:29"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "23-11-2026 16:05:29",
+     "end": "23-11-2026 17:24:52"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "23-11-2026 17:24:52",
+     "end": "23-11-2026 19:05:29"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "23-11-2026 19:05:29",
+     "end": "23-11-2026 20:46:07"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "23-11-2026 20:46:07",
+     "end": "23-11-2026 22:26:44"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "23-11-2026 22:26:44",
+     "end": "24-11-2026 00:07:22"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "24-11-2026 00:07:22",
+     "end": "24-11-2026 01:48:00"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "24-11-2026 01:48:00",
+     "end": "24-11-2026 03:28:37"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "24-11-2026 03:28:37",
+     "end": "24-11-2026 05:09:15"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "24-11-2026 05:09:15",
+     "end": "24-11-2026 06:49:53"
+    }
+   ],
+   "festivals": {
+    "total": 2,
+    "data": [
+     {
+      "id": "2026-11-23_SHUKLA_CHATURDASHI",
+      "name": "Shukla Chaturdashi",
+      "slug": "shukla-chaturdashi",
+      "type": "vrat",
+      "category": "hindu",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "23-11-2026 06:49:53",
+      "end": "23-11-2026 23:43:26",
+      "duration_note": "16h 53m",
+      "observance_tithi": {
+       "number": 14,
+       "paksha": "Shukla",
+       "name": "Chaturdashi"
+      },
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-23_VAIKUNTHA_CHATURDASHI",
+      "name": "Vaikuntha Chaturdashi",
+      "slug": "vaikuntha-chaturdashi",
+      "type": "vrat",
+      "category": "hindu_vaishnava",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "23-11-2026 06:49:53",
+      "end": "23-11-2026 23:43:26",
+      "duration_note": "16h 53m",
+      "observance_tithi": {
+       "number": 14,
+       "paksha": "Shukla",
+       "name": "Chaturdashi"
+      },
+      "note": "Joint worship of Shiva and Vishnu — Kartik Shukla Chaturdashi",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-18T05:14:56.677Z",
+   "computed_at": "2026-11-18T05:14:56.677Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-23",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-24": {
+  "data": {
+   "date": "2026-11-24",
+   "weekday": "Tuesday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 7,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "24-11-2026 06:50:40",
+    "set": "24-11-2026 17:24:38",
+    "longitude": 241.71,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "24-11-2026 16:56:34",
+    "set": "25-11-2026 07:35:04",
+    "rashi": "Mesha"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Kartik",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "KARTIKA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "shukla_paksha",
+    "purnima"
+   ],
+   "udaya_tithi": {
+    "number": 15,
+    "name": "Purnima",
+    "paksha": "Shukla",
+    "end": "24-11-2026 20:24:04"
+   },
+   "udaya_nakshatra": {
+    "number": 3,
+    "name": "Krittika",
+    "end": "24-11-2026 23:24:20"
+   },
+   "udaya_yoga": {
+    "number": 19,
+    "name": "Parigha",
+    "end": "24-11-2026 16:03:36"
+   },
+   "tithi": [
+    {
+     "number": 15,
+     "name": "Purnima",
+     "paksha": "Shukla",
+     "start": "24-11-2026 06:50:40",
+     "end": "24-11-2026 20:24:04"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 3,
+     "name": "Krittika",
+     "start": "24-11-2026 06:50:40",
+     "end": "24-11-2026 23:24:20"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 19,
+     "name": "Parigha",
+     "start": "24-11-2026 06:50:40",
+     "end": "24-11-2026 16:03:36"
+    },
+    {
+     "number": 20,
+     "name": "Shiva",
+     "start": "24-11-2026 16:03:36",
+     "end": "25-11-2026 11:57:41"
+    }
+   ],
+   "karana": [
+    {
+     "number": 29,
+     "name": "Vishti",
+     "start": "23-11-2026 23:43:25",
+     "end": "24-11-2026 10:06:08"
+    },
+    {
+     "number": 30,
+     "name": "Bava",
+     "start": "24-11-2026 10:06:08",
+     "end": "24-11-2026 20:24:04"
+    },
+    {
+     "number": 31,
+     "name": "Balava",
+     "start": "24-11-2026 20:24:04",
+     "end": "25-11-2026 06:38:38"
+    },
+    {
+     "number": 32,
+     "name": "Kaulava",
+     "start": "25-11-2026 06:38:38",
+     "end": "25-11-2026 16:51:15"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "24-11-2026 14:46:08",
+     "end": "24-11-2026 16:05:23"
+    },
+    "gulika_kaal": {
+     "start": "24-11-2026 12:07:39",
+     "end": "24-11-2026 13:26:53"
+    },
+    "yamaganda_kaal": {
+     "start": "24-11-2026 09:29:09",
+     "end": "24-11-2026 10:48:24"
+    },
+    "abhijit": {
+     "start": "24-11-2026 11:46:31",
+     "end": "24-11-2026 12:28:46"
+    },
+    "brahma": {
+     "start": "24-11-2026 05:14:40",
+     "end": "24-11-2026 06:02:40"
+    },
+    "vijaya": {
+     "start": "24-11-2026 14:14:26",
+     "end": "24-11-2026 14:56:42"
+    },
+    "varjyam": {
+     "start": "24-11-2026 12:07:39",
+     "end": "24-11-2026 13:11:02"
+    },
+    "durmuhurta": {
+     "start": "24-11-2026 08:20:40",
+     "end": "24-11-2026 09:50:40"
+    },
+    "amrit_siddhi": {
+     "start": "24-11-2026 16:00:06",
+     "end": "24-11-2026 16:21:14"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "24-11-2026 06:50:40",
+     "end": "24-11-2026 08:09:54"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "24-11-2026 08:09:54",
+     "end": "24-11-2026 09:29:09"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "24-11-2026 09:29:09",
+     "end": "24-11-2026 10:48:24"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "24-11-2026 10:48:24",
+     "end": "24-11-2026 12:07:39"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "24-11-2026 12:07:39",
+     "end": "24-11-2026 13:26:53"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "24-11-2026 13:26:53",
+     "end": "24-11-2026 14:46:08"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "24-11-2026 14:46:08",
+     "end": "24-11-2026 16:05:23"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "24-11-2026 16:05:23",
+     "end": "24-11-2026 17:24:38"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "24-11-2026 17:24:38",
+     "end": "24-11-2026 19:05:23"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "24-11-2026 19:05:23",
+     "end": "24-11-2026 20:46:08"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "24-11-2026 20:46:08",
+     "end": "24-11-2026 22:26:53"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "24-11-2026 22:26:53",
+     "end": "25-11-2026 00:07:39"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "25-11-2026 00:07:39",
+     "end": "25-11-2026 01:48:24"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "25-11-2026 01:48:24",
+     "end": "25-11-2026 03:29:09"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "25-11-2026 03:29:09",
+     "end": "25-11-2026 05:09:54"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "25-11-2026 05:09:54",
+     "end": "25-11-2026 06:50:40"
+    }
+   ],
+   "festivals": {
+    "total": 4,
+    "data": [
+     {
+      "id": "2026-11-24_PURNIMA",
+      "name": "Kartik Purnima",
+      "slug": "kartik-purnima",
+      "type": "major",
+      "category": "hindu",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "24-11-2026 06:50:40",
+      "end": "24-11-2026 20:24:04",
+      "duration_note": "13h 33m",
+      "observance_tithi": {
+       "number": 15,
+       "paksha": "Shukla",
+       "name": "Purnima"
+      },
+      "note": "Dev Diwali / Tripuri Purnima",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-24_KARTHIGAI_DEEPAM",
+      "name": "Karthigai Deepam",
+      "slug": "karthigai-deepam",
+      "type": "major",
+      "category": "hindu",
+      "observed_in": [
+       "tamil-nadu",
+       "south-india"
+      ],
+      "start": "24-11-2026 06:50:40",
+      "end": "24-11-2026 23:24:20",
+      "duration_note": "16h 33m",
+      "observance_tithi": null,
+      "note": "Festival of lights — Krittika nakshatra in Kartik month",
+      "observance_type": "regional",
+      "status": "computed",
+      "confidence": "high",
+      "notice": "Festival observance may vary by region and tradition."
+     },
+     {
+      "id": "2026-11-24_GURU_NANAK_JAYANTI",
+      "name": "Guru Nanak Jayanti",
+      "slug": "guru-nanak-jayanti",
+      "type": "major",
+      "category": "sikh",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "24-11-2026 06:50:40",
+      "end": "24-11-2026 20:24:04",
+      "duration_note": "13h 33m",
+      "observance_tithi": null,
+      "note": "Birth anniversary of Guru Nanak Dev Ji, founder of Sikhism — Kartik Purnima",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     },
+     {
+      "id": "2026-11-24_SHAHEEDI_DIVAS_GURU_TEGH_BAHADUR_JI",
+      "name": "Shaheedi Divas - Guru Tegh Bahadur Ji",
+      "slug": "shaheedi-divas---guru-tegh-bahadur-ji",
+      "type": "major",
+      "category": "sikh",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "24-11-2026 00:00:00",
+      "end": "24-11-2026 23:59:59",
+      "duration_note": "All day",
+      "observance_tithi": null,
+      "note": "Martyrdom day of Guru Tegh Bahadur Ji, 9th Sikh Guru — executed by Mughal Emperor Aurangzeb on November 24, 1675 CE in Delhi (Chandni Chowk). Gurudwara Sis Ganj Sahib marks the site.",
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-18T05:15:04.383Z",
+   "computed_at": "2026-11-18T05:15:04.383Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-24",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ },
+ "2026-11-25": {
+  "data": {
+   "date": "2026-11-25",
+   "weekday": "Wednesday",
+   "timezone": "Asia/Kolkata",
+   "utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location": {
+    "city": "Delhi",
+    "city_id": "delhi",
+    "resolved_via": "exact_match"
+   },
+   "calendars": {
+    "vikram_samvat": 2083,
+    "shaka_samvat": 1948,
+    "vikram_samvat_system": "chaitradi_lunisolar",
+    "shaka_samvat_system": "traditional_lunisolar",
+    "bengali": {
+     "day": 8,
+     "month": "Agrahayan",
+     "year": 1433
+    }
+   },
+   "sun": {
+    "rise": "25-11-2026 06:51:28",
+    "set": "25-11-2026 17:24:26",
+    "longitude": 242.72,
+    "rashi": "Vrishchika"
+   },
+   "moon": {
+    "rise": "25-11-2026 17:55:11",
+    "set": "26-11-2026 08:44:49",
+    "rashi": "Vrishabha"
+   },
+   "lunar_month": {
+    "name": "Kartik",
+    "id": "KARTIKA",
+    "adhik": false,
+    "selected_system": "amanta",
+    "selected": "Kartik",
+    "amanta": "Kartik",
+    "purnimanta": "Margashirsha",
+    "ids": {
+     "selected": "KARTIKA",
+     "amanta": "KARTIKA",
+     "purnimanta": "MARGASHIRSHA"
+    }
+   },
+   "computation": {
+    "system": "drik",
+    "ayanamsha": "Lahiri",
+    "calendar_basis": "regional_panchang_rules",
+    "time_basis": "local_sunrise"
+   },
+   "tags": [
+    "krishna_paksha",
+    "pratipada"
+   ],
+   "udaya_tithi": {
+    "number": 16,
+    "name": "Pratipada",
+    "paksha": "Krishna",
+    "end": "25-11-2026 16:51:15"
+   },
+   "udaya_nakshatra": {
+    "number": 4,
+    "name": "Rohini",
+    "end": "25-11-2026 20:35:29"
+   },
+   "udaya_yoga": {
+    "number": 20,
+    "name": "Shiva",
+    "end": "25-11-2026 11:57:41"
+   },
+   "tithi": [
+    {
+     "number": 16,
+     "name": "Pratipada",
+     "paksha": "Krishna",
+     "start": "25-11-2026 06:51:28",
+     "end": "25-11-2026 16:51:15"
+    },
+    {
+     "number": 17,
+     "name": "Dwitiya",
+     "paksha": "Krishna",
+     "start": "25-11-2026 16:51:15",
+     "end": "26-11-2026 13:16:11"
+    }
+   ],
+   "nakshatra": [
+    {
+     "number": 4,
+     "name": "Rohini",
+     "start": "25-11-2026 06:51:28",
+     "end": "25-11-2026 20:35:29"
+    }
+   ],
+   "yoga": [
+    {
+     "number": 20,
+     "name": "Shiva",
+     "start": "25-11-2026 06:51:28",
+     "end": "25-11-2026 11:57:41"
+    },
+    {
+     "number": 21,
+     "name": "Siddha",
+     "start": "25-11-2026 11:57:41",
+     "end": "26-11-2026 07:47:41"
+    }
+   ],
+   "karana": [
+    {
+     "number": 32,
+     "name": "Kaulava",
+     "start": "25-11-2026 06:38:38",
+     "end": "25-11-2026 16:51:15"
+    },
+    {
+     "number": 33,
+     "name": "Taitila",
+     "start": "25-11-2026 16:51:15",
+     "end": "26-11-2026 03:03:19"
+    },
+    {
+     "number": 34,
+     "name": "Garaja",
+     "start": "26-11-2026 03:03:19",
+     "end": "26-11-2026 13:16:11"
+    }
+   ],
+   "muhurat": {
+    "rahu_kaal": {
+     "start": "25-11-2026 12:07:57",
+     "end": "25-11-2026 13:27:04"
+    },
+    "gulika_kaal": {
+     "start": "25-11-2026 10:48:49",
+     "end": "25-11-2026 12:07:57"
+    },
+    "yamaganda_kaal": {
+     "start": "25-11-2026 08:10:35",
+     "end": "25-11-2026 09:29:42"
+    },
+    "abhijit": {
+     "start": null,
+     "end": null
+    },
+    "brahma": {
+     "start": "25-11-2026 05:15:28",
+     "end": "25-11-2026 06:03:28"
+    },
+    "vijaya": {
+     "start": "25-11-2026 14:14:32",
+     "end": "25-11-2026 14:56:44"
+    },
+    "varjyam": {
+     "start": "25-11-2026 12:07:57",
+     "end": "25-11-2026 13:11:14"
+    },
+    "durmuhurta": {
+     "start": "25-11-2026 08:21:28",
+     "end": "25-11-2026 09:51:28"
+    },
+    "amrit_siddhi": {
+     "start": "25-11-2026 16:00:02",
+     "end": "25-11-2026 16:21:08"
+    }
+   },
+   "choghadiya": [
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "25-11-2026 06:51:28",
+     "end": "25-11-2026 08:10:35"
+    },
+    {
+     "period": "day",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "25-11-2026 08:10:35",
+     "end": "25-11-2026 09:29:42"
+    },
+    {
+     "period": "day",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "25-11-2026 09:29:42",
+     "end": "25-11-2026 10:48:49"
+    },
+    {
+     "period": "day",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "25-11-2026 10:48:49",
+     "end": "25-11-2026 12:07:57"
+    },
+    {
+     "period": "day",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "25-11-2026 12:07:57",
+     "end": "25-11-2026 13:27:04"
+    },
+    {
+     "period": "day",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "25-11-2026 13:27:04",
+     "end": "25-11-2026 14:46:11"
+    },
+    {
+     "period": "day",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "25-11-2026 14:46:11",
+     "end": "25-11-2026 16:05:18"
+    },
+    {
+     "period": "day",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "25-11-2026 16:05:18",
+     "end": "25-11-2026 17:24:26"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "25-11-2026 17:24:26",
+     "end": "25-11-2026 19:05:18"
+    },
+    {
+     "period": "night",
+     "type": "Udveg",
+     "quality": "inauspicious",
+     "start": "25-11-2026 19:05:18",
+     "end": "25-11-2026 20:46:11"
+    },
+    {
+     "period": "night",
+     "type": "Char",
+     "quality": "neutral",
+     "start": "25-11-2026 20:46:11",
+     "end": "25-11-2026 22:27:04"
+    },
+    {
+     "period": "night",
+     "type": "Labh",
+     "quality": "beneficial",
+     "start": "25-11-2026 22:27:04",
+     "end": "26-11-2026 00:07:57"
+    },
+    {
+     "period": "night",
+     "type": "Amrit",
+     "quality": "very_auspicious",
+     "start": "26-11-2026 00:07:57",
+     "end": "26-11-2026 01:48:49"
+    },
+    {
+     "period": "night",
+     "type": "Kaal",
+     "quality": "inauspicious",
+     "start": "26-11-2026 01:48:49",
+     "end": "26-11-2026 03:29:42"
+    },
+    {
+     "period": "night",
+     "type": "Shubh",
+     "quality": "auspicious",
+     "start": "26-11-2026 03:29:42",
+     "end": "26-11-2026 05:10:35"
+    },
+    {
+     "period": "night",
+     "type": "Rog",
+     "quality": "inauspicious",
+     "start": "26-11-2026 05:10:35",
+     "end": "26-11-2026 06:51:28"
+    }
+   ],
+   "festivals": {
+    "total": 1,
+    "data": [
+     {
+      "id": "2026-11-25_ROHINI_VRAT",
+      "name": "Rohini Vrat",
+      "slug": "rohini-vrat",
+      "type": "vrat",
+      "category": "hindu_vaishnava",
+      "observed_in": [
+       "all-india"
+      ],
+      "start": "25-11-2026 06:51:28",
+      "end": "25-11-2026 20:35:29",
+      "duration_note": "13h 44m",
+      "observance_tithi": null,
+      "observance_type": "standard",
+      "status": "computed",
+      "confidence": "high"
+     }
+    ]
+   }
+  },
+  "meta": {
+   "api_version": "1.0",
+   "stability": "v1",
+   "engine": "v5.0",
+   "ayanamsha": "Lahiri",
+   "region_variant": "north_india",
+   "last_updated": "2026-11-18T05:15:12.150Z",
+   "computed_at": "2026-11-18T05:15:12.150Z",
+   "resolved_timezone": "Asia/Kolkata",
+   "civil_date": "2026-11-25",
+   "date_source": "explicit",
+   "output_timezone": "Asia/Kolkata",
+   "output_utc_offset": "+05:30",
+   "location_utc_offset": "+05:30",
+   "field_semantics": {
+    "timezone_fields": {
+     "resolved_timezone": "IANA zone of the requested location",
+     "location_utc_offset": "UTC offset of resolved_timezone on the civil date (DST-aware, evaluated at local noon)",
+     "output_timezone": "zone every timestamp in `data` is expressed in",
+     "output_utc_offset": "UTC offset of output_timezone",
+     "utc_offset": "legacy alias of output_utc_offset (offset of the returned timestamps, NOT the location offset)"
+    },
+    "sun": {
+     "rashi": {
+      "zodiac": "sidereal",
+      "ayanamsha": "Lahiri",
+      "reference": "local sunrise at the requested location"
+     },
+     "transit_rashi": {
+      "zodiac": "sidereal",
+      "reference": "present only when the Sun enters a new rashi before the next sunrise"
+     },
+     "longitude": {
+      "zodiac": "tropical",
+      "reference": "00:00 UTC on the civil date"
+     }
+    },
+    "calendars": {
+     "vikram_samvat": {
+      "system": "chaitradi_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada"
+     },
+     "shaka_samvat": {
+      "system": "traditional_lunisolar",
+      "year_changes": "Chaitra Shukla Pratipada",
+      "not": "Indian National Calendar (Saka), whose year starts on 1 Chaitra (about 22 March)"
+     }
+    }
+   },
+   "data_source": "live",
+   "cache_age_seconds": 0,
+   "version": "1.0"
+  },
+  "profile": "free",
+  "features": {
+   "muhurat": true,
+   "choghadiya": true,
+   "metadata": false,
+   "monthly_api": false
+  },
+  "attribution": "Powered by https://platform.devdarsha.com"
+ }
+}

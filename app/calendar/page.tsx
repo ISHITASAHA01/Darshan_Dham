@@ -23,6 +23,22 @@ const CITIES = [
     { id: "pune", name: "Pune" },
     { id: "jaipur", name: "Jaipur" },
     { id: "varanasi", name: "Varanasi" },
+    { id: "lucknow", name: "Lucknow" },
+    { id: "patna", name: "Patna" },
+    { id: "bhopal", name: "Bhopal" },
+    { id: "indore", name: "Indore" },
+    { id: "chandigarh", name: "Chandigarh" },
+    { id: "ayodhya", name: "Ayodhya" },
+    { id: "mathura", name: "Mathura" },
+    { id: "haridwar", name: "Haridwar" },
+    { id: "ujjain", name: "Ujjain" },
+    { id: "nagpur", name: "Nagpur" },
+    { id: "surat", name: "Surat" },
+    { id: "bhubaneswar", name: "Bhubaneswar" },
+    { id: "guwahati", name: "Guwahati" },
+    { id: "ranchi", name: "Ranchi" },
+    { id: "amritsar", name: "Amritsar" },
+    { id: "kochi", name: "Kochi" },
 ];
 
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
