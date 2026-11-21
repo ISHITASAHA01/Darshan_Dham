@@ -56,7 +56,6 @@ function formatDate(date: Date) {
     return `${year}-${month}-${day}`;
 }
 
-// Handles API responses wrapped inside multiple data objects.
 function normalizePanchang(response: any): any {
     let current = response;
 
@@ -87,7 +86,6 @@ function normalizePanchang(response: any): any {
     return current ?? {};
 }
 
-// Reads nested values such as calendars.bengali.day.
 function getNestedValue(data: any, path: string): any {
     return path.split(".").reduce(
         (value, key) => value?.[key],
@@ -99,15 +97,8 @@ function getFirst(data: any, paths: string[]): string {
     for (const path of paths) {
         const value = getNestedValue(data, path);
 
-        if (
-            value !== undefined &&
-            value !== null &&
-            value !== ""
-        ) {
-            if (
-                typeof value === "string" ||
-                typeof value === "number"
-            ) {
+        if (value !== undefined && value !== null && value !== "") {
+            if (typeof value === "string" || typeof value === "number") {
                 return String(value);
             }
 
@@ -128,7 +119,6 @@ function getFirst(data: any, paths: string[]): string {
     return "Not available";
 }
 
-// Extracts festival names from festivals.data.
 function getFestivalNames(data: any): string[] {
     const festivalValue = data?.festivals;
 
@@ -172,14 +162,10 @@ export default function CalendarPage() {
 
         return [
             ...Array(firstDay).fill(null),
-            ...Array.from(
-                { length: totalDays },
-                (_, index) => index + 1
-            ),
+            ...Array.from({ length: totalDays }, (_, index) => index + 1),
         ];
     }, [month, year]);
 
-    // Load Panchang data from the API.
     useEffect(() => {
         let cancelled = false;
 
@@ -215,9 +201,7 @@ export default function CalendarPage() {
                 }
             } catch (err: any) {
                 if (!cancelled) {
-                    setError(
-                        err.message || "Unable to load Panchang."
-                    );
+                    setError(err.message || "Unable to load Panchang.");
                 }
             } finally {
                 if (!cancelled) {
@@ -251,10 +235,8 @@ export default function CalendarPage() {
         setSelectedDate(formatDate(today));
     }
 
-    // Normalize nested API response.
     const data = normalizePanchang(panchang);
 
-    // Hindu Panchang values.
     const tithi = getFirst(data, [
         "udaya_tithi.name",
         "tithi.0.name",
@@ -294,7 +276,6 @@ export default function CalendarPage() {
         "sun.sunset",
     ]);
 
-    // Bengali Panjika: separate day, month and year.
     const bengaliDay = getFirst(data, [
         "calendars.bengali.day",
         "bengali.day",
@@ -313,25 +294,20 @@ export default function CalendarPage() {
         "bengali_date.year",
     ]);
 
-    // Vikram Samvat.
     const samvat = getFirst(data, [
         "calendars.vikram_samvat",
         "vikram_samvat",
     ]);
 
-    // Festivals from festivals.data.
     const festivals = getFestivalNames(data);
 
     const selected = new Date(`${selectedDate}T12:00:00`);
 
-    const selectedLabel = selected.toLocaleDateString(
-        "en-IN",
-        {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-        }
-    );
+    const selectedLabel = selected.toLocaleDateString("en-IN", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    });
 
     const calendarDetails = [
         { label: "Tithi", value: tithi, icon: "🌙" },
@@ -343,27 +319,35 @@ export default function CalendarPage() {
         { label: "Vikram Samvat", value: samvat, icon: "📜" },
     ];
 
+    const detailCardClass =
+        "rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-4";
+
+    const detailLabelClass =
+        "flex items-center gap-2 text-sm font-semibold text-[var(--color-saffron-dark)]";
+
+    const detailValueClass =
+        "mt-2 break-words text-base font-bold text-[var(--foreground)]";
+
     return (
-        <main className="min-h-screen bg-gradient-to-b from-[#fff9ed] via-[#fff4df] to-[#fffaf1] px-3 py-8 text-[#49321e] sm:px-6">
+        <main className="min-h-screen bg-[var(--background)] px-3 py-8 text-[var(--foreground)] transition-colors duration-300 sm:px-6">
             <div className="mx-auto max-w-7xl">
 
                 {/* Header */}
-                <section className="relative overflow-hidden rounded-[2rem] border border-[#e8c98e] bg-gradient-to-br from-[#fff0c9] via-[#ffe2a3] to-[#f7c66e] p-7 shadow-lg sm:p-12">
-
+                <section className="relative overflow-hidden rounded-[2rem] border border-[var(--border)] bg-[var(--surface-soft)] p-7 shadow-lg sm:p-12">
                     <div className="pointer-events-none absolute -right-10 -top-16 text-[180px] opacity-10">
                         🪷
                     </div>
 
                     <div className="relative z-10">
-                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[#9c5b17]">
+                        <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-[var(--color-saffron-dark)]">
                             DARSHAN DHAM • SANATAN CALENDAR
                         </p>
 
-                        <h1 className="font-heading text-3xl font-bold text-[#713c16] sm:text-5xl">
+                        <h1 className="font-heading text-3xl font-bold text-[var(--foreground)] sm:text-5xl">
                             Sacred Calendar
                         </h1>
 
-                        <p className="mt-3 max-w-2xl text-sm text-[#80552c] sm:text-base">
+                        <p className="mt-3 max-w-2xl text-sm text-[var(--muted)] sm:text-base">
                             Discover Hindu Panchang and Bengali Panjika
                         </p>
 
@@ -371,8 +355,8 @@ export default function CalendarPage() {
                             <button
                                 onClick={() => setMode("hindu")}
                                 className={`rounded-full px-6 py-3 text-sm font-semibold transition ${mode === "hindu"
-                                    ? "bg-[#8d451b] text-white shadow-md"
-                                    : "border border-[#b77b39] bg-white/60 text-[#75421f]"
+                                    ? "bg-[var(--color-saffron-dark)] text-white shadow-md"
+                                    : "border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:bg-[var(--background)]"
                                     }`}
                             >
                                 🕉️ Hindu Panchang
@@ -381,8 +365,8 @@ export default function CalendarPage() {
                             <button
                                 onClick={() => setMode("bengali")}
                                 className={`rounded-full px-6 py-3 text-sm font-semibold transition ${mode === "bengali"
-                                    ? "bg-[#8d451b] text-white shadow-md"
-                                    : "border border-[#b77b39] bg-white/60 text-[#75421f]"
+                                    ? "bg-[var(--color-saffron-dark)] text-white shadow-md"
+                                    : "border border-[var(--border)] bg-[var(--surface)] text-[var(--foreground)] hover:bg-[var(--background)]"
                                     }`}
                             >
                                 🌺 Bengali Panjika
@@ -395,11 +379,11 @@ export default function CalendarPage() {
                 <section className="mt-7 grid gap-6 lg:grid-cols-[1.35fr_0.85fr]">
 
                     {/* Calendar */}
-                    <div className="rounded-3xl border border-[#ead8b9] bg-white p-4 shadow-sm sm:p-7">
+                    <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-4 text-[var(--foreground)] shadow-sm sm:p-7">
 
                         <div className="flex flex-wrap items-center justify-between gap-3">
                             <div>
-                                <p className="text-xs font-semibold uppercase tracking-widest text-[#a36b31]">
+                                <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-saffron-dark)]">
                                     DARSHAN DHAM CALENDAR
                                 </p>
 
@@ -411,7 +395,7 @@ export default function CalendarPage() {
                             <div className="flex gap-2">
                                 <button
                                     onClick={goToToday}
-                                    className="rounded-full border border-[#e5c99e] px-4 py-2 text-sm font-semibold hover:bg-[#fff5e3]"
+                                    className="rounded-full border border-[var(--border)] px-4 py-2 text-sm font-semibold transition hover:bg-[var(--surface-soft)]"
                                 >
                                     Today
                                 </button>
@@ -419,7 +403,7 @@ export default function CalendarPage() {
                                 <button
                                     onClick={() => changeMonth(-1)}
                                     aria-label="Previous month"
-                                    className="rounded-full border border-[#e5c99e] px-4 py-2 hover:bg-[#fff5e3]"
+                                    className="rounded-full border border-[var(--border)] px-4 py-2 transition hover:bg-[var(--surface-soft)]"
                                 >
                                     ‹
                                 </button>
@@ -427,7 +411,7 @@ export default function CalendarPage() {
                                 <button
                                     onClick={() => changeMonth(1)}
                                     aria-label="Next month"
-                                    className="rounded-full border border-[#e5c99e] px-4 py-2 hover:bg-[#fff5e3]"
+                                    className="rounded-full border border-[var(--border)] px-4 py-2 transition hover:bg-[var(--surface-soft)]"
                                 >
                                     ›
                                 </button>
@@ -438,7 +422,7 @@ export default function CalendarPage() {
                             {WEEKDAYS.map((day) => (
                                 <div
                                     key={day}
-                                    className="py-2 text-center text-xs font-bold text-[#9b6c3c]"
+                                    className="py-2 text-center text-xs font-bold text-[var(--muted)]"
                                 >
                                     {day}
                                 </div>
@@ -461,30 +445,30 @@ export default function CalendarPage() {
                                         key={dateString}
                                         onClick={() => selectDay(day)}
                                         className={`flex aspect-square flex-col items-center justify-center rounded-xl text-sm transition sm:rounded-2xl sm:text-base ${isSelected
-                                            ? "bg-[#934a20] font-bold text-white shadow-md"
+                                            ? "bg-[var(--color-saffron-dark)] font-bold text-white shadow-md"
                                             : isToday
-                                                ? "border-2 border-[#d18a35] bg-[#fff3d7] font-bold"
-                                                : "border border-transparent hover:border-[#edcf9e] hover:bg-[#fff6e7]"
+                                                ? "border-2 border-[var(--color-saffron)] bg-[var(--surface-soft)] font-bold text-[var(--foreground)]"
+                                                : "border border-transparent text-[var(--foreground)] hover:border-[var(--border)] hover:bg-[var(--surface-soft)]"
                                             }`}
                                     >
                                         {day}
 
                                         {isToday && !isSelected && (
-                                            <span className="mt-0.5 h-1 w-1 rounded-full bg-[#c47b27]" />
+                                            <span className="mt-0.5 h-1 w-1 rounded-full bg-[var(--color-saffron)]" />
                                         )}
                                     </button>
                                 );
                             })}
                         </div>
 
-                        <div className="mt-5 flex flex-wrap gap-4 text-xs text-[#8b6b4b]">
+                        <div className="mt-5 flex flex-wrap gap-4 text-xs text-[var(--muted)]">
                             <span className="flex items-center gap-2">
-                                <span className="h-2.5 w-2.5 rounded-full bg-[#934a20]" />
+                                <span className="h-2.5 w-2.5 rounded-full bg-[var(--color-saffron-dark)]" />
                                 Selected date
                             </span>
 
                             <span className="flex items-center gap-2">
-                                <span className="h-2.5 w-2.5 rounded-full border-2 border-[#d18a35]" />
+                                <span className="h-2.5 w-2.5 rounded-full border-2 border-[var(--color-saffron)]" />
                                 Today
                             </span>
                         </div>
@@ -493,15 +477,15 @@ export default function CalendarPage() {
                     {/* City and selected date */}
                     <aside className="space-y-5">
 
-                        <div className="rounded-3xl border border-[#ead8b9] bg-white p-5 shadow-sm">
-                            <label className="text-sm font-bold text-[#80552c]">
+                        <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 text-[var(--foreground)] shadow-sm">
+                            <label className="text-sm font-bold text-[var(--foreground)]">
                                 Select your city
                             </label>
 
                             <select
                                 value={city}
                                 onChange={(event) => setCity(event.target.value)}
-                                className="mt-2 w-full rounded-xl border border-[#e8d6b8] bg-[#fffaf1] px-4 py-3 text-sm outline-none focus:border-[#bd7933]"
+                                className="mt-2 w-full rounded-xl border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-3 text-sm text-[var(--foreground)] outline-none focus:border-[var(--color-saffron)]"
                             >
                                 {CITIES.map((item) => (
                                     <option key={item.id} value={item.id}>
@@ -510,9 +494,9 @@ export default function CalendarPage() {
                                 ))}
                             </select>
                         </div>
-
-                        <div className="rounded-3xl bg-gradient-to-br from-[#843f1c] to-[#572b18] p-6 text-white shadow-lg">
-                            <p className="text-xs font-semibold uppercase tracking-widest text-[#f5d49d]">
+                        <div className="rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[#fff6e6] to-[var(--surface-soft)] p-6 text-[var(--foreground)] shadow-lg dark:from-[var(--color-navy)] dark:to-[var(--surface-soft)]">
+                            {/* <div className="rounded-3xl border border-[var(--border)] bg-gradient-to-br from-[var(--color-navy)] to-[var(--surface-soft)] p-6 text-[var(--foreground)] shadow-lg"> */}
+                            <p className="text-xs font-semibold uppercase tracking-widest text-[var(--color-saffron)]">
                                 {mode === "hindu"
                                     ? "🕉️ Hindu Panchang"
                                     : "🌺 Bengali Panjika"}
@@ -522,13 +506,13 @@ export default function CalendarPage() {
                                 {selectedLabel}
                             </p>
 
-                            <p className="mt-2 text-sm text-white/70">
+                            <p className="mt-2 text-sm text-[var(--muted)]">
                                 {city.toUpperCase()}
                             </p>
 
-                            <div className="mt-5 h-px bg-white/20" />
+                            <div className="mt-5 h-px bg-[var(--border)]" />
 
-                            <p className="mt-4 text-xs text-[#f5d49d]">
+                            <p className="mt-4 text-xs text-[var(--color-saffron)]">
                                 Selected Date
                             </p>
 
@@ -540,11 +524,11 @@ export default function CalendarPage() {
                 </section>
 
                 {/* Daily Panchang details */}
-                <section className="mt-7 rounded-3xl border border-[#ead8b9] bg-white p-5 shadow-sm sm:p-8">
+                <section className="mt-7 rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-5 text-[var(--foreground)] shadow-sm sm:p-8">
 
                     <div className="flex flex-wrap items-center justify-between gap-3">
                         <div>
-                            <p className="text-xs font-bold uppercase tracking-widest text-[#a36b31]">
+                            <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-saffron-dark)]">
                                 DARSHAN DHAM • DAILY DETAILS
                             </p>
 
@@ -556,14 +540,14 @@ export default function CalendarPage() {
                         </div>
 
                         {loading && (
-                            <span className="animate-pulse rounded-full bg-[#fff0d1] px-4 py-2 text-xs font-semibold text-[#92501d]">
+                            <span className="animate-pulse rounded-full border border-[var(--border)] bg-[var(--surface-soft)] px-4 py-2 text-xs font-semibold text-[var(--color-saffron-dark)]">
                                 Fetching sacred calendar...
                             </span>
                         )}
                     </div>
 
                     {error && (
-                        <div className="mt-5 rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-700">
+                        <div className="mt-5 rounded-xl border border-red-300 bg-red-500/10 p-4 text-sm text-red-600 dark:text-red-300">
                             {error}
 
                             <p className="mt-1 text-xs">
@@ -574,7 +558,7 @@ export default function CalendarPage() {
                     )}
 
                     {!loading && !error && !panchang && (
-                        <p className="mt-5 text-sm text-[#94785a]">
+                        <p className="mt-5 text-sm text-[var(--muted)]">
                             Panchang data is not available for this date.
                         </p>
                     )}
@@ -587,16 +571,16 @@ export default function CalendarPage() {
                                     {calendarDetails.map((item) => (
                                         <div
                                             key={item.label}
-                                            className="rounded-2xl border border-[#f0e1c9] bg-[#fffaf2] p-4"
+                                            className={detailCardClass}
                                         >
-                                            <div className="flex items-center gap-2 text-sm font-semibold text-[#90602f]">
+                                            <div className={detailLabelClass}>
                                                 <span className="text-xl">
                                                     {item.icon}
                                                 </span>
                                                 {item.label}
                                             </div>
 
-                                            <p className="mt-2 break-words text-base font-bold text-[#55351f]">
+                                            <p className={detailValueClass}>
                                                 {item.value}
                                             </p>
                                         </div>
@@ -608,35 +592,35 @@ export default function CalendarPage() {
                             {mode === "bengali" && (
                                 <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
 
-                                    <div className="rounded-2xl border border-[#f0e1c9] bg-[#fffaf2] p-4">
-                                        <div className="flex items-center gap-2 text-sm font-semibold text-[#90602f]">
+                                    <div className={detailCardClass}>
+                                        <div className={detailLabelClass}>
                                             <span className="text-xl">📅</span>
                                             Bengali Day
                                         </div>
 
-                                        <p className="mt-2 text-2xl font-bold text-[#55351f]">
+                                        <p className="mt-2 text-2xl font-bold text-[var(--foreground)]">
                                             {bengaliDay}
                                         </p>
                                     </div>
 
-                                    <div className="rounded-2xl border border-[#f0e1c9] bg-[#fffaf2] p-4">
-                                        <div className="flex items-center gap-2 text-sm font-semibold text-[#90602f]">
+                                    <div className={detailCardClass}>
+                                        <div className={detailLabelClass}>
                                             <span className="text-xl">🌺</span>
                                             Bengali Month
                                         </div>
 
-                                        <p className="mt-2 text-2xl font-bold text-[#55351f]">
+                                        <p className="mt-2 text-2xl font-bold text-[var(--foreground)]">
                                             {bengaliMonth}
                                         </p>
                                     </div>
 
-                                    <div className="rounded-2xl border border-[#f0e1c9] bg-[#fffaf2] p-4">
-                                        <div className="flex items-center gap-2 text-sm font-semibold text-[#90602f]">
+                                    <div className={detailCardClass}>
+                                        <div className={detailLabelClass}>
                                             <span className="text-xl">📜</span>
                                             Bengali Year
                                         </div>
 
-                                        <p className="mt-2 text-2xl font-bold text-[#55351f]">
+                                        <p className="mt-2 text-2xl font-bold text-[var(--foreground)]">
                                             {bengaliYear}
                                         </p>
                                     </div>
@@ -644,8 +628,8 @@ export default function CalendarPage() {
                             )}
 
                             {/* Festivals */}
-                            <div className="mt-6 rounded-2xl border border-[#f0e1c9] bg-[#fffaf2] p-5">
-                                <div className="flex items-center gap-2 text-sm font-semibold text-[#90602f]">
+                            <div className="mt-6 rounded-2xl border border-[var(--border)] bg-[var(--surface-soft)] p-5">
+                                <div className={detailLabelClass}>
                                     <span className="text-xl">🪔</span>
                                     Festivals & Observances
                                 </div>
@@ -655,7 +639,7 @@ export default function CalendarPage() {
                                         {festivals.map((festival, index) => (
                                             <li
                                                 key={`${festival}-${index}`}
-                                                className="flex items-start gap-2 text-base font-bold text-[#55351f]"
+                                                className="flex items-start gap-2 text-base font-bold text-[var(--foreground)]"
                                             >
                                                 <span>🪷</span>
                                                 <span>{festival}</span>
@@ -663,7 +647,7 @@ export default function CalendarPage() {
                                         ))}
                                     </ul>
                                 ) : (
-                                    <p className="mt-3 text-sm text-[#94785a]">
+                                    <p className="mt-3 text-sm text-[var(--muted)]">
                                         No festival information available for this date.
                                     </p>
                                 )}
@@ -673,7 +657,7 @@ export default function CalendarPage() {
                 </section>
 
                 {/* Footer */}
-                <footer className="py-8 text-center text-xs text-[#9b8268]">
+                <footer className="py-8 text-center text-xs text-[var(--muted)]">
                     🪷 DARSHAN DHAM — Your guide to India's sacred traditions 🪷
                 </footer>
             </div>

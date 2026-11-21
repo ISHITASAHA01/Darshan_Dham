@@ -1,31 +1,47 @@
 @import "tailwindcss";
 
 
+
 :root {
   color-scheme: light;
-  --background: #fdf8f1;
-  --foreground: #2b1d12;
 
-  --color-saffron: #d9822b;
-  --color-saffron-dark: #b8681a;
-  --color-saffron-light: #f6e4cc;
-  --color-cream: #fdf8f1;
-  --color-navy: #0f1b2d;
-  --color-brown: #5a3e2b;
+  /* Premium Yatrik Light Theme */
+  --background: #fbf6ed;
+  --foreground: #342316;
+
+  --color-saffron: #d98a36;
+  --color-saffron-dark: #b96b25;
+  --color-saffron-light: #f3dfc3;
+  --color-cream: #fffaf2;
+  --color-navy: #172b3d;
+  --color-brown: #65452f;
+
+  --surface: #fffdf8;
+  --surface-soft: #f5ecdf;
+  --border: #e9d9c3;
+  --muted: #806d5b;
 }
 
 .dark {
   color-scheme: dark;
-  --background: #121212;
-  --foreground: #f5eee6;
 
-  --color-saffron: #f0a34f;
-  --color-saffron-dark: #d9822b;
-  --color-saffron-light: #49331f;
-  --color-cream: #1e1e1e;
-  --color-navy: #0b1422;
-  --color-brown: #e4c9ae;
+  /* Premium Yatrik Dark Theme */
+  --background: #111d2b;
+  --foreground: #f5ead8;
+
+  --color-saffron: #eab46b;
+  --color-saffron-dark: #cf9148;
+  --color-saffron-light: #493a2b;
+  --color-cream: #192839;
+  --color-navy: #0c1724;
+  --color-brown: #e0c6a4;
+
+  --surface: #1b2b3c;
+  --surface-soft: #223448;
+  --border: #35485a;
+  --muted: #b8aa96;
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -43,10 +59,17 @@
 }
 
 
+/* body {
+  background: var(--background);
+  color: var(--foreground);
+} */
+
 body {
   background: var(--background);
   color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 /* Google Translate ka bar hamesha ke liye chhupa hua rakho */
 .goog-te-banner-frame,
 .skiptranslate {
@@ -67,3 +90,67 @@ body {
     transform: translateX(300%);
   }
 }
+@keyframes loginCardEnter {
+    0% {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(-90deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(8deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg);
+    }
+}
+
+.login-card-animate {
+    animation: loginCardEnter 1.2s ease-in-out both;
+    transform-style: preserve-3d;
+    transition: box-shadow 0.35s ease;
+}
+
+.login-card-animate:hover {
+    box-shadow: 0 20px 45px rgba(120, 70, 25, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-card-animate {
+        animation: none;
+    }
+}
+
+.login-card-animate {
+    transition: transform 0.6s ease, box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    cursor: pointer;
+}
+
+.login-card-animate.is-flipped {
+    transform: perspective(1000px) rotateY(12deg);
+    box-shadow: 0 20px 45px rgba(120, 70, 25, 0.18);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login-card-animate {
+        transition: none;
+    }
+}
+
+/* DD-DARK-FIX: dark mode me safed cards ko dark surface do */
+.dark .bg-white:not([class*="border-[#"]) {
+  background-color: var(--surface, #14243a);
+}
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: var(--muted, #a8b3c4);
+  opacity: 0.85;
+}
+.dark select option {
+  background-color: var(--surface, #14243a);
+  color: var(--foreground, #f5eee6);
+}
+@custom-variant dark (&:where(.dark, .dark *));

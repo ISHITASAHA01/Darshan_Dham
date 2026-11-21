@@ -90,6 +90,7 @@ export const getAllTemples = cache(async (): Promise<TempleFull[]> => {
 
         // Supabase ka data bhi add karo.
         // Same slug hua to Supabase ka updated record use hoga.
+        if (data && data.length > 0) merged.clear();
         for (const row of (data ?? []) as Row[]) {
             merged.set(row.slug, fromRow(row));
         }

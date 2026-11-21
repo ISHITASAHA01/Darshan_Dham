@@ -58,9 +58,11 @@ export default function RootLayout({
           {/* <ClearGoogleTranslate /> */}
           <GoogleTranslate />
           <LanguageProvider>
-            <Navbar />
-            {children}
-            <Footer />
+            <div className="flex min-h-screen flex-col">
+              <Navbar />
+              <div className="flex-1">{children}</div>
+              <Footer />
+            </div>
           </LanguageProvider>
         </PageLoader>
       </body>
