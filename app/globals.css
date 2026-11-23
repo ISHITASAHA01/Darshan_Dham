@@ -154,3 +154,192 @@ body {
   color: var(--foreground, #f5eee6);
 }
 @custom-variant dark (&:where(.dark, .dark *));
+
+
+/* ---------- Aesthetic polish ---------- */
+html { scroll-behavior: smooth; }
+
+::selection { background: var(--color-saffron); color: #fff; }
+
+:focus-visible {
+  outline: 2px solid var(--color-saffron);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* halka garam roshni (sirf light mode) */
+body {
+  background-image:
+    radial-gradient(900px 420px at 50% -120px, rgba(217, 138, 54, 0.10), transparent 70%);
+  background-repeat: no-repeat;
+}
+.dark body { background-image: none; }
+
+/* patla, sundar scrollbar */
+* { scrollbar-width: thin; scrollbar-color: var(--color-saffron) transparent; }
+
+/* sections ke beech sunehri ॐ lakeer */
+.section-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 40rem;
+  margin: 1.5rem auto;
+  padding: 0 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--color-saffron);
+}
+.section-ornament::before,
+.section-ornament::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  opacity: 0.6;
+}
+.section-ornament::before { background: linear-gradient(to right, transparent, var(--color-saffron)); }
+.section-ornament::after { background: linear-gradient(to left, transparent, var(--color-saffron)); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+
+/* ====================================================================== */
+/*  DD-CALENDAR: animations (phool barsaat, mala, meditation, popup)       */
+/*  Ye poora block globals.css ke sabse neeche rehna chahiye.              */
+/* ====================================================================== */
+
+/* ---------- phoolon ki barsaat ---------- */
+.dd-petal {
+  position: absolute;
+  top: 0;
+  will-change: transform, opacity;
+  animation: ddFall linear infinite;
+}
+.dd-petal > span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  will-change: transform;
+  animation: ddSway ease-in-out infinite alternate;
+}
+@keyframes ddFall {
+  0%   { transform: translate3d(0, -10vh, 0); opacity: 0; }
+  8%   { opacity: var(--po, 0.7); }
+  90%  { opacity: var(--po, 0.7); }
+  100% { transform: translate3d(0, 112vh, 0); opacity: 0; }
+}
+@keyframes ddSway {
+  from { transform: translateX(calc(var(--sway, 30px) * -1)) rotateZ(-30deg) rotateX(0deg); }
+  to   { transform: translateX(var(--sway, 30px)) rotateZ(35deg) rotateX(70deg); }
+}
+
+/* ---------- mala + meditation ---------- */
+/* SVG ke andar ghumne wale hisse (centre = 150,150) */
+.dd-spin     { transform-origin: 150px 150px; animation: ddSpin 120s linear infinite; }
+.dd-spin-rev { transform-origin: 150px 150px; animation: ddSpin 160s linear infinite reverse; }
+/* HTML / poore <svg> element ke liye (GPU par chalta hai, phone par halka) */
+.dd-spin-html { animation: ddSpin 140s linear infinite; }
+.dd-rot       { will-change: transform; animation: ddSpin 120s linear infinite; }
+.dd-rot-rev   { will-change: transform; animation: ddSpin 160s linear infinite reverse; }
+@keyframes ddSpin { to { transform: rotate(360deg); } }
+
+.dd-float      { animation: ddFloat 6s ease-in-out infinite alternate; }
+.dd-float-soft { animation: ddFloat 8s ease-in-out infinite alternate; }
+@keyframes ddFloat {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-10px); }
+}
+
+.dd-glow { animation: ddGlow 5s ease-in-out infinite; }
+@keyframes ddGlow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 1;    transform: scale(1.08); }
+}
+
+.dd-twinkle { animation: ddTwinkle 3s ease-in-out infinite; }
+@keyframes ddTwinkle {
+  0%, 100% { opacity: 0.25; }
+  50%      { opacity: 1; }
+}
+
+/* upar ki taraf udti chingariyan / roshni ke kan */
+.dd-riser {
+  position: absolute;
+  bottom: -8px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, #ffd48a 0%, rgba(240, 138, 36, 0.6) 55%, transparent 75%);
+  opacity: 0;
+  animation: ddRise linear infinite;
+  pointer-events: none;
+}
+@keyframes ddRise {
+  0%   { transform: translate3d(0, 0, 0); opacity: 0; }
+  15%  { opacity: 0.9; }
+  100% { transform: translate3d(16px, -260px, 0); opacity: 0; }
+}
+
+/* mala par tap karne par bahar failti ring */
+.dd-tap-ring {
+  transform-origin: 150px 150px;
+  animation: ddTapRing 0.7s ease-out forwards;
+}
+@keyframes ddTapRing {
+  from { transform: scale(1);    opacity: 0.8; }
+  to   { transform: scale(1.4);  opacity: 0; }
+}
+
+/* meditation: saans ke saath phoolta-sikudta ghera + failti lehren */
+.dd-breath { animation: ddBreath 8s ease-in-out infinite; }
+@keyframes ddBreath {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.07); }
+}
+.dd-ripple { animation: ddRipple 7.8s ease-out infinite; opacity: 0; }
+@keyframes ddRipple {
+  0%   { transform: scale(0.9); opacity: 0.55; }
+  100% { transform: scale(2);   opacity: 0; }
+}
+
+/* Know More popup */
+.dd-modal-in { animation: ddModalIn 0.28s ease-out both; }
+@keyframes ddModalIn {
+  from { opacity: 0; transform: translateY(24px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- Shiva ji ki photo: kinaare dheere se gayab (card me ghul jaye) ---------- */
+.dd-shiva-mask {
+  -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+  mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+@media (min-width: 640px) {
+  .dd-shiva-mask {
+    -webkit-mask-image: linear-gradient(to left, #000 0%, #000 38%, rgba(0, 0, 0, 0.55) 68%, transparent 100%);
+    mask-image: linear-gradient(to left, #000 0%, #000 38%, rgba(0, 0, 0, 0.55) 68%, transparent 100%);
+  }
+}
+
+/* ---------- mobile (phone) ke liye sudhaar ---------- */
+/* mala par tezi se tap karne par zoom ya neela flash na aaye */
+.dd-tap {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+/* calendar page par side me scroll na ho */
+.dd-page { overflow-x: clip; }
+
+@media (max-width: 639px) {
+  /* phone par safe-area (notch) ka dhyan */
+  .dd-page { padding-bottom: env(safe-area-inset-bottom); }
+}
+
+/* jinko animation pasand nahi (phone ki "reduce motion" setting) unke liye sab band */
+@media (prefers-reduced-motion: reduce) {
+  .dd-petal, .dd-petal > span, .dd-spin, .dd-spin-rev, .dd-spin-html, .dd-rot, .dd-rot-rev, .dd-float, .dd-float-soft,
+  .dd-glow, .dd-twinkle, .dd-riser, .dd-tap-ring, .dd-breath, .dd-ripple, .dd-modal-in {
+    animation: none !important;
+  }
+}

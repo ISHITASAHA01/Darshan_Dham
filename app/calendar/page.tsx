@@ -5,35 +5,30 @@ import {
     CalendarDays, ChevronLeft, ChevronRight, ArrowRight,
     Sun, Sunset, Moon, MoonStar, MapPin, Sparkles,
 } from "lucide-react";
+import Link from "next/link";
 import FestivalVisual from "@/components/FestivalVisual";
+// import FestivalModal from "@/components/FestivalModal";
+// import FlowerRain from "@/components/FlowerRain";
+// import Lotus from "@/components/Lotus";
 import { FestivalCountdown, MeditationTimer, DigitalMala } from "@/components/home/HomeExtras";
-import { FESTIVALS, getUpcoming } from "@/lib/festivals";
+import { FESTIVALS, getUpcoming, type Festival } from "@/lib/festivals";
 import SafeImage from "@/components/SafeImage";
+import FestivalModal from "@/components/FestivalModal";
+import Lotus from "@/components/Lotus";
+import FlowerRain from "@/components/FlowerRain";
 
 /* ------------------------------------------------------------------ */
 /*  1. IMAGES — apni images ke naam yahin badlo (public/ folder ke andar) */
 /* ------------------------------------------------------------------ */
 const IMG = {
-    logo: "/images/logo/logo.png",
-    heroLight: "/images/calendar/hero-light.jpg",
-    heroDark: "/images/calendar/hero-dark.jpg",
+    heroLight: "/images/hero/hero4.jpg",   // Pushkar sunset (light mode)
+    heroDark: "/images/hero/hero3.jpg",    // Golden Temple at night (dark mode)
     shivaLight: "/images/calendar/deities/shiva.png",
     shivaDark: "/images/calendar/deities/shiva-dark.png",
-    sidebarLight: "/images/calendar/sidebar-temple.png",
-    sidebarDark: "/images/calendar/sidebar-temple-dark.png",
-    footerLight: "/images/calendar/footer-temple.png",
-    footerDark: "/images/calendar/footer-temple-dark.png",
+    // Daily Panchang ke upar ki asli photo (sunrise / sunset jaisi). Badalni ho to sirf naam badlo.
+    daily: "/images/hero/hero4.jpg",
 };
 
-const NAV = [
-    { name: "Home", href: "/", icon: "🏠" },
-    { name: "Temples", href: "/temples", icon: "🛕" },
-    { name: "States", href: "/states", icon: "🇮🇳" },
-    { name: "Calendar", href: "/calendar", icon: "📅" },
-    { name: "Favorites", href: "/favorites", icon: "❤️" },
-    { name: "Account", href: "/account", icon: "👤" },
-    { name: "Contact", href: "/contact", icon: "✉️" },
-];
 
 const CITIES = [
     "Delhi", "Kolkata", "Mumbai", "Bengaluru", "Chennai", "Hyderabad", "Ahmedabad", "Pune",
@@ -52,9 +47,9 @@ type Mode = "hindu" | "bengali";
 type Tab = "panchang" | "countdown" | "meditation";
 
 const TABS: { id: Tab; label: string }[] = [
-    { id: "panchang", label: "🗓️ Panchang" },
-    { id: "countdown", label: "⏳ Festival Countdown" },
-    { id: "meditation", label: "🧘 Meditation and Mala" },
+    { id: "panchang", label: "Panchang" },
+    { id: "countdown", label: "Festival Countdown" },
+    { id: "meditation", label: "Meditation and Mala" },
 ];
 
 /* ------------------------------ helpers ------------------------------ */
@@ -122,25 +117,25 @@ export default function CalendarPage() {
     const [month, setMonth] = useState(today.getMonth());
     const [year, setYear] = useState(today.getFullYear());
     const [selectedDate, setSelectedDate] = useState(fmt(today));
-    const [isDark, setIsDark] = useState(false);
+
+    const [modalFest, setModalFest] = useState<Festival | null>(null);
 
     const [panchang, setPanchang] = useState<any>(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
-    /* theme */
+    /* /calendar?date=2026-12-01 se aaye to wahi din khule (festivals page ke "View in calendar" ke liye) */
     useEffect(() => {
-        const dark = localStorage.getItem("theme") === "dark";
-        setIsDark(dark);
-        document.documentElement.classList.toggle("dark", dark);
+        const d = new URLSearchParams(window.location.search).get("date");
+        if (!d || !/^\d{4}-\d{2}-\d{2}$/.test(d)) return;
+        const dt = new Date(`${d}T12:00:00`);
+        if (Number.isNaN(dt.getTime())) return;
+        setSelectedDate(d);
+        setMonth(dt.getMonth());
+        setYear(dt.getFullYear());
+        const t = setTimeout(() => document.getElementById("panchang-details")?.scrollIntoView({ behavior: "smooth", block: "center" }), 400);
+        return () => clearTimeout(t);
     }, []);
-
-    function toggleTheme() {
-        const next = !isDark;
-        setIsDark(next);
-        document.documentElement.classList.toggle("dark", next);
-        localStorage.setItem("theme", next ? "dark" : "light");
-    }
 
     /* panchang fetch */
     useEffect(() => {
@@ -191,6 +186,12 @@ export default function CalendarPage() {
         setSelectedDate(fmt(d));
         if (d.getMonth() !== month) { setMonth(d.getMonth()); setYear(d.getFullYear()); }
     }
+    /* Know More popup se "View Panchang" dabane par us din ka panchang dikhao */
+    function viewPanchang(iso: string) {
+        setTab("panchang");
+        pick(new Date(`${iso}T12:00:00`));
+        setTimeout(() => document.getElementById("panchang-details")?.scrollIntoView({ behavior: "smooth", block: "center" }), 120);
+    }
     function goToday() { pick(today); setMonth(today.getMonth()); setYear(today.getFullYear()); }
 
     /* data */
@@ -235,100 +236,43 @@ export default function CalendarPage() {
             ];
 
     return (
-        <main className="min-h-screen bg-gradient-to-b from-[#fffaf1] via-[#fff4e3] to-[#fdebd3] text-[#2b1b0e] transition-colors duration-300 dark:from-[#0f1c2a] dark:via-[#111d2b] dark:to-[#132334] dark:text-[#f5ead8] lg:pl-64">
+        <main className="dd-page relative min-h-screen bg-gradient-to-b from-[#fffaf1] via-[#fff4e3] to-[#fdebd3] text-[#2b1b0e] transition-colors duration-300 dark:from-[#0f1c2a] dark:via-[#111d2b] dark:to-[#132334] dark:text-[#f5ead8]">
 
-            {/* ============ SIDEBAR (desktop) ============ */}
-            <aside className="fixed left-0 top-0 z-50 hidden h-screen w-64 flex-col overflow-y-auto border-r border-amber-200/70 bg-[#fffaf2] px-5 py-6 dark:border-amber-400/15 dark:bg-[#0c1724] lg:flex">
-                <div className="mb-8 flex flex-col items-center text-center">
-                    <SafeImage src={IMG.logo} alt="Darshan Dham" width={56} height={56} className="object-contain" />
-                    <h2 className="mt-2 font-heading text-2xl font-bold">Darshan Dham</h2>
-                    <p className={`text-[11px] ${muted}`}>Explore · Pray · Discover</p>
-                </div>
+            {/* poori screen par dheemi phoolon ki barsaat */}
+            <FlowerRain />
 
-                <nav className="space-y-1.5">
-                    {NAV.map((n) => (
-                        <a key={n.name} href={n.href}
-                            className={`flex items-center gap-3 rounded-full px-4 py-2.5 text-sm font-semibold transition ${n.name === "Calendar"
-                                ? "bg-gradient-to-r from-[#e8a23a] to-[#d68b2e] text-white shadow-md"
-                                : `${muted} hover:bg-amber-100/60 dark:hover:bg-white/5`}`}>
-                            <span>{n.icon}</span>{n.name}
-                        </a>
-                    ))}
-                </nav>
-
-                <div className="mt-auto pt-6">
-                    <div className="relative h-44 w-full">
-                        <SafeImage src={IMG.sidebarLight} alt="" fill sizes="256px" className="object-contain dark:hidden" />
-                        <SafeImage src={IMG.sidebarDark} alt="" fill sizes="256px" className="hidden object-contain dark:block" />
-                    </div>
-                    <p className={`mt-3 text-center text-xs italic leading-5 ${muted}`}>
-                        “Every day is a new opportunity to connect with the divine.”
-                    </p>
-                    <button onClick={toggleTheme}
-                        className="mt-4 flex w-full items-center justify-center gap-2 rounded-full border border-amber-300/60 bg-white/60 py-2.5 text-sm font-bold transition hover:border-amber-500 dark:border-amber-400/25 dark:bg-white/5">
-                        {isDark ? "☀️ Light Theme" : "🌙 Dark Theme"}
-                    </button>
-                </div>
-            </aside>
-
-            <div className="mx-auto max-w-[1400px] space-y-5 px-3 py-4 sm:px-6 sm:py-6">
-
-                {/* ============ MOBILE TOP BAR ============ */}
-                <div className="space-y-3 lg:hidden">
-                    <div className={`${card} flex items-center justify-between p-3`}>
-                        <div className="flex items-center gap-2.5">
-                            <SafeImage src={IMG.logo} alt="Darshan Dham" width={40} height={40} />
-                            <div>
-                                <p className="font-heading font-bold leading-tight">Darshan Dham</p>
-                                <p className={`text-[10px] ${muted}`}>Explore · Pray · Discover</p>
-                            </div>
-                        </div>
-                        <button onClick={toggleTheme} aria-label="Toggle theme"
-                            className="rounded-full border border-amber-300/60 bg-white/60 px-3 py-2 text-sm dark:border-amber-400/25 dark:bg-white/5">
-                            {isDark ? "☀️" : "🌙"}
-                        </button>
-                    </div>
-                    <nav className="-mx-3 flex gap-2 overflow-x-auto px-3 pb-1">
-                        {NAV.map((n) => (
-                            <a key={n.name} href={n.href}
-                                className={`shrink-0 rounded-full px-4 py-2 text-xs font-semibold ${n.name === "Calendar"
-                                    ? "bg-[#df922e] text-white"
-                                    : "border border-amber-200/70 bg-white/70 dark:border-amber-400/20 dark:bg-[#1b2b3c]/80"}`}>
-                                {n.icon} {n.name}
-                            </a>
-                        ))}
-                    </nav>
-                </div>
+            <div className="mx-auto max-w-[1400px] space-y-4 px-3 py-4 sm:space-y-5 sm:px-6 sm:py-6">
 
                 {/* ============ HERO ============ */}
-                <section className="relative isolate overflow-hidden rounded-[2rem] shadow-xl">
+                <section className="relative isolate overflow-hidden rounded-[1.5rem] shadow-xl sm:rounded-[2rem]">
                     <div className="absolute inset-0 -z-10">
-                        <SafeImage src={IMG.heroLight} alt="Sacred temple at sunrise" fill priority sizes="100vw"
-                            className="object-cover object-[75%_center] dark:hidden" />
-                        <SafeImage src={IMG.heroDark} alt="Sacred temple at night" fill priority sizes="100vw"
-                            className="hidden object-cover object-[75%_center] dark:block" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#fff3df] via-[#fff3df]/80 to-[#fff3df]/10 dark:from-[#111d2b] dark:via-[#111d2b]/75 dark:to-transparent sm:via-[#fff3df]/55 sm:dark:via-[#111d2b]/45" />
+                        <SafeImage src={IMG.heroLight} alt="Sacred temple at sunset" fill priority sizes="100vw"
+                            className="object-cover dark:hidden" />
+                        <SafeImage src={IMG.heroDark} alt="Golden Temple at night" fill priority sizes="100vw"
+                            className="hidden object-cover dark:block" />
+                        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/10" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
                     </div>
 
-                    <div className="px-5 py-8 sm:px-10 sm:py-12 lg:px-14">
-                        <div className="max-w-xl">
-                            <p className={`text-[11px] font-bold uppercase tracking-[0.25em] sm:text-xs ${accent}`}>
+                    <div className="px-5 py-10 sm:px-10 sm:py-20 lg:px-14">
+                        <div className="max-w-xl text-white">
+                            <p className="text-[11px] font-bold uppercase tracking-[0.3em] text-[#f3c477] sm:text-xs">
                                 Darshan Dham · Sanatan Calendar
                             </p>
-                            <h1 className="mt-3 font-heading text-4xl font-bold leading-tight text-[#3a2410] dark:text-[#f6c36b] sm:text-6xl">
+                            <h1 className="mt-3 font-heading text-[2.5rem] font-bold leading-tight sm:text-6xl">
                                 Sacred Calendar
                             </h1>
-                            <p className="mt-3 text-sm leading-6 text-[#4a3520] dark:text-white/85 sm:text-xl">
+                            <p className="mt-3 text-sm leading-6 text-white/85 sm:text-lg">
                                 Discover Hindu Panchang and Bengali Panjika
                             </p>
-                            <p className={`mt-1 text-xs sm:text-sm ${accent}`}>॥ ॐ नमः शिवाय ॥</p>
+                            <p className="mt-1 text-xs text-[#f3c477] sm:text-sm">॥ ॐ नमः शिवाय ॥</p>
 
-                            <div className="mt-6 flex flex-wrap gap-3">
-                                {([["hindu", "🕉️ Hindu Panchang"], ["bengali", "🌺 Bengali Panjika"]] as const).map(([m, label]) => (
+                            <div className="mt-6 flex flex-wrap gap-2.5 sm:mt-7 sm:gap-3">
+                                {([["hindu", "Hindu Panchang"], ["bengali", "Bengali Panjika"]] as const).map(([m, label]) => (
                                     <button key={m} onClick={() => setMode(m)}
-                                        className={`rounded-full px-5 py-2.5 text-sm font-bold transition ${mode === m
+                                        className={`rounded-full px-5 py-2.5 text-sm font-bold transition sm:px-6 ${mode === m
                                             ? "bg-gradient-to-r from-[#e8a23a] to-[#d68b2e] text-white shadow-lg"
-                                            : "border border-amber-300/70 bg-white/70 text-[#4a3520] backdrop-blur hover:bg-white dark:border-white/25 dark:bg-white/10 dark:text-white"}`}>
+                                            : "border border-white/40 bg-black/25 text-white backdrop-blur hover:bg-white/20"}`}>
                                         {label}
                                     </button>
                                 ))}
@@ -339,10 +283,10 @@ export default function CalendarPage() {
 
                 {/* ============ TABS ============ */}
                 <div role="tablist" aria-label="Calendar sections"
-                    className="-mx-3 flex gap-2 overflow-x-auto px-3 pb-1 sm:mx-0 sm:justify-center sm:px-0">
+                    className="-mx-3 flex snap-x gap-2 overflow-x-auto px-3 pb-1 [scrollbar-width:none] sm:mx-0 sm:justify-center sm:px-0 [&::-webkit-scrollbar]:hidden">
                     {TABS.map((t) => (
                         <button key={t.id} role="tab" aria-selected={tab === t.id} onClick={() => setTab(t.id)}
-                            className={`shrink-0 rounded-full px-5 py-2.5 text-sm font-bold transition ${tab === t.id
+                            className={`shrink-0 snap-start rounded-full px-5 py-2.5 text-sm font-bold transition ${tab === t.id
                                 ? "bg-gradient-to-r from-[#e8a23a] to-[#d68b2e] text-white shadow-md"
                                 : "border border-amber-200/70 bg-white/80 hover:border-amber-500 dark:border-amber-400/20 dark:bg-[#1b2b3c]/80"}`}>
                             {t.label}
@@ -420,27 +364,34 @@ export default function CalendarPage() {
                             </div>
 
                             {/* Today's Panchang */}
-                            <div id="panchang-details" className={`${card} relative overflow-hidden`}>
-                                <div className="absolute inset-y-0 right-0 w-[55%] sm:w-[48%]">
-                                    <SafeImage src={IMG.shivaLight} alt="Lord Shiva" fill sizes="(max-width:1280px) 50vw, 25vw"
-                                        className="object-contain object-right-bottom dark:hidden" />
-                                    <SafeImage src={IMG.shivaDark} alt="Lord Shiva" fill sizes="(max-width:1280px) 50vw, 25vw"
-                                        className="hidden object-contain object-right-bottom dark:block" />
-                                    <div className="absolute inset-0 bg-gradient-to-r from-[#fffaf2] via-[#fffaf2]/40 to-transparent dark:from-[#1b2b3c] dark:via-[#1b2b3c]/40" />
+                            <div id="panchang-details" className={`${card} relative scroll-mt-24 overflow-hidden`}>
+
+                                {/* Shiva ji: desktop par daayein, phone par upar. Kinaare card me ghul jaate hain. */}
+                                <div className="dd-shiva-mask pointer-events-none absolute inset-x-0 top-0 h-52 sm:inset-y-0 sm:left-auto sm:right-0 sm:h-auto sm:w-[46%]">
+                                    {/* light mode */}
+                                    <div className="absolute inset-0 dark:hidden">
+                                        <SafeImage src={IMG.shivaLight} alt="Lord Shiva" fill sizes="(max-width:640px) 100vw, 28vw"
+                                            className="object-cover object-[50%_25%]" />
+                                    </div>
+                                    {/* dark mode: neeche ki likhai (watermark) card se bahar kat jaye, isliye 118% lamba */}
+                                    <div className="absolute inset-x-0 top-0 hidden h-[118%] dark:block">
+                                        <SafeImage src={IMG.shivaDark} alt="Lord Shiva" fill sizes="(max-width:640px) 100vw, 28vw"
+                                            className="object-cover object-top" />
+                                    </div>
                                 </div>
 
-                                <div className="relative flex h-full flex-col p-5 sm:p-6">
+                                <div className="relative flex h-full flex-col p-5 pt-44 sm:w-[60%] sm:p-6 sm:pt-6">
                                     <div className="flex items-center justify-between gap-2">
                                         <h2 className="flex items-center gap-2 font-heading text-xl font-bold">
-                                            <span className="text-2xl">🪷</span> Today’s Panchang
+                                            <Lotus size={30} /> Today’s Panchang
                                         </h2>
                                         <a href="#panchang-strip"
-                                            className={`flex items-center gap-1 rounded-full border border-amber-300/70 bg-white/70 px-3 py-1 text-xs font-bold dark:border-amber-400/30 dark:bg-white/5 ${accent}`}>
+                                            className={`flex shrink-0 items-center gap-1 rounded-full border border-amber-300/70 bg-white/80 px-3 py-1 text-xs font-bold backdrop-blur dark:border-amber-400/30 dark:bg-black/30 ${accent}`}>
                                             View Details <ArrowRight className="h-3 w-3" />
                                         </a>
                                     </div>
 
-                                    <p className="mt-5 font-heading text-2xl font-bold sm:text-3xl">{longDate} · {weekday}</p>
+                                    <p className="mt-4 font-heading text-[1.65rem] font-bold leading-tight sm:mt-5 sm:text-3xl">{longDate} · {weekday}</p>
                                     <p className={`mt-1 flex items-center gap-1 text-sm ${muted}`}><MapPin className="h-3.5 w-3.5" />{cityName}</p>
 
                                     {loading ? (
@@ -450,12 +401,12 @@ export default function CalendarPage() {
                                     ) : (
                                         <dl className="mt-5 space-y-2.5 text-sm sm:text-base">
                                             {todayRows.map(([k, v]) => (
-                                                <div key={k} className="grid grid-cols-[100px_10px_1fr] items-baseline sm:grid-cols-[120px_10px_1fr]">
+                                                <div key={k} className="grid grid-cols-[104px_10px_1fr] items-baseline sm:grid-cols-[110px_10px_1fr]">
                                                     <dt className="flex items-center gap-2 text-[#7a6650] dark:text-[#d6c9b3]">
-                                                        <i className="h-2.5 w-2.5 rounded-full bg-[#e39a2f]" />{k}
+                                                        <i className="h-2.5 w-2.5 shrink-0 rounded-full bg-[#e39a2f]" />{k}
                                                     </dt>
                                                     <span>:</span>
-                                                    <dd className="max-w-[55%] font-semibold sm:max-w-none">{v}</dd>
+                                                    <dd className="font-semibold">{v}</dd>
                                                 </div>
                                             ))}
                                         </dl>
@@ -463,11 +414,11 @@ export default function CalendarPage() {
 
                                     <div className="mt-auto grid grid-cols-2 gap-3 pt-6">
                                         <div className="flex items-center gap-2.5">
-                                            <Sun className="h-7 w-7 text-[#e39a2f]" />
+                                            <Sun className="h-7 w-7 shrink-0 text-[#e39a2f]" />
                                             <div><p className={`text-[11px] ${muted}`}>Sunrise</p><p className="text-sm font-bold">{sunrise}</p></div>
                                         </div>
                                         <div className="flex items-center gap-2.5">
-                                            <Sunset className="h-7 w-7 text-[#e0562f]" />
+                                            <Sunset className="h-7 w-7 shrink-0 text-[#e0562f]" />
                                             <div><p className={`text-[11px] ${muted}`}>Sunset</p><p className="text-sm font-bold">{sunset}</p></div>
                                         </div>
                                     </div>
@@ -480,12 +431,13 @@ export default function CalendarPage() {
                             <div className={`${card} p-4 sm:p-5`}>
                                 <div className="flex items-center justify-between">
                                     <h2 className="flex items-center gap-2 font-heading text-lg font-bold"><span>🌸</span>Upcoming Festivals</h2>
-                                    <a href="/festivals" className={`flex items-center gap-1 text-sm font-bold ${accent}`}>View All <ArrowRight className="h-4 w-4" /></a>
+                                    <Link href="/calendar/festivals" className={`flex items-center gap-1 text-sm font-bold ${accent}`}>View All <ArrowRight className="h-4 w-4" /></Link>
                                 </div>
                                 <div className="mt-3 grid grid-cols-2 gap-3 sm:grid-cols-4">
                                     {upcoming.map((f) => (
                                         <button key={f.name + f.date}
-                                            onClick={() => pick(new Date(`${f.date}T12:00:00`))}
+                                            onClick={() => setModalFest(f)}
+                                            aria-label={`${f.name}, know more`}
                                             className="group overflow-hidden rounded-xl border border-amber-200/70 bg-white/95 text-center shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-amber-400/20 dark:bg-[#0c1724]">
                                             <div className="relative h-20 overflow-hidden sm:h-24">
                                                 <FestivalVisual name={f.name} sizes="(max-width:640px) 45vw, 15vw"
@@ -507,7 +459,7 @@ export default function CalendarPage() {
                                     <p className="text-sm font-bold text-[#ffd48a]">Festival of the Month</p>
                                     <h3 className="mt-1 font-heading text-3xl font-bold">{featured.name}</h3>
                                     <p className="mt-1 text-sm text-white/85">{prettyDate(featured.date)} · Auspicious day for new beginnings</p>
-                                    <button onClick={() => pick(new Date(`${featured.date}T12:00:00`))}
+                                    <button onClick={() => setModalFest(featured)}
                                         className="mt-4 flex w-fit items-center gap-2 rounded-full border border-white/50 bg-white/15 px-5 py-2 text-sm font-bold backdrop-blur transition hover:bg-white/30">
                                         Know More <ArrowRight className="h-4 w-4" />
                                     </button>
@@ -516,67 +468,74 @@ export default function CalendarPage() {
                         </section>
 
                         {/* ============ DAILY PANCHANG DETAILS STRIP ============ */}
-                        <section id="panchang-strip" className={`${card} relative overflow-hidden p-4 sm:p-5`}>
-                            <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-1/3 md:block">
-                                <SafeImage src={IMG.footerLight} alt="" fill sizes="30vw" className="object-contain object-right dark:hidden" />
-                                <SafeImage src={IMG.footerDark} alt="" fill sizes="30vw" className="hidden object-contain object-right dark:block" />
-                            </div>
+                        <section id="panchang-strip" className={`${card} relative scroll-mt-24 overflow-hidden`}>
 
-                            <div className="relative flex flex-wrap items-center justify-between gap-2">
-                                <h2 className="flex items-center gap-2 font-heading text-lg font-bold">
-                                    <span>🌼</span>Daily Panchang Details
-                                </h2>
-                                <div className="flex items-center gap-2">
-                                    <label htmlFor="city" className="sr-only">City</label>
-                                    <MapPin className={`h-4 w-4 ${accent}`} />
-                                    <select id="city" value={city} onChange={(e) => setCity(e.target.value)}
-                                        className="rounded-full border border-amber-300/60 bg-white/80 px-3 py-1.5 text-sm outline-none focus:border-amber-500 dark:border-amber-400/25 dark:bg-[#0c1724]">
-                                        {CITIES.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
-                                    </select>
+                            {/* upar asli photo ki patti: title aur city us par */}
+                            <div className="relative isolate h-32 sm:h-36">
+                                <SafeImage src={IMG.daily} alt="Sunrise over a sacred lake" fill sizes="(max-width:1400px) 100vw, 1400px"
+                                    className="-z-10 object-cover object-[50%_60%] dark:brightness-[0.8]" />
+                                <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/70 via-black/25 to-black/10" />
+                                <div className="flex h-full flex-wrap items-end justify-between gap-2 p-4 sm:p-5">
+                                    <h2 className="flex items-center gap-2 font-heading text-lg font-bold text-white drop-shadow sm:text-xl">
+                                        <span>🌼</span>Daily Panchang Details
+                                    </h2>
+                                    <div className="flex items-center gap-2">
+                                        <label htmlFor="city" className="sr-only">City</label>
+                                        <MapPin className="h-4 w-4 text-[#ffd48a]" />
+                                        <select id="city" value={city} onChange={(e) => setCity(e.target.value)}
+                                            className="rounded-full border border-white/40 bg-white/90 px-3 py-1.5 text-sm text-[#2b1b0e] outline-none focus:border-amber-500 dark:bg-[#0c1724] dark:text-[#f5ead8]">
+                                            {CITIES.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+                                        </select>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div className="relative mt-4 grid grid-cols-2 gap-4 md:grid-cols-4 md:divide-x md:divide-amber-200/70 dark:md:divide-white/10">
-                                {strip.map((s) => (
-                                    <div key={s.label} className="flex items-center justify-center gap-3 md:px-3">
-                                        <span className="text-[#e39a2f] [&>svg]:h-8 [&>svg]:w-8 dark:text-[#f3b552]">{s.icon}</span>
-                                        <div>
-                                            <p className={`text-[11px] ${muted}`}>{s.label}</p>
-                                            <p className="text-sm font-bold">{loading ? "…" : s.value}</p>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            {mode === "hindu" && (
-                                <p className={`relative mt-4 border-t border-amber-200/60 pt-3 text-xs dark:border-white/10 ${muted}`}>
-                                    Vikram Samvat: <b className="text-[#2b1b0e] dark:text-[#f5ead8]">{samvat}</b>
-                                </p>
-                            )}
-
-                            {apiFestivals.length > 0 && !loading && (
-                                <div className="relative mt-3 flex flex-wrap gap-3">
-                                    {apiFestivals.map((name) => (
-                                        <div key={name} className="flex items-center gap-2 rounded-full border border-amber-200/70 bg-white/70 py-1 pl-1 pr-4 dark:border-amber-400/20 dark:bg-white/5">
-                                            <span className="relative h-9 w-9 overflow-hidden rounded-full">
-                                                <FestivalVisual name={name} sizes="36px" />
-                                            </span>
-                                            <span className="text-sm font-bold">{name}</span>
+                            <div className="p-4 sm:p-5">
+                                <div className="grid grid-cols-2 gap-x-3 gap-y-4 md:grid-cols-4 md:divide-x md:divide-amber-200/70 dark:md:divide-white/10">
+                                    {strip.map((s) => (
+                                        <div key={s.label} className="flex items-center gap-2.5 md:justify-center md:gap-3 md:px-3">
+                                            <span className="text-[#e39a2f] dark:text-[#f3b552] [&>svg]:h-7 [&>svg]:w-7 sm:[&>svg]:h-8 sm:[&>svg]:w-8">{s.icon}</span>
+                                            <div className="min-w-0">
+                                                <p className={`text-[11px] ${muted}`}>{s.label}</p>
+                                                <p className="truncate text-sm font-bold">{loading ? "…" : s.value}</p>
+                                            </div>
                                         </div>
                                     ))}
                                 </div>
-                            )}
+
+                                {mode === "hindu" && (
+                                    <p className={`mt-4 border-t border-amber-200/60 pt-3 text-xs dark:border-white/10 ${muted}`}>
+                                        Vikram Samvat: <b className="text-[#2b1b0e] dark:text-[#f5ead8]">{samvat}</b>
+                                    </p>
+                                )}
+
+                                {apiFestivals.length > 0 && !loading && (
+                                    <div className="mt-3 flex flex-wrap gap-2.5 sm:gap-3">
+                                        {apiFestivals.map((name) => (
+                                            <div key={name} className="flex items-center gap-2 rounded-full border border-amber-200/70 bg-white/70 py-1 pl-1 pr-4 dark:border-amber-400/20 dark:bg-white/5">
+                                                <span className="relative h-9 w-9 shrink-0 overflow-hidden rounded-full">
+                                                    <FestivalVisual name={name} sizes="36px" />
+                                                </span>
+                                                <span className="text-sm font-bold">{name}</span>
+                                            </div>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
                         </section>
 
                     </>
                 )}
 
                 <footer className="pb-4 text-center">
-                    <p className={`font-heading text-base font-semibold ${accent}`}>
-                        🪷 May your journey be blessed with peace, devotion and divine light.
+                    <p className={`flex items-center justify-center gap-2 font-heading text-base font-semibold ${accent}`}>
+                        <Lotus size={26} /> May your journey be blessed with peace, devotion and divine light.
                     </p>
                 </footer>
             </div>
+
+            {/* Know More popup */}
+            <FestivalModal festival={modalFest} onClose={() => setModalFest(null)} onViewPanchang={viewPanchang} />
         </main>
     );
 }

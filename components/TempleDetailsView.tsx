@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 // import { MapPin, Clock, Flame, Navigation, ScrollText, ZoomIn, Music } from "lucide-react";
@@ -11,11 +10,6 @@ import {
     ScrollText,
     ZoomIn,
     Music,
-    Play,
-    Pause,
-    SkipBack,
-    SkipForward,
-    Heart,
 } from "lucide-react";
 import type { Temple } from "@/data/temples";
 import TempleStory from "@/components/TempleStory";
@@ -23,8 +17,13 @@ import TempleIcon from "@/components/TempleIcon";
 import PujaList from "@/components/PujaList";
 import VisitInfo from "@/components/VisitInfo";
 import ImageLightbox from "@/components/ImageLightbox";
+import BhajanSection from "@/components/BhajanSection";
+// import { LYRICS_HI } from "@/data/bhajanLyricsHi";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { locName, locCity, locState, locDeity, locTimings } from "@/i18n/localize";
+import { LYRICS_HI } from "@/data/bhajanLyricsHi";
+import { useEffect } from "react";
+import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 
 // ---- Bhajan & Aarti (deity ke hisaab se list) ----
 type Bhajan = { title: string; kind: string };
@@ -1518,174 +1517,6 @@ Napadam Tasya Pashyami Shokaduhkhabhayam Na Hi.
 Yaistu Bhaktya Smrita Nityam Tesham Vriddhih Prajayate,
 Ye Tvaam Smaranti Deveshi Rakshase Tan Na Sanshayah.`,
 };
-// Hindi lyrics (Devanagari). Naam bilkul English wale jaisa rakhna.
-const LYRICS_HI: Record<string, string> = {
-
-
-};
-
-// Bengali lyrics
-const LYRICS_BN: Record<string, string> = {
-    //     "Hanuman Chalisa": `প্রারম্ভিক দোহা
-
-};
-
-// Urdu lyrics
-const LYRICS_UR: Record<string, string> = {
-
-};
-
-const LYRICS_BY_LANG: Record<string, Record<string, string>> = {
-    hi: LYRICS_HI,
-    bn: LYRICS_BN,
-    ur: LYRICS_UR,
-};
-
-// Diya (lamp) illustration - inline SVG, koi image file nahi chahiye
-
-
-function BhajanItem({ b }: { b: Bhajan }) {
-    const about = ABOUT[b.title];
-    const lyrics = LYRICS[b.title]?.trim() ?? "";
-
-    return (
-        <li>
-            <details className="py-2">
-                <summary className="flex cursor-pointer list-none items-center justify-between gap-3 hover:text-saffron">
-                    <span className="text-foreground">
-                        {b.title}{" "}
-                        <span className="text-xs text-brown">▾</span>
-                    </span>
-
-                    <span className="rounded-full bg-saffron-light px-2.5 py-0.5 text-xs text-saffron-dark">
-                        {b.kind}
-                    </span>
-                </summary>
-
-                {about && (
-                    <p className="mt-3 text-sm leading-relaxed text-brown">
-                        {about}
-                    </p>
-                )}
-
-                {lyrics && (
-                    <p className="mt-3 whitespace-pre-line rounded-lg bg-saffron-light/40 p-3 text-sm leading-relaxed text-foreground">
-                        {lyrics}
-                    </p>
-                )}
-            </details>
-        </li>
-    );
-}
-
-
-function DiyaArt() {
-    return (
-        <svg viewBox="0 0 120 120" className="h-20 w-20 shrink-0" aria-hidden="true">
-            <defs>
-                <radialGradient id="diya-glow" cx="50%" cy="40%" r="60%">
-                    <stop offset="0%" stopColor="#ffe9a8" />
-                    <stop offset="100%" stopColor="#f6e4cc" stopOpacity="0" />
-                </radialGradient>
-            </defs>
-            <circle cx="60" cy="52" r="46" fill="url(#diya-glow)" />
-            <path d="M60 18 C70 34 74 42 60 56 C46 42 50 34 60 18Z" fill="#d9822b" />
-            <path d="M60 30 C65 40 66 45 60 53 C54 45 55 40 60 30Z" fill="#ffd36e" />
-            <path d="M22 66 Q60 62 98 66 Q92 96 60 98 Q28 96 22 66Z" fill="#b8681a" />
-            <ellipse cx="60" cy="66" rx="38" ry="6" fill="#d9822b" />
-            <rect x="44" y="98" width="32" height="6" rx="3" fill="#5a3e2b" />
-        </svg>
-    );
-}
-
-
-function BhajanPlayer() {
-    const [isFavorite, setIsFavorite] = useState(false);
-
-    return (
-        <div className="mt-5 rounded-2xl border border-[#ead5b5] bg-gradient-to-br from-[#fffaf0] via-[#fff5e5] to-[#f8e5c9] p-5 shadow-md">
-
-            <div className="flex items-center gap-4">
-                <div className="flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br from-[#e6a13b] to-[#a95716] shadow-md">
-                    <Flame className="h-9 w-9 text-white" />
-                </div>
-
-                <div className="min-w-0 flex-1">
-                    <p className="text-xs font-semibold uppercase tracking-widest text-[#a66a27]">
-                        Featured Bhajan
-                    </p>
-                    <h3 className="mt-1 font-heading text-lg font-bold text-[#603b20]">
-                        Om Jai Jagdish Hare
-                    </h3>
-                    <p className="text-sm text-[#98734e]">
-                        Aarti • Devotional Music
-                    </p>
-                </div>
-
-                <button
-                    type="button"
-                    onClick={() => setIsFavorite(!isFavorite)}
-                    aria-label="Toggle favourite"
-                    className="rounded-full p-2 hover:bg-white/70"
-                >
-                    <Heart
-                        className={`h-6 w-6 ${isFavorite
-                            ? "fill-red-500 text-red-500"
-                            : "text-[#a66a27]"
-                            }`}
-                    />
-                </button>
-            </div>
-
-            <div className="mt-6">
-                <div className="h-1.5 overflow-hidden rounded-full bg-[#e8d4b8]">
-                    <div className="h-full w-0 rounded-full bg-[#c47a24]" />
-                </div>
-
-                <div className="mt-2 flex justify-between text-xs text-[#98734e]">
-                    <span>00:00</span>
-                    <span>--:--</span>
-                </div>
-            </div>
-
-            <div className="mt-4 flex items-center justify-center gap-8">
-                <button
-                    type="button"
-                    disabled
-                    className="text-[#a66a27] opacity-40"
-                    aria-label="Previous song"
-                >
-                    <SkipBack size={25} />
-                </button>
-
-                <button
-                    type="button"
-                    disabled
-                    className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#e6a13b] to-[#b96819] text-white shadow-lg opacity-60"
-                    aria-label="Audio not available yet"
-                >
-                    <Play size={27} fill="currentColor" />
-                </button>
-
-                <button
-                    type="button"
-                    disabled
-                    className="text-[#a66a27] opacity-40"
-                    aria-label="Next song"
-                >
-                    <SkipForward size={25} />
-                </button>
-            </div>
-
-            <p className="mt-4 text-center text-xs text-[#98734e]">
-                🙏 Audio will be available soon
-            </p>
-        </div>
-    );
-}
-
-
-
 export default function TempleDetailsView({
     temple,
     image,
@@ -1698,8 +1529,63 @@ export default function TempleDetailsView({
     directions: string;
 }) {
     const { t, lang } = useLanguage();
+
+    useEffect(() => {
+        let active = true;
+
+        const saveRecentView = async () => {
+            try {
+                const supabase = createSupabaseBrowserClient();
+
+                const {
+                    data: { session },
+                    error: sessionError,
+                } = await supabase.auth.getSession();
+
+                if (sessionError) {
+                    throw sessionError;
+                }
+
+                // Guest user ke views save nahi honge
+                if (!active || !session?.user) return;
+
+                const { error } = await supabase
+                    .from("recent_views")
+                    .upsert(
+                        {
+                            user_id: session.user.id,
+                            temple_slug: temple.slug,
+                            viewed_at: new Date().toISOString(),
+                        },
+                        {
+                            onConflict: "user_id,temple_slug",
+                        }
+                    );
+
+                if (error) {
+                    throw error;
+                }
+            } catch (error) {
+                console.error("Recent view save error:", error);
+            }
+        };
+
+        saveRecentView();
+
+        return () => {
+            active = false;
+        };
+    }, [temple.slug]);
+
     const name = locName(temple.slug, temple.name, lang);
     const bhajans = getBhajans(temple.deity);
+    const tracks = bhajans.map((b) => ({
+        title: b.title,
+        kind: b.kind,
+        about: ABOUT[b.title],
+        lyrics: LYRICS[b.title]?.trim() || undefined,
+        lyricsHi: LYRICS_HI[b.title]?.trim() || undefined,
+    }));
 
     return (
         <main>
@@ -1746,16 +1632,7 @@ export default function TempleDetailsView({
                     <h2 className="mb-3 mt-10 flex items-center gap-2 font-heading text-2xl font-semibold">
                         <Music className="h-6 w-6 text-saffron" /> Bhajan & Aarti
                     </h2>
-                    <BhajanPlayer />
-                    <div className="flex items-center gap-4 rounded-xl border border-saffron-light bg-white p-5 shadow-sm">
-                        <DiyaArt />
-                        <ul className="flex-1 divide-y divide-saffron-light text-sm">
-                            {bhajans.map((b, i) => (
-                                <BhajanItem key={i} b={b} />
-                            ))}
-
-                        </ul>
-                    </div>
+                    <BhajanSection tracks={tracks} />
 
                     <h2 className="mb-3 mt-10 flex items-center gap-2 font-heading text-2xl font-semibold">
                         <MapPin className="h-6 w-6 text-saffron" /> {t("real_location")}

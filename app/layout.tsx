@@ -52,11 +52,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${playfair.variable} ${poppins.variable} font-sans antialiased`}>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            (function () {
+              try {
+                const theme = localStorage.getItem("theme");
+                document.documentElement.classList.toggle(
+                  "dark",
+                  theme === "dark"
+                );
+              } catch (error) {}
+            })();
+          `,
+          }}
+        />
+      </head>
+
+      <body
+        className={`${playfair.variable} ${poppins.variable} font-sans antialiased`}
+      >
         <PageLoader>
           {/* <ClearGoogleTranslate /> */}
           <GoogleTranslate />
+
           <LanguageProvider>
             <div className="flex min-h-screen flex-col">
               <Navbar />

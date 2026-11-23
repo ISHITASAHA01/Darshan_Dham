@@ -53,10 +53,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    const dark = savedTheme === "dark";
-
-    document.documentElement.classList.toggle("dark", dark);
+    const dark = document.documentElement.classList.contains("dark");
     setIsDark(dark);
   }, []);
 

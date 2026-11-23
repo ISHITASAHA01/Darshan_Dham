@@ -7,6 +7,7 @@ import Link from "next/link";
 import { createSupabaseBrowserClient } from "@/lib/supabase/client";
 import { Eye, EyeOff, Mail, Lock, User, ArrowLeft } from "lucide-react";
 
+
 export default function LoginPage() {
     const router = useRouter();
     const [hovered, setHovered] = useState<"left" | "right" | null>(null);
@@ -204,8 +205,8 @@ export default function LoginPage() {
                                 setMessage("");
                             }}
                             className={`rounded-lg py-3 text-sm font-semibold transition ${mode === "login"
-                                    ? "bg-[var(--color-saffron)] text-white shadow"
-                                    : "text-[var(--muted)]"
+                                ? "bg-[var(--color-saffron)] text-white shadow"
+                                : "text-[var(--muted)]"
                                 }`}
                         >
                             Login
@@ -219,8 +220,8 @@ export default function LoginPage() {
                                 setMessage("");
                             }}
                             className={`rounded-lg py-3 text-sm font-semibold transition ${mode === "signup"
-                                    ? "bg-[var(--color-saffron)] text-white shadow"
-                                    : "text-[var(--muted)]"
+                                ? "bg-[var(--color-saffron)] text-white shadow"
+                                : "text-[var(--muted)]"
                                 }`}
                         >
                             Sign Up

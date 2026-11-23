@@ -16,7 +16,8 @@ export type BhajanTrack = {
     title: string;
     kind: string;
     about?: string;
-    lyrics?: string;
+    lyrics?: string;     // Roman (English akshar) me
+    lyricsHi?: string;   // Hindi (देवनागरी) me
 };
 
 /*
@@ -57,6 +58,7 @@ export default function BhajanSection({ tracks }: { tracks: BhajanTrack[] }) {
     const [currentTime, setCurrentTime] = useState(0);
     const [duration, setDuration] = useState(0);
     const [showLyrics, setShowLyrics] = useState(false);
+    const [script, setScript] = useState<"hi" | "roman">("hi");
     const [favorites, setFavorites] = useState<string[]>([]);
     const [filter, setFilter] = useState("All");
 
@@ -296,28 +298,53 @@ export default function BhajanSection({ tracks }: { tracks: BhajanTrack[] }) {
                     <p className="mt-5 text-sm leading-relaxed text-[#80684e]">{track.about}</p>
                 )}
 
-                {track.lyrics && (
-                    <>
-                        <button
-                            type="button"
-                            onClick={() => setShowLyrics((v) => !v)}
-                            aria-expanded={showLyrics}
-                            className="mt-4 inline-flex items-center gap-2 rounded-full border border-[#e5c99e] bg-white/70 px-4 py-2 text-sm font-semibold text-[#8d451b] hover:bg-white"
-                        >
-                            <FileText size={16} />
-                            {showLyrics ? "Hide lyrics" : "Show lyrics"}
-                        </button>
+                {(track.lyrics || track.lyricsHi) && (() => {
+                    const both = Boolean(track.lyrics && track.lyricsHi);
+                    const active: "hi" | "roman" = both ? script : track.lyricsHi ? "hi" : "roman";
+                    const text = active === "hi" ? track.lyricsHi : track.lyrics;
 
-                        {showLyrics && (
-                            <p
-                                translate="no"
-                                className="notranslate mt-3 max-h-80 overflow-y-auto whitespace-pre-line rounded-xl bg-white/80 p-4 text-base leading-relaxed text-foreground"
-                            >
-                                {track.lyrics}
-                            </p>
-                        )}
-                    </>
-                )}
+                    return (
+                        <>
+                            <div className="mt-4 flex flex-wrap items-center gap-2">
+                                <button
+                                    type="button"
+                                    onClick={() => setShowLyrics((v) => !v)}
+                                    aria-expanded={showLyrics}
+                                    className="inline-flex items-center gap-2 rounded-full border border-[#e5c99e] bg-white/70 px-4 py-2 text-sm font-semibold text-[#8d451b] hover:bg-white"
+                                >
+                                    <FileText size={16} />
+                                    {showLyrics ? "Hide lyrics" : "Show lyrics"}
+                                </button>
+
+                                {showLyrics && both && (
+                                    <div className="inline-flex overflow-hidden rounded-full border border-[#e5c99e] text-xs font-bold" role="group" aria-label="Lyrics script">
+                                        {([["hi", "हिन्दी"], ["roman", "English"]] as const).map(([id, label]) => (
+                                            <button
+                                                key={id}
+                                                type="button"
+                                                onClick={() => setScript(id)}
+                                                aria-pressed={active === id}
+                                                className={`px-3.5 py-2 transition ${active === id ? "bg-[#8d451b] text-white" : "bg-white/70 text-[#8d451b] hover:bg-white"}`}
+                                            >
+                                                {label}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+
+                            {showLyrics && (
+                                <p
+                                    translate="no"
+                                    lang={active === "hi" ? "hi" : "en"}
+                                    className={`notranslate mt-3 max-h-96 overflow-y-auto whitespace-pre-line rounded-xl border border-[#ead5b5] bg-white/80 p-5 text-[#3b2615] ${active === "hi" ? "text-lg leading-9" : "text-base leading-relaxed"}`}
+                                >
+                                    {text}
+                                </p>
+                            )}
+                        </>
+                    );
+                })()}
             </div>
 
             {/* ---------- Playlist ---------- */}

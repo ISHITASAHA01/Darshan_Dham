@@ -6,6 +6,7 @@ import type { Metadata } from "next";
 
 export const revalidate = 60;
 
+
 export async function generateMetadata({
   params,
 }: {
@@ -13,22 +14,41 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const temple = await getTempleBySlug(slug);
+
   if (!temple) return {};
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL ??
+    "https://darshan-dham.vercel.app";
+
   const image = temple.image ?? getTempleImage(temple.slug);
-  const title = `${temple.name}, ${temple.city} - Timings, Aarti & History`;
-  const description = `${temple.name} in ${temple.city}, ${temple.state}. Darshan timings: ${temple.timings}. Aarti times, history, map and directions.`;
+
+  const title = `${temple.name}, ${temple.city} - Darshan Timings, Aarti & History | Darshan Dham`;
+
+  const description =
+    `Explore ${temple.name} in ${temple.city}, ${temple.state}. ` +
+    `Check darshan timings (${temple.timings}), temple history, ` +
+    `aarti information, location and directions on Darshan Dham.`;
 
   return {
     title,
     description,
-    alternates: { canonical: `/temples/${slug}` },
+
+    alternates: {
+      canonical: `${baseUrl}/temples/${slug}`,
+    },
+
     openGraph: {
       title,
       description,
+      url: `${baseUrl}/temples/${slug}`,
+      siteName: "Darshan Dham",
       type: "article",
-      images: image ? [{ url: image }] : undefined,
+      images: image
+        ? [{ url: image, alt: `${temple.name} temple` }]
+        : undefined,
     },
+
     twitter: {
       card: "summary_large_image",
       title,
