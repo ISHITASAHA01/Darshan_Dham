@@ -1,23 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 /**
- * Poori screen par phoolon ki halki barsaat (dheemi gati se).
- * - Mouse/touch ko rokta nahi (pointer-events-none).
- * - Navbar ke neeche rehta hai (z-40), isliye menu par asar nahi.
- * - "Reduce motion" on ho to kuch nahi dikhata.
- * - Mobile par kam petals, taaki phone halka chale.
+ * Phoolon ki halki, dheemi barsaat. Ye teen jagah dikhti hai:
+ *   1. Site pehli baar khulte hi (loader ke baad).
+ *   2. Kisi bhi BUTTON par click karne par (tabs, Count bead, Start, Know More ...).
+ *   3. Kisi bhi menu / section LINK par click karne par (Home, Temples, Calendar ...).
+ * - Har baar kuch phool upar se girte hain aur neeche pahunch kar apne aap hat jaate hain.
+ * - Mala jaisi jagah par tezi se tap karne par bhi screen bhari nahi hoti (MAX_PETALS ki seema).
+ * - Mouse/touch ko rokta nahi (pointer-events-none), navbar ke neeche rehta hai (z-40).
+ * - Phone me "Reduce motion" on ho to kuch nahi dikhata.
  *
- * Use: <FlowerRain />   ya   <FlowerRain count={30} />
+ * Use: <FlowerRain /> ko sirf app/layout.tsx me ek baar rakho (page me alag se mat rakho).
  */
 
 type Petal = {
-    left: number;   // % (screen ki chaudai me)
-    size: number;   // px
-    fall: number;   // girne me kitne second
-    delay: number;  // negative delay = shuru se hi screen par bikhre hue
-    sway: number;   // left-right jhoolne ki doori (px)
+    id: number;
+    left: number;     // % (screen ki chaudai me)
+    size: number;     // px
+    fall: number;     // girne me kitne second
+    delay: number;    // thoda ruk kar shuru (second)
+    sway: number;     // left-right jhoolne ki doori (px)
     swayDur: number;
     opacity: number;
     color: [string, string];
@@ -31,45 +35,83 @@ const PALETTE: [string, string][] = [
     ["#ffd9a0", "#e8902a"], // sunehra
 ];
 
+const MAX_PETALS = 36; // ek saath screen par isse zyada nahi
+
+let uid = 0;
 function build(n: number): Petal[] {
-    return Array.from({ length: n }, () => {
-        const fall = 18 + Math.random() * 16; // 18 se 34 second: bahut dheere
-        return {
-            left: Math.random() * 100,
-            size: 14 + Math.random() * 16,
-            fall,
-            delay: -Math.random() * fall,
-            sway: 20 + Math.random() * 50,
-            swayDur: 4 + Math.random() * 4,
-            opacity: 0.45 + Math.random() * 0.4,
-            color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
-        };
-    });
+    return Array.from({ length: n }, () => ({
+        id: ++uid,
+        left: Math.random() * 100,
+        size: 14 + Math.random() * 16,
+        fall: 9 + Math.random() * 7, // 9 se 16 second: dheere dheere
+        delay: Math.random() * 1.2,
+        sway: 20 + Math.random() * 50,
+        swayDur: 3.5 + Math.random() * 3.5,
+        opacity: 0.5 + Math.random() * 0.4,
+        color: PALETTE[Math.floor(Math.random() * PALETTE.length)],
+    }));
 }
 
-export default function FlowerRain({ count }: { count?: number }) {
+export default function FlowerRain() {
     const [petals, setPetals] = useState<Petal[]>([]);
+    const enabled = useRef(false);
 
     useEffect(() => {
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-        const n = count ?? (window.innerWidth < 640 ? 12 : 22);
-        setPetals(build(n));
-    }, [count]);
+        enabled.current = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+        const shower = (n: number) => setPetals((old) => [...old, ...build(n)].slice(-MAX_PETALS));
+        const small = () => window.innerWidth < 640;
+
+        // 1. site khulte hi (agar loader dikh raha hai to uske jaane ke baad)
+        let seen = false;
+        try { seen = sessionStorage.getItem("dd-loader-seen") === "1"; } catch { /* ignore */ }
+        const first = enabled.current
+            ? setTimeout(() => shower(small() ? 10 : 16), seen ? 400 : 1600)
+            : undefined;
+
+        // 2 + 3. button ya internal link par click
+        const onClick = (e: MouseEvent) => {
+            if (!enabled.current) return;
+            const el = (e.target as Element | null)?.closest?.("button, a[href]");
+            if (!el) return;
+            if (el instanceof HTMLButtonElement) {
+                if (el.disabled) return;
+            } else {
+                const a = el as HTMLAnchorElement;
+                const href = a.getAttribute("href") || "";
+                if (a.target === "_blank" || /^(mailto:|tel:)/.test(href)) return;
+                if (a.origin && a.origin !== window.location.origin) return; // bahar ki site
+            }
+            shower(small() ? 5 : 8);
+        };
+
+        document.addEventListener("click", onClick, true);
+        return () => {
+            if (first) clearTimeout(first);
+            document.removeEventListener("click", onClick, true);
+        };
+    }, []);
 
     if (petals.length === 0) return null;
 
     return (
         <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-40 overflow-hidden">
-            {petals.map((p, i) => (
+            {petals.map((p) => (
                 <div
-                    key={i}
+                    key={p.id}
                     className="dd-petal"
+                    onAnimationEnd={(e) => {
+                        // sirf girne wali animation khatam hone par hatao (jhoolne wali kabhi khatam nahi hoti)
+                        if (e.target === e.currentTarget) setPetals((old) => old.filter((x) => x.id !== p.id));
+                    }}
                     style={{
                         left: `${p.left}%`,
                         width: p.size,
                         height: p.size,
                         animationDuration: `${p.fall}s`,
                         animationDelay: `${p.delay}s`,
+                        animationIterationCount: 1,
+                        animationFillMode: "both",
                         ["--po" as string]: p.opacity,
                         ["--sway" as string]: `${p.sway}px`,
                     } as React.CSSProperties}

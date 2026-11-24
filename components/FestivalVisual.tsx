@@ -2,11 +2,12 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { getFestivalBanner, getFestivalImage, getFestivalStyle } from "@/lib/festivals";
+import { getFestivalImageChain, getFestivalStyle } from "@/lib/festivals";
 
 /**
  * Festival ki photo dikhata hai (public/festivals/ se).
- * Photo load na ho to rang ka background aur halka ॐ dikhta hai.
+ * Pehle us festival ki apni photo (jaise ram-navami.jpg), na mile to category wali photo,
+ * wo bhi na mile to rang ka background aur halka ॐ dikhta hai.
  * Parent element me "relative" class hona zaroori hai.
  */
 export default function FestivalVisual({
@@ -20,13 +21,15 @@ export default function FestivalVisual({
     sizes?: string;
     className?: string;
 }) {
-    const [failed, setFailed] = useState(false);
-    const image = banner ? getFestivalBanner(name) : getFestivalImage(name);
+    const chain = getFestivalImageChain(name, banner);
+    const [tried, setTried] = useState(0); // kitni photos fail ho chuki
+    const failed = tried >= chain.length;
+    const image = chain[Math.min(tried, chain.length - 1)];
 
     return (
         <div className={`absolute inset-0 ${className}`} style={{ background: getFestivalStyle(name).gradient }}>
             {!failed ? (
-                <Image src={image} alt="" fill sizes={sizes} onError={() => setFailed(true)} className="object-cover" />
+                <Image key={image} src={image} alt="" fill sizes={sizes} onError={() => setTried((t) => t + 1)} className="object-cover" />
             ) : (
                 <span className="absolute inset-0 flex select-none items-center justify-center text-6xl text-white/25">ॐ</span>
             )}

@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import { LanguageProvider } from "@/i18n/LanguageContext";
 // import ClearGoogleTranslate from "@/components/ClearGoogleTranslate";
 import PageLoader from "@/components/PageLoader";
+import FlowerRain from "@/components/FlowerRain";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -21,7 +22,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://aapki-site.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://darshan-dham.vercel.app"
   ),
   title: {
     default: "DARSHAN DHAM | Explore Every Temple in India",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
 
 // export const metadata: Metadata = {
 //   metadataBase: new URL(
-//     process.env.NEXT_PUBLIC_SITE_URL ?? "https://aapki-site.vercel.app"
+//     process.env.NEXT_PUBLIC_SITE_URL ?? "https://darshan-dham.vercel.app"
 //   ),
 
 //   title: "DARSHAN DHAM | Explore Every Temple in India",
@@ -52,7 +53,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -77,6 +78,9 @@ export default function RootLayout({
         <PageLoader>
           {/* <ClearGoogleTranslate /> */}
           <GoogleTranslate />
+
+          {/* phoolon ki barsaat: site khulte hi, aur har button / menu click par */}
+          <FlowerRain />
 
           <LanguageProvider>
             <div className="flex min-h-screen flex-col">

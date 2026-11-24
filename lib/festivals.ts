@@ -188,6 +188,85 @@ export function getFestivalImage(name: string): string {
 
 export const getFestivalBanner = (name: string): string => findMedia(name)?.banner ?? getFestivalImage(name);
 
+/* ------------------------------------------------------------------ */
+/*  HAR FESTIVAL KI APNI PHOTO (sabse aasaan tareeka)                   */
+/*  Photo ko public/festivals/ me neeche likhe naam se .jpg me rakh do. */
+/*  Code badalne ki zaroorat nahi. Photo na ho to purani category wali  */
+/*  photo dikhti hai. Naam badalna ho to sirf yahan slug badlo.         */
+/*  (keys: festival ke naam me ye shabd (chhote akshar) mile to match)   */
+/* ------------------------------------------------------------------ */
+export const FESTIVAL_SLUGS: { keys: string[]; slug: string }[] = [
+    { keys: ["tulsi vivah"], slug: "tulsi-vivah" },
+    { keys: ["dev diwali", "dev deepawali"], slug: "dev-diwali" },
+    { keys: ["kalabhairav"], slug: "kalabhairav-jayanti" },
+    { keys: ["utpanna"], slug: "utpanna-ekadashi" },
+    { keys: ["vivah panchami"], slug: "vivah-panchami" },
+    { keys: ["skanda"], slug: "skanda-shashti" },
+    { keys: ["dhanu sankranti"], slug: "dhanu-sankranti" },
+    { keys: ["gita jayanti"], slug: "gita-jayanti" },
+    { keys: ["datta jayanti"], slug: "datta-jayanti" },
+    { keys: ["lohri"], slug: "lohri" },
+    { keys: ["makar sankranti"], slug: "makar-sankranti" },
+    { keys: ["vasant panchami"], slug: "vasant-panchami" },
+    { keys: ["maha shivaratri"], slug: "maha-shivaratri" },
+    { keys: ["holika"], slug: "holika-dahan" },
+    { keys: ["holi"], slug: "holi" },
+    { keys: ["chaitra navratri"], slug: "chaitra-navratri" },
+    { keys: ["ugadi"], slug: "ugadi" },
+    { keys: ["baisakhi"], slug: "baisakhi" },
+    { keys: ["ram navami"], slug: "ram-navami" },
+    { keys: ["hanuman jayanti"], slug: "hanuman-jayanti" },
+    { keys: ["akshaya"], slug: "akshaya-tritiya" },
+    { keys: ["buddha purnima"], slug: "buddha-purnima" },
+    { keys: ["shani jayanti"], slug: "shani-jayanti" },
+    { keys: ["nirjala"], slug: "nirjala-ekadashi" },
+    { keys: ["rath yatra"], slug: "rath-yatra" },
+    { keys: ["devshayani"], slug: "devshayani-ekadashi" },
+    { keys: ["guru purnima"], slug: "guru-purnima" },
+    { keys: ["shravan"], slug: "shravan-sawan" },
+    { keys: ["hariyali"], slug: "hariyali-teej" },
+    { keys: ["nag panchami"], slug: "nag-panchami" },
+    { keys: ["varalakshmi"], slug: "varalakshmi-vrat" },
+    { keys: ["raksha bandhan"], slug: "raksha-bandhan" },
+    { keys: ["janmashtami"], slug: "janmashtami" },
+    { keys: ["hartalika"], slug: "hartalika-teej" },
+    { keys: ["ganesh chaturthi"], slug: "ganesh-chaturthi" },
+    { keys: ["onam"], slug: "onam" },
+    { keys: ["anant chaturdashi"], slug: "anant-chaturdashi" },
+    { keys: ["pitru paksha"], slug: "pitru-paksha" },
+    { keys: ["sarva pitru"], slug: "sarva-pitru-amavasya" },
+    { keys: ["sharad navratri"], slug: "sharad-navratri" },
+    { keys: ["durga ashtami"], slug: "durga-ashtami" },
+    { keys: ["maha navami"], slug: "maha-navami" },
+    { keys: ["vijayadashami"], slug: "dussehra" },
+    { keys: ["sharad purnima"], slug: "sharad-purnima" },
+    { keys: ["karwa"], slug: "karwa-chauth" },
+    { keys: ["ahoi"], slug: "ahoi-ashtami" },
+    { keys: ["dhanteras"], slug: "dhanteras" },
+    { keys: ["choti diwali"], slug: "choti-diwali" },
+    { keys: ["diwali (lakshmi"], slug: "diwali" },
+    { keys: ["govardhan"], slug: "govardhan-puja" },
+    { keys: ["bhai dooj"], slug: "bhai-dooj" },
+    { keys: ["chhath"], slug: "chhath-puja" },
+    { keys: ["dev uthani"], slug: "dev-uthani-ekadashi" },
+];
+
+export function getFestivalSlug(name: string): string | null {
+    const n = name.toLowerCase();
+    return FESTIVAL_SLUGS.find((m) => m.keys.some((k) => n.includes(k)))?.slug ?? null;
+}
+
+/**
+ * Photo ki list, pehli sabse achhi: [uski apni photo, ..., category wali photo].
+ * FestivalVisual pehli try karta hai, na mile to agli.
+ */
+export function getFestivalImageChain(name: string, banner = false): string[] {
+    const slug = getFestivalSlug(name);
+    const fallback = banner ? getFestivalBanner(name) : getFestivalImage(name);
+    const own = slug ? `${DIR}/${slug}.jpg` : null;
+    return own && own !== fallback ? [own, fallback] : [fallback];
+}
+
 export const getFestivalStyle = (name: string) => CATEGORY_STYLE[getCategory(name)];
 
 export function toISO(d: Date) {

@@ -7,15 +7,11 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import FestivalVisual from "@/components/FestivalVisual";
-// import FestivalModal from "@/components/FestivalModal";
-// import FlowerRain from "@/components/FlowerRain";
-// import Lotus from "@/components/Lotus";
+import FestivalModal from "@/components/FestivalModal";
+import Lotus from "@/components/Lotus";
 import { FestivalCountdown, MeditationTimer, DigitalMala } from "@/components/home/HomeExtras";
 import { FESTIVALS, getUpcoming, type Festival } from "@/lib/festivals";
 import SafeImage from "@/components/SafeImage";
-import FestivalModal from "@/components/FestivalModal";
-import Lotus from "@/components/Lotus";
-import FlowerRain from "@/components/FlowerRain";
 
 /* ------------------------------------------------------------------ */
 /*  1. IMAGES — apni images ke naam yahin badlo (public/ folder ke andar) */
@@ -238,9 +234,6 @@ export default function CalendarPage() {
     return (
         <main className="dd-page relative min-h-screen bg-gradient-to-b from-[#fffaf1] via-[#fff4e3] to-[#fdebd3] text-[#2b1b0e] transition-colors duration-300 dark:from-[#0f1c2a] dark:via-[#111d2b] dark:to-[#132334] dark:text-[#f5ead8]">
 
-            {/* poori screen par dheemi phoolon ki barsaat */}
-            <FlowerRain />
-
             <div className="mx-auto max-w-[1400px] space-y-4 px-3 py-4 sm:space-y-5 sm:px-6 sm:py-6">
 
                 {/* ============ HERO ============ */}
@@ -383,7 +376,7 @@ export default function CalendarPage() {
                                 <div className="relative flex h-full flex-col p-5 pt-44 sm:w-[60%] sm:p-6 sm:pt-6">
                                     <div className="flex items-center justify-between gap-2">
                                         <h2 className="flex items-center gap-2 font-heading text-xl font-bold">
-                                            <Lotus size={30} /> Today’s Panchang
+                                            <Lotus size={30} /> <span>Today’s Panchang</span>
                                         </h2>
                                         <a href="#panchang-strip"
                                             className={`flex shrink-0 items-center gap-1 rounded-full border border-amber-300/70 bg-white/80 px-3 py-1 text-xs font-bold backdrop-blur dark:border-amber-400/30 dark:bg-black/30 ${accent}`}>
@@ -472,7 +465,7 @@ export default function CalendarPage() {
 
                             {/* upar asli photo ki patti: title aur city us par */}
                             <div className="relative isolate h-32 sm:h-36">
-                                <SafeImage src={IMG.daily} alt="Sunrise over a sacred lake" fill sizes="(max-width:1400px) 100vw, 1400px"
+                                <SafeImage src={IMG.daily} alt="Sunrise over a sacred lake" fill sizes="(max-width:1400px) calc(100vw - 24px), 1352px"
                                     className="-z-10 object-cover object-[50%_60%] dark:brightness-[0.8]" />
                                 <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black/70 via-black/25 to-black/10" />
                                 <div className="flex h-full flex-wrap items-end justify-between gap-2 p-4 sm:p-5">
@@ -529,7 +522,7 @@ export default function CalendarPage() {
 
                 <footer className="pb-4 text-center">
                     <p className={`flex items-center justify-center gap-2 font-heading text-base font-semibold ${accent}`}>
-                        <Lotus size={26} /> May your journey be blessed with peace, devotion and divine light.
+                        <Lotus size={26} /> <span>May your journey be blessed with peace, devotion and divine light.</span>
                     </p>
                 </footer>
             </div>
